@@ -1,39 +1,41 @@
 # 凹语言手册
 
-#### 介绍
-{**以下是 Gitee 平台说明，您可以替换此简介**
-Gitee 是 OSCHINA 推出的基于 Git 的代码托管平台（同时支持 SVN）。专为开发者提供稳定、高效、安全的云端软件开发协作平台
-无论是个人、团队、或是企业，都能够用 Gitee 实现代码托管、项目管理、协作开发。企业项目请看 [https://gitee.com/enterprises](https://gitee.com/enterprises)}
+## 介绍
 
-#### 软件架构
-软件架构说明
+本仓库是 凹语言 的配套手册，随其更新，拟定目录如下，欢迎共建。
 
-
-#### 安装教程
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
-
-
-#### 特技
-
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1. 安装及入门  
+  1.1. 安装  
+  1.2. 你好，世界  
+2. 程序结构  
+  2.1. 声明  
+  2.2. 全局变量声明  
+  2.3. 函数声明  
+  2.4. 常量声明  
+  2.5. 导入声明  
+3. 基础数据类型  
+  3.1. 整数  
+  3.2. 浮点数  
+  3.3. 字符串  
+4. 复合数据类型  
+  4.1. 数组  
+  4.2. 切片  
+5. 函数  
+  5.1. 函数声明及调用  
+  5.2. 匿名函数及闭包  
+  5.3. 函数值  
+  5.4. 可变参数  
+6. 自定义类型  
+  6.1. 结构体  
+  6.2. 方法  
+  6.3. 方法值  
+  6.4. 嵌入结构体  
+  6.5. 匿名结构体  
+7. 接口  
+  7.1. 接口是隐式合约  
+  7.2. 非空接口的实现条件  
+  7.3. 空接口-万能封包器  
+  7.4. 接口类型断言总结  
+8. 与宿主环境交互  
+  8.x（待定）  
+  
