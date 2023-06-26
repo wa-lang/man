@@ -1,0 +1,14 @@
+// 版权 @2023 凹语言 作者。保留所有权利。
+
+global aInt: i32 = 42  //32位有符号整数
+global _num: f32 = 952.7  //32位浮点数
+
+func main {
+	println(aInt)
+	println(_num)
+	println(名字)
+	println(counter)
+}
+
+global 名字: string = "张三"  //字符串
+global counter: u32  //32位无符号整数
