@@ -1,0 +1,15 @@
+// 版权 @2023 凹语言 作者。保留所有权利。
+
+func swap(i, j: i32) => (i32, i32) {
+	return j, i
+}
+
+func main {
+	a, b := swap(4, 2)
+	println("a:", a, ", b:", b)
+	println(add(a, b))
+}
+
+func add(i, j: i32) => i32 {
+	return i + j
+}
