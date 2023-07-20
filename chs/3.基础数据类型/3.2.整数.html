@@ -1,0 +1,283 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>整数 - 凹语言手册</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="凹语言手册">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">凹语言手册</a></li><li class="chapter-item expanded affix "><a href="../../preface.html">前言</a></li><li class="chapter-item expanded "><a href="../../chs/1.安装及入门/index.html"><strong aria-hidden="true">1.</strong> 安装及入门</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/1.安装及入门/1.1.安装.html"><strong aria-hidden="true">1.1.</strong> 安装</a></li><li class="chapter-item expanded "><a href="../../chs/1.安装及入门/1.2.你好世界.html"><strong aria-hidden="true">1.2.</strong> 你好，世界</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/2.程序结构/index.html"><strong aria-hidden="true">2.</strong> 程序结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/2.程序结构/2.1.全局声明.html"><strong aria-hidden="true">2.1.</strong> 全局声明</a></li><li class="chapter-item expanded "><a href="../../chs/2.程序结构/2.2.全局变量声明.html"><strong aria-hidden="true">2.2.</strong> 全局变量声明</a></li><li class="chapter-item expanded "><a href="../../chs/2.程序结构/2.3.函数声明.html"><strong aria-hidden="true">2.3.</strong> 函数声明</a></li><li class="chapter-item expanded "><a href="../../chs/2.程序结构/2.4.常量声明.html"><strong aria-hidden="true">2.4.</strong> 常量声明</a></li><li class="chapter-item expanded "><a href="../../chs/2.程序结构/2.5.导入声明.html"><strong aria-hidden="true">2.5.</strong> 导入声明</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/3.基础数据类型/index.html"><strong aria-hidden="true">3.</strong> 基础数据类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/3.基础数据类型/3.1.局部变量声明.html"><strong aria-hidden="true">3.1.</strong> 局部变量声明</a></li><li class="chapter-item expanded "><a href="../../chs/3.基础数据类型/3.2.整数.html" class="active"><strong aria-hidden="true">3.2.</strong> 整数</a></li><li class="chapter-item expanded "><a href="../../chs/3.基础数据类型/3.3.浮点数.html"><strong aria-hidden="true">3.3.</strong> 浮点数</a></li><li class="chapter-item expanded "><a href="../../chs/3.基础数据类型/3.4.字符串.html"><strong aria-hidden="true">3.4.</strong> 字符串</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/4.函数/index.html"><strong aria-hidden="true">4.</strong> 函数</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/4.函数/4.1.函数调用.html"><strong aria-hidden="true">4.1.</strong> 函数调用</a></li><li class="chapter-item expanded "><a href="../../chs/4.函数/4.2.函数值.html"><strong aria-hidden="true">4.2.</strong> 函数值</a></li><li class="chapter-item expanded "><a href="../../chs/4.函数/4.3.匿名函数及闭包.html"><strong aria-hidden="true">4.3.</strong> 匿名函数及闭包</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/5.复合数据类型/index.html"><strong aria-hidden="true">5.</strong> 复合数据类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/5.复合数据类型/5.1.引用.html"><strong aria-hidden="true">5.1.</strong> 引用</a></li><li class="chapter-item expanded "><a href="../../chs/5.复合数据类型/5.2.数组.html"><strong aria-hidden="true">5.2.</strong> 数组</a></li><li class="chapter-item expanded "><a href="../../chs/5.复合数据类型/5.3.切片.html"><strong aria-hidden="true">5.3.</strong> 切片</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/index.html"><strong aria-hidden="true">6.</strong> 自定义类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/6.1.结构体.html"><strong aria-hidden="true">6.1.</strong> 结构体</a></li><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/6.2.方法.html"><strong aria-hidden="true">6.2.</strong> 方法</a></li><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/6.3.方法值.html"><strong aria-hidden="true">6.3.</strong> 方法值</a></li><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/6.4.嵌入结构体.html"><strong aria-hidden="true">6.4.</strong> 嵌入结构体</a></li><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/6.5.匿名结构体.html"><strong aria-hidden="true">6.5.</strong> 匿名结构体</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/7.接口/index.html"><strong aria-hidden="true">7.</strong> 接口</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/7.接口/7.1.接口是合约.html"><strong aria-hidden="true">7.1.</strong> 接口是合约</a></li><li class="chapter-item expanded "><a href="../../chs/7.接口/7.2.非空接口的实现条件.html"><strong aria-hidden="true">7.2.</strong> 非空接口的实现条件</a></li><li class="chapter-item expanded "><a href="../../chs/7.接口/7.3.空接口-万能封包器.html"><strong aria-hidden="true">7.3.</strong> 空接口-万能封包器</a></li><li class="chapter-item expanded "><a href="../../chs/7.接口/7.4.接口类型断言总结.html"><strong aria-hidden="true">7.4.</strong> 接口类型断言总结</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/8.与宿主环境交互/index.html"><strong aria-hidden="true">8.</strong> 与宿主环境交互</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">凹语言手册</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://gitee.com/wa-lang/wa" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://gitee.com/wa-lang/man/edit/master/./chs/3.基础数据类型/3.2.整数.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h2 id="32-整数"><a class="header" href="#32-整数">3.2. 整数</a></h2>
+<p>凹语言目前支持以下几种整数类型：</p>
+<ul>
+<li><code>u8</code> ：无符号8位整数；</li>
+<li><code>u16</code> ：无符号16位整数；</li>
+<li><code>i32</code> ：有符号32位整数；</li>
+<li><code>u32</code> ：无符号32位整数；</li>
+<li><code>i64</code> ：有符号64位整数；</li>
+<li><code>u64</code> ：无符号64位整数；</li>
+<li><code>int</code> ：不定宽有符号整数；</li>
+<li><code>uint</code> ：不定宽无符号整数；</li>
+<li><code>bool</code>：布尔型。</li>
+</ul>
+<p>其中：</p>
+<ul>
+<li><code>int</code> 和 <code>uint</code> 为不定宽整数，它们的宽度是由目标平台决定的。之所以有不定宽整数类型，是因为目标平台的寻址范围可能不同，内建函数 <code>len</code> 等涉及存储范围的操作，需要统一的数据类型以保持代码在不同的目标平台上能正常编译，并充分利用平台寻址范围；</li>
+<li><code>bool</code> 型实际内存布局为 <code>u8</code>，合法取值的字面值为 <code>true</code>、<code>false</code>，对应内存数值为 1 和 0。</li>
+</ul>
+<blockquote>
+<p>当前凹语言的主要目标平台为 <strong>wasm32</strong>，在该平台下，不定宽整数的位宽为32位，既4字节。</p>
+</blockquote>
+<p>除布尔型外的整数支持以下单目运算：</p>
+<ul>
+<li><code>^</code> ：按位取反</li>
+<li><code>-</code> ：取算术负值（既用0减去操作数）</li>
+</ul>
+<p>例如：</p>
+<pre><code class="language-wa">    i: u8 = 9
+    println(^i) //246
+    println(-i) //247
+
+    j: i32 = 9
+    println(^i) //-10
+    println(-i) //-9
+</code></pre>
+<p>除布尔型外的整数支持以下双目算术运算：</p>
+<ul>
+<li><code>+</code>：求和，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>-</code>：求差，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>*</code>：求积，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>/</code>：求商，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>%</code>：求余，两个操作数类型必须一致，返回值类型与操作数一致。</li>
+</ul>
+<p>例如：</p>
+<pre><code class="language-wa">    i, j: u8 = 9, 250
+    println(i + j) //3
+    println(i - j) //15
+    println(i * j) //202
+    println(j / i) //27
+    println(j % i) //7
+</code></pre>
+<p>除布尔型的整数支持以下双目位运算：</p>
+<ul>
+<li><code>&amp;</code>：按位取与，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>|</code>：按位取或，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>^</code>：按位取异或，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>&amp;^</code>：按位清空，两个操作数类型必须一致，返回值类型与操作数一致。对 <code>z = x ^&amp; y</code>，设 <code>xn</code>、<code>yn</code>、<code>zn</code> 分别为 <code>x</code>、<code>y</code>、<code>z</code> 的第n位，则当 <code>yn</code> 为1时 <code>zn</code> 为0，否则 <code>zn</code> 等于 <code>xn</code>。该运算等价于 <code>z = x &amp; (^y)</code>；</li>
+<li><code>&lt;&lt;</code>：左移，对 <code>z = x &lt;&lt; y</code>，<code>z</code> 的类型与 <code>x</code> 一致，<code>y</code> 必须为大于0的整数，移位时低位补0；</li>
+<li><code>&gt;&gt;</code>：右移，对 <code>z = x &gt;&gt; y</code>，<code>z</code> 的类型与 <code>x</code> 一致，<code>y</code> 必须为大于0的整数，移位时高位补0。</li>
+</ul>
+<p>例如：</p>
+<pre><code class="language-wa">    i, j: u16 = 343, 47831
+	println(i &amp; j) //87
+	println(i | j) //48087
+	println(i ^ j) //48000
+	println(i &amp;^ j) //256
+	println(i &lt;&lt; 5) //10976
+	println(j &gt;&gt; 5) //1494
+</code></pre>
+<p>加、减、乘、左移等运算的结果可能超过操作数的表达范围，此时将截取低位部分作为结果。</p>
+<p>除布尔型的整数支持以下比较运算（双目）：</p>
+<ul>
+<li><code>==</code>：相等。操作数类型必须一致，返回值为 <code>bool</code> 型，符合判断条件返回 <code>true</code>，否则返回 <code>false</code>，下同；</li>
+<li><code>!=</code>：不等；</li>
+<li><code>&gt;</code>：大于；</li>
+<li><code>&gt;=</code>：大等于；</li>
+<li><code>&lt;</code>：小于；</li>
+<li><code>&lt;=</code>：小等于。</li>
+</ul>
+<blockquote>
+<p>如果参与比较的两个操作数中有一个为常数，则常数应位于比较运算符的右侧。</p>
+</blockquote>
+<p>布尔型支持以下单目运算：</p>
+<ul>
+<li><code>!</code>：取反，操作数为 <code>false</code> 返回 <code>true</code>，否则返回 <code>false</code>。</li>
+</ul>
+<p>实际上除了通过2.4节介绍的常量声明的具名常量外，代码中出现的很多字面值，也是常量，比如：</p>
+<pre><code class="language-wa">    i := 13
+</code></pre>
+<p>代码中的 <code>13</code> 就是一个无类型的整数常量。使用无类型整数常量进行变量快捷声明时，变量的类型为不定宽有符号整数（既 <code>int</code>），上述代码等价于：</p>
+<pre><code class="language-wa">    i: int
+    i = 13
+</code></pre>
+<p>将整数常量赋值给整数变量时，会在编译时执行类型和范围检查，自动匹配至变量类型——向无符号整数赋予负数常量、或常量值超过被赋值变量宽度等行为将被判定为非法。</p>
+<p>整数拥有所有的二元运算符，二元运算符的优先级按以下顺序递减（同一行内的优先级相同，从左至右执行）：</p>
+<pre><code>*      /      %      &lt;&lt;       &gt;&gt;     &amp;       &amp;^
++      -      |      ^
+==     !=     &lt;      &lt;=       &gt;      &gt;=
+&amp;&amp;
+||
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../chs/3.基础数据类型/3.1.局部变量声明.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../chs/3.基础数据类型/3.3.浮点数.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../chs/3.基础数据类型/3.1.局部变量声明.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../chs/3.基础数据类型/3.3.浮点数.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

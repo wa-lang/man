@@ -1,0 +1,785 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>凹语言手册</title>
+        <meta name="robots" content="noindex" />
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="凹语言手册">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">凹语言手册</a></li><li class="chapter-item expanded affix "><a href="preface.html">前言</a></li><li class="chapter-item expanded "><a href="chs/1.安装及入门/index.html"><strong aria-hidden="true">1.</strong> 安装及入门</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chs/1.安装及入门/1.1.安装.html"><strong aria-hidden="true">1.1.</strong> 安装</a></li><li class="chapter-item expanded "><a href="chs/1.安装及入门/1.2.你好世界.html"><strong aria-hidden="true">1.2.</strong> 你好，世界</a></li></ol></li><li class="chapter-item expanded "><a href="chs/2.程序结构/index.html"><strong aria-hidden="true">2.</strong> 程序结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chs/2.程序结构/2.1.全局声明.html"><strong aria-hidden="true">2.1.</strong> 全局声明</a></li><li class="chapter-item expanded "><a href="chs/2.程序结构/2.2.全局变量声明.html"><strong aria-hidden="true">2.2.</strong> 全局变量声明</a></li><li class="chapter-item expanded "><a href="chs/2.程序结构/2.3.函数声明.html"><strong aria-hidden="true">2.3.</strong> 函数声明</a></li><li class="chapter-item expanded "><a href="chs/2.程序结构/2.4.常量声明.html"><strong aria-hidden="true">2.4.</strong> 常量声明</a></li><li class="chapter-item expanded "><a href="chs/2.程序结构/2.5.导入声明.html"><strong aria-hidden="true">2.5.</strong> 导入声明</a></li></ol></li><li class="chapter-item expanded "><a href="chs/3.基础数据类型/index.html"><strong aria-hidden="true">3.</strong> 基础数据类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chs/3.基础数据类型/3.1.局部变量声明.html"><strong aria-hidden="true">3.1.</strong> 局部变量声明</a></li><li class="chapter-item expanded "><a href="chs/3.基础数据类型/3.2.整数.html"><strong aria-hidden="true">3.2.</strong> 整数</a></li><li class="chapter-item expanded "><a href="chs/3.基础数据类型/3.3.浮点数.html"><strong aria-hidden="true">3.3.</strong> 浮点数</a></li><li class="chapter-item expanded "><a href="chs/3.基础数据类型/3.4.字符串.html"><strong aria-hidden="true">3.4.</strong> 字符串</a></li></ol></li><li class="chapter-item expanded "><a href="chs/4.函数/index.html"><strong aria-hidden="true">4.</strong> 函数</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chs/4.函数/4.1.函数调用.html"><strong aria-hidden="true">4.1.</strong> 函数调用</a></li><li class="chapter-item expanded "><a href="chs/4.函数/4.2.函数值.html"><strong aria-hidden="true">4.2.</strong> 函数值</a></li><li class="chapter-item expanded "><a href="chs/4.函数/4.3.匿名函数及闭包.html"><strong aria-hidden="true">4.3.</strong> 匿名函数及闭包</a></li></ol></li><li class="chapter-item expanded "><a href="chs/5.复合数据类型/index.html"><strong aria-hidden="true">5.</strong> 复合数据类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chs/5.复合数据类型/5.1.引用.html"><strong aria-hidden="true">5.1.</strong> 引用</a></li><li class="chapter-item expanded "><a href="chs/5.复合数据类型/5.2.数组.html"><strong aria-hidden="true">5.2.</strong> 数组</a></li><li class="chapter-item expanded "><a href="chs/5.复合数据类型/5.3.切片.html"><strong aria-hidden="true">5.3.</strong> 切片</a></li></ol></li><li class="chapter-item expanded "><a href="chs/6.自定义类型/index.html"><strong aria-hidden="true">6.</strong> 自定义类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chs/6.自定义类型/6.1.结构体.html"><strong aria-hidden="true">6.1.</strong> 结构体</a></li><li class="chapter-item expanded "><a href="chs/6.自定义类型/6.2.方法.html"><strong aria-hidden="true">6.2.</strong> 方法</a></li><li class="chapter-item expanded "><a href="chs/6.自定义类型/6.3.方法值.html"><strong aria-hidden="true">6.3.</strong> 方法值</a></li><li class="chapter-item expanded "><a href="chs/6.自定义类型/6.4.嵌入结构体.html"><strong aria-hidden="true">6.4.</strong> 嵌入结构体</a></li><li class="chapter-item expanded "><a href="chs/6.自定义类型/6.5.匿名结构体.html"><strong aria-hidden="true">6.5.</strong> 匿名结构体</a></li></ol></li><li class="chapter-item expanded "><a href="chs/7.接口/index.html"><strong aria-hidden="true">7.</strong> 接口</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="chs/7.接口/7.1.接口是合约.html"><strong aria-hidden="true">7.1.</strong> 接口是合约</a></li><li class="chapter-item expanded "><a href="chs/7.接口/7.2.非空接口的实现条件.html"><strong aria-hidden="true">7.2.</strong> 非空接口的实现条件</a></li><li class="chapter-item expanded "><a href="chs/7.接口/7.3.空接口-万能封包器.html"><strong aria-hidden="true">7.3.</strong> 空接口-万能封包器</a></li><li class="chapter-item expanded "><a href="chs/7.接口/7.4.接口类型断言总结.html"><strong aria-hidden="true">7.4.</strong> 接口类型断言总结</a></li></ol></li><li class="chapter-item expanded "><a href="chs/8.与宿主环境交互/index.html"><strong aria-hidden="true">8.</strong> 与宿主环境交互</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">凹语言手册</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://gitee.com/wa-lang/wa" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><img src="cover.png" alt="" /></p>
+<p><a href="https://zh-lang.osanswer.net/t/topic/247">凹语言 MVP 文档共建邀请</a></p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="前言"><a class="header" href="#前言">前言</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="1-安装及入门"><a class="header" href="#1-安装及入门">1. 安装及入门</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="11-安装"><a class="header" href="#11-安装">1.1. 安装</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="12-你好世界"><a class="header" href="#12-你好世界">1.2. 你好，世界</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="2-程序结构"><a class="header" href="#2-程序结构">2. 程序结构</a></h1>
+<p>凹语言和其他编程语言一样，一个大的程序是由很多小的部分组成的。本章介绍全局变量声明、函数声明、常量声明、导入声明和类型声明。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="21-全局声明"><a class="header" href="#21-全局声明">2.1. 全局声明</a></h2>
+<p>一个典型的 凹语言 程序源码如下例所示：</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+
+import &quot;errors&quot;
+
+const PI = 3.1415926
+
+global 终极问题的答案: i32
+
+func main {
+	终极问题的答案 = getAnswer()
+	println(&quot;宇宙的答案：&quot;, 终极问题的答案)
+	println(&quot;π:&quot;, PI)
+
+	err := errors.New(&quot;!!!&quot;)
+	println(&quot;err:&quot;, err.Error())
+}
+
+func getAnswer =&gt; i32 {
+	return 42
+}
+</code></pre>
+<blockquote>
+<p>与很多语言类似，在 凹语言 中，双斜杠 <code>//</code> 后至行尾的部分为注释，不产生实际作用。</p>
+</blockquote>
+<p>凹代码由<code>全局声明</code>组成，比如在上面的例子中：</p>
+<ul>
+<li><code>import &quot;errors&quot;</code> 是一个导入 <code>errors</code> 模块的声明</li>
+<li><code>const PI = 3.1415926</code> 是一个常量声明，它声明了一个名为 <code>PI</code> 的常量，值为 3.1415926</li>
+<li><code>global 终极问题的答案: i32</code> 是一个全局变量声明，它声明了一个名为 <code>终极问题的答案</code> 的全局变量，类型为32位整数</li>
+<li><code>func getAnswer =&gt; i32 {...}</code> 是一个函数声明，它声明了一个返回值为32位整数的函数</li>
+</ul>
+<p>凹语言 共有5种全局声明，每种声明均由特定的关键字开始（其后跟随该声明对象的实体），声明及对应关键字的关系如下：</p>
+<ul>
+<li><code>global</code> ：全局变量声明</li>
+<li><code>func</code> ：函数声明</li>
+<li><code>const</code> ：常量声明</li>
+<li><code>import</code> ：导入声明</li>
+<li><code>type</code> ：类型声明</li>
+</ul>
+<p>本章接下来的小节将依次简介全局变量声明、函数声明、常量声明、导入声明，类型声明将在第6章单独讲解。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="22-全局变量声明"><a class="header" href="#22-全局变量声明">2.2. 全局变量声明</a></h2>
+<p>全局变量声明以关键字 <code>global</code> 开始，一般语法如下：</p>
+<pre><code class="language-wa">global 变量名: 类型 = 初始值表达式
+</code></pre>
+<p>比如下面的例子：</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+
+global aInt: i32 = 42  //32位有符号整数
+global _num: f32 = 952.7  //32位浮点数
+
+func main {
+	println(aInt)
+	println(_num)
+	println(名字)
+	println(counter)
+}
+
+global 名字: string = &quot;张三&quot;  //字符串
+global counter: u32  //32位无符号整数
+</code></pre>
+<p>该程序运行的输出如下：</p>
+<pre><code>42
+952.7
+张三
+0
+</code></pre>
+<p>全局变量在模块内部的任何地方都可以使用——哪怕全局变量的声明与使用位于不同的源文件中，只要它们位于同一个模块内即可；在同一个源文件内，也并不要求“先声明再使用”，上面的例子中，变量 <code>名字</code>、<code>counter</code> 就可体现该特点。</p>
+<p>需要注意的是，上例中变量 <code>counter</code> 声明时没有给出初始值：</p>
+<blockquote>
+<p>在 凹语言 中，未给定初始值的变量一概以0值初始化，这有助于消除不确定性。</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="23-函数声明"><a class="header" href="#23-函数声明">2.3. 函数声明</a></h2>
+<p>函数声明以关键字 <code>func</code> 开始，一般语法如下：</p>
+<pre><code class="language-wa">func 函数名(参数列表) =&gt; (返回值列表) {函数体}
+</code></pre>
+<p>比如下面的例子：</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+
+func swap(i, j: i32) =&gt; (i32, i32) {
+	return j, i
+}
+
+func main {
+	a, b := swap(4, 2)
+	println(&quot;a:&quot;, a, &quot;, b:&quot;, b)
+	println(add(a, b))
+}
+
+func add(i, j: i32) =&gt; i32 {
+	return i + j
+}
+</code></pre>
+<p>该程序运行的输出如下：</p>
+<pre><code>a: 2 , b: 4
+6
+</code></pre>
+<p>对于没有返回值的函数，<code>=&gt; (返回值列表)</code> 的部分可省略，没有输入参数的函数 <code>(参数列表)</code> 的部分可省略，比如上例中的：<code>func main {...}</code>，即为：<code>func main() =&gt; () {...}</code> 的简写。</p>
+<p>与全局变量类似，函数可在包内的任何源文件中声明且无需“先声明再使用”。</p>
+<p>关于函数的更多信息见第4章。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="24-常量声明"><a class="header" href="#24-常量声明">2.4. 常量声明</a></h2>
+<p>常量声明以关键字 <code>const</code> 开始，一般语法如下：</p>
+<pre><code class="language-wa">const 常量名: 类型 = 常量值
+</code></pre>
+<p>比如下面的例子：</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+
+const Answer: i32 = 42
+const aConstString: string = &quot;你好，凹语言&quot;
+
+func main {
+	println(Answer)
+	println(aConstString)
+	println(aConstInt)
+}
+
+const aConstInt = 13
+</code></pre>
+<p>该程序运行的输出如下：</p>
+<pre><code>42
+你好，凹语言
+13
+</code></pre>
+<p>声明常量时，如果不指定类型（比如上例中的 <code>aConstInt</code>），那么它将是<strong>无类型常量</strong>，无类型常量有4种类型，分别为：无类型整数、无类型浮点数、无类型字符、无类型字符串，常量值写法如下：</p>
+<pre><code class="language-wa">const aUntypedInt = 11  //无类型整数
+const aUntypedFloat = 13.0  //无类型浮点数
+const aUntypedRune = 'a'  //无类型字符
+const aUntypedString = &quot;abc&quot;  //无类型字符串
+</code></pre>
+<p>对常量值的算数逻辑运算是在编译时完成的，比如：</p>
+<pre><code class="language-wa">// 版权 @2019 凹语言 作者。保留所有权利。
+
+const K = 4200000000000000000000000
+const J = 4200000000000000000000000
+
+func main {
+	println(K/J)
+}
+</code></pre>
+<p>虽然<code>K</code>和<code>J</code>的值均超过了凹中位数最多的整数类型<code>i64</code>的表达范围，但是<code>K/J</code>的值仍然能被正确打印。这也侧面体现了<strong>数值常量拥有超过变量基本类型的表达范围和精度</strong>。</p>
+<p>将常量赋值给变量时的相关规则，将在第3章详细讨论。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="25-导入声明"><a class="header" href="#25-导入声明">2.5. 导入声明</a></h2>
+<p>导入声明以关键字 <code>import</code> 开始，一般语法如下：</p>
+<pre><code class="language-wa">import 导入模块路径
+</code></pre>
+<p>比如下面的例子：</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+
+import &quot;errors&quot;
+
+func main {
+	err := errors.New(&quot;!!!&quot;)
+	println(&quot;err:&quot;, err.Error())
+}
+
+func getAnswer =&gt; i32 {
+	return 42
+}
+</code></pre>
+<p>程序开始处的 <code>import &quot;errors&quot;</code> 声明导入了凹的内置 <code>errors</code> 模块，后续的函数中即可使用该模块的公开对象——如例子中的 <code>errors.New</code> 函数；<code>.</code> 在这里被称为<strong>选择操作符</strong>，它的含义是从左侧的对象（模块）中选择名称与右侧相同的那个对象来使用，该操作符除了用于选择模块公开的函数、全局变量等对象，还用于选择结构体的成员（详见第6章）。</p>
+<p>导入声明应位于源文件内的所有非导入声明之前（既位于头部，紧随文件头注释之后）。若导入多个模块，可以使用括号成组导入，形如：</p>
+<pre><code class="language-wa">import (
+	&quot;errors&quot;
+	&quot;strconv&quot;
+)
+</code></pre>
+<p>该声明与下述声明是等价的：</p>
+<pre><code class="language-wa">import &quot;errors&quot;
+import &quot;strconv&quot;
+</code></pre>
+<p>在导入模块时，可以给模块起别名，一般语法如下：</p>
+<pre><code class="language-wa">import 导入模块路径 =&gt; 模块别名
+</code></pre>
+<p>这种用法可以解决同时导入两个路径不同，但名字相同的模块时名字冲突的问题，例如：</p>
+<pre><code class="language-wa">import (
+	&quot;errors&quot;
+	&quot;mypackage/errors&quot; =&gt; myerrors
+)
+
+func main {
+	err := errors.New(&quot;!!!&quot;)  //调用内置 errors 模块
+	myerr := myerrors.New(&quot;!!!&quot;)  //调用 mypackage/errors 模块
+}
+</code></pre>
+<blockquote>
+<p>与其他声明不同，<strong>导入声明的作用范围是当前源文件</strong>，如果一个模块内的两个源文件使用了同一个第三方模块，那么两个文件内都需要其导入声明。</p>
+</blockquote>
+<p>在凹语言中，每个源文件导入的其他模块都<strong>必须被使用</strong>，也就是说，如果导入了一个模块，但并未使用其任何对象，将被视为语法错误。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="3-基础数据类型"><a class="header" href="#3-基础数据类型">3. 基础数据类型</a></h1>
+<p>从底层而言，所有的数据都是由比特组成。对应的凹语言基础数据类型有整型数、浮点数、字符串等。本章介绍基本数据类型以及局部变量的使用。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="31-局部变量声明"><a class="header" href="#31-局部变量声明">3.1. 局部变量声明</a></h2>
+<p>第2章介绍了全局变量和常量声明，同样常用的还有局部变量（函数内部定义的变量）声明，它的一般语法为：</p>
+<pre><code class="language-wa">局部变量名: 数据类型 = 初始值
+</code></pre>
+<p>与全部变量和常量不同的是：局部变量的声明不以关键字开始；在声明局部变量时，如果省略 <code>= 初始值</code> 部分，则该变量将以0值初始化，如：</p>
+<pre><code class="language-wa">    aI32: i32 = 42
+    aString: string = &quot;你好&quot;
+    aF32: f32  //0.0
+</code></pre>
+<p>另一种常用的声明局部变量的语法使用快捷定义符 <code>:=</code> ，语法如下：</p>
+<pre><code class="language-wa">局部变量名 := 表达式
+</code></pre>
+<p>使用这种写法时变量的类型将与快捷定义符右侧表达式的类型保持一致，且表达式的值将被赋为该局部变量的初始值，如：</p>
+<pre><code class="language-wa">    a := 13  //int
+    f := 3.14  //f64
+    s := genString()  //string
+...
+func genString() =&gt; string { return &quot;Hello&quot; }
+</code></pre>
+<blockquote>
+<p>凹语言是静态类型语言，合法表达式的类型可以在编译时推定，因此变量的类型是确定的。该 <code>:=</code> 语法类似于C++的 <code>auto</code> 类型。</p>
+</blockquote>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="32-整数"><a class="header" href="#32-整数">3.2. 整数</a></h2>
+<p>凹语言目前支持以下几种整数类型：</p>
+<ul>
+<li><code>u8</code> ：无符号8位整数；</li>
+<li><code>u16</code> ：无符号16位整数；</li>
+<li><code>i32</code> ：有符号32位整数；</li>
+<li><code>u32</code> ：无符号32位整数；</li>
+<li><code>i64</code> ：有符号64位整数；</li>
+<li><code>u64</code> ：无符号64位整数；</li>
+<li><code>int</code> ：不定宽有符号整数；</li>
+<li><code>uint</code> ：不定宽无符号整数；</li>
+<li><code>bool</code>：布尔型。</li>
+</ul>
+<p>其中：</p>
+<ul>
+<li><code>int</code> 和 <code>uint</code> 为不定宽整数，它们的宽度是由目标平台决定的。之所以有不定宽整数类型，是因为目标平台的寻址范围可能不同，内建函数 <code>len</code> 等涉及存储范围的操作，需要统一的数据类型以保持代码在不同的目标平台上能正常编译，并充分利用平台寻址范围；</li>
+<li><code>bool</code> 型实际内存布局为 <code>u8</code>，合法取值的字面值为 <code>true</code>、<code>false</code>，对应内存数值为 1 和 0。</li>
+</ul>
+<blockquote>
+<p>当前凹语言的主要目标平台为 <strong>wasm32</strong>，在该平台下，不定宽整数的位宽为32位，既4字节。</p>
+</blockquote>
+<p>除布尔型外的整数支持以下单目运算：</p>
+<ul>
+<li><code>^</code> ：按位取反</li>
+<li><code>-</code> ：取算术负值（既用0减去操作数）</li>
+</ul>
+<p>例如：</p>
+<pre><code class="language-wa">    i: u8 = 9
+    println(^i) //246
+    println(-i) //247
+
+    j: i32 = 9
+    println(^i) //-10
+    println(-i) //-9
+</code></pre>
+<p>除布尔型外的整数支持以下双目算术运算：</p>
+<ul>
+<li><code>+</code>：求和，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>-</code>：求差，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>*</code>：求积，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>/</code>：求商，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>%</code>：求余，两个操作数类型必须一致，返回值类型与操作数一致。</li>
+</ul>
+<p>例如：</p>
+<pre><code class="language-wa">    i, j: u8 = 9, 250
+    println(i + j) //3
+    println(i - j) //15
+    println(i * j) //202
+    println(j / i) //27
+    println(j % i) //7
+</code></pre>
+<p>除布尔型的整数支持以下双目位运算：</p>
+<ul>
+<li><code>&amp;</code>：按位取与，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>|</code>：按位取或，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>^</code>：按位取异或，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>&amp;^</code>：按位清空，两个操作数类型必须一致，返回值类型与操作数一致。对 <code>z = x ^&amp; y</code>，设 <code>xn</code>、<code>yn</code>、<code>zn</code> 分别为 <code>x</code>、<code>y</code>、<code>z</code> 的第n位，则当 <code>yn</code> 为1时 <code>zn</code> 为0，否则 <code>zn</code> 等于 <code>xn</code>。该运算等价于 <code>z = x &amp; (^y)</code>；</li>
+<li><code>&lt;&lt;</code>：左移，对 <code>z = x &lt;&lt; y</code>，<code>z</code> 的类型与 <code>x</code> 一致，<code>y</code> 必须为大于0的整数，移位时低位补0；</li>
+<li><code>&gt;&gt;</code>：右移，对 <code>z = x &gt;&gt; y</code>，<code>z</code> 的类型与 <code>x</code> 一致，<code>y</code> 必须为大于0的整数，移位时高位补0。</li>
+</ul>
+<p>例如：</p>
+<pre><code class="language-wa">    i, j: u16 = 343, 47831
+	println(i &amp; j) //87
+	println(i | j) //48087
+	println(i ^ j) //48000
+	println(i &amp;^ j) //256
+	println(i &lt;&lt; 5) //10976
+	println(j &gt;&gt; 5) //1494
+</code></pre>
+<p>加、减、乘、左移等运算的结果可能超过操作数的表达范围，此时将截取低位部分作为结果。</p>
+<p>除布尔型的整数支持以下比较运算（双目）：</p>
+<ul>
+<li><code>==</code>：相等。操作数类型必须一致，返回值为 <code>bool</code> 型，符合判断条件返回 <code>true</code>，否则返回 <code>false</code>，下同；</li>
+<li><code>!=</code>：不等；</li>
+<li><code>&gt;</code>：大于；</li>
+<li><code>&gt;=</code>：大等于；</li>
+<li><code>&lt;</code>：小于；</li>
+<li><code>&lt;=</code>：小等于。</li>
+</ul>
+<blockquote>
+<p>如果参与比较的两个操作数中有一个为常数，则常数应位于比较运算符的右侧。</p>
+</blockquote>
+<p>布尔型支持以下单目运算：</p>
+<ul>
+<li><code>!</code>：取反，操作数为 <code>false</code> 返回 <code>true</code>，否则返回 <code>false</code>。</li>
+</ul>
+<p>实际上除了通过2.4节介绍的常量声明的具名常量外，代码中出现的很多字面值，也是常量，比如：</p>
+<pre><code class="language-wa">    i := 13
+</code></pre>
+<p>代码中的 <code>13</code> 就是一个无类型的整数常量。使用无类型整数常量进行变量快捷声明时，变量的类型为不定宽有符号整数（既 <code>int</code>），上述代码等价于：</p>
+<pre><code class="language-wa">    i: int
+    i = 13
+</code></pre>
+<p>将整数常量赋值给整数变量时，会在编译时执行类型和范围检查，自动匹配至变量类型——向无符号整数赋予负数常量、或常量值超过被赋值变量宽度等行为将被判定为非法。</p>
+<p>整数拥有所有的二元运算符，二元运算符的优先级按以下顺序递减（同一行内的优先级相同，从左至右执行）：</p>
+<pre><code>*      /      %      &lt;&lt;       &gt;&gt;     &amp;       &amp;^
++      -      |      ^
+==     !=     &lt;      &lt;=       &gt;      &gt;=
+&amp;&amp;
+||
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="33-浮点数"><a class="header" href="#33-浮点数">3.3. 浮点数</a></h2>
+<p>凹语言目前支持以下两种浮点数（均为IEEE 754标准）：</p>
+<ul>
+<li><code>f32</code> ：32位浮点数；</li>
+<li><code>f64</code> ：64位浮点数.</li>
+</ul>
+<p>浮点数支持以下单目运算符</p>
+<ul>
+<li><code>-</code> ：取算术负值（既用0减去操作数）</li>
+</ul>
+<p>例如：</p>
+<pre><code class="language-wa">    i: f32 = 1.25
+    println(-i) //-1.25
+</code></pre>
+<p>浮点数支持以下双目算术运算：</p>
+<ul>
+<li><code>+</code>：求和，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>-</code>：求差，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>*</code>：求积，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+<li><code>/</code>：求商，两个操作数类型必须一致，返回值类型与操作数一致；</li>
+</ul>
+<p>例如：</p>
+<pre><code class="language-wa">    i, j: f64 = 1, 0.5
+    println(i + j) // 1.5
+    println(i - j) // 0.5
+    println(i * j) // 0.5
+    println(j / i) // 2
+</code></pre>
+<p>浮点数支持以下比较运算（双目）：</p>
+<ul>
+<li><code>==</code>：相等。操作数类型必须一致，返回值为 <code>bool</code> 型，符合判断条件返回 <code>true</code>，否则返回 <code>false</code>，下同；</li>
+<li><code>!=</code>：不等；</li>
+<li><code>&gt;</code>：大于；</li>
+<li><code>&gt;=</code>：大等于；</li>
+<li><code>&lt;</code>：小于；</li>
+<li><code>&lt;=</code>：小等于。</li>
+</ul>
+<p>使用无类型浮点常量进行变量快捷声明时，变量的类型为 <code>f64</code>，如下面两种写法是等价的：</p>
+<pre><code class="language-wa">    f := 1.5
+</code></pre>
+<pre><code class="language-wa">    f: f64 = 1.5
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="34-字符串"><a class="header" href="#34-字符串">3.4. 字符串</a></h2>
+<p>字符串在凹语言中被视为基础数据类型，类型名称为：<code>string</code>，字符串字面常量通过双引号 <code>&quot;&quot;</code> 括起定义，采用 UTF-8 编码，例如：</p>
+<pre><code class="language-wa">    s: string = &quot;你好，凹语言&quot;
+    println(s)     // 你好，凹语言
+    println(&quot;+42&quot;) // +42
+</code></pre>
+<p>与整数、浮点数类似，字符串变量也可以使用 <code>:=</code> 快捷定义，例如：</p>
+<pre><code class="language-wa">    s := &quot;编号9527&quot;
+</code></pre>
+<p>字符串支持加法（<code>+</code>）双目操作，返回值为两个字符串的连接，例如：</p>
+<pre><code class="language-wa">    s1 := &quot;abc&quot;
+    s2 := &quot;123&quot;
+    println(s1 + s2) // abc123
+</code></pre>
+<p>容纳字符串的底层结构是一个字节（既<code>u8</code>）数组，可以使用 <code>[]</code> 获取其中某个字节的数值，或一个子串，例如：</p>
+<pre><code class="language-wa">    s := &quot;abcdefg&quot;
+    println(s[2])   // 99，既 'c' 的ASCII值
+    println(s[1:3]) // bc
+</code></pre>
+<p>在这种用法中，<code>[]</code> 内的下标单位是<strong>字节</strong>，而不是<strong>字符</strong>。如果源字符串包含非 ASCII 码字符（如中文字符），而下标未处于整字符边界处，则返回的子字串可能非法，例如：</p>
+<pre><code class="language-wa">    s := &quot;你好&quot;
+    println(s[1:3]) // ��
+</code></pre>
+<p><code>s[m:n]</code> 用法从第<code>n</code>个字节处开始截取，返回的字串长度为 <code>n-m</code> 字节。若省略 <code>m</code> 则表示从字符串开始截取，若省略 <code>n</code> 则表示截取至字符串末尾，例如：</p>
+<pre><code class="language-wa">    s := &quot;abcdefg&quot;
+    println(s[:3]) // abc
+    println(s[3:]) // defg
+</code></pre>
+<p>从底层数据的角度看，截取子字符串时没有重新申请字节数组拷贝，而是直接引用原始字符串的地址。为避免多个引用同一片内存的字符串相互修改的影响，字符串被设定为不能局部修改——既不能向 <code>s[n]</code> 赋值。下述写法是非法的：</p>
+<pre><code class="language-wa">    s := &quot;abcdefg&quot;
+    s[0] = 99 // 非法操作
+</code></pre>
+<p>两个字符串间可使用 <code>==</code>、<code>!=</code> 运算符进行相等、不等判断，例如：</p>
+<pre><code class="language-wa">    s := &quot;abc&quot;
+    println(s == &quot;123&quot;) // false
+    println(s != &quot;123&quot;) // true
+</code></pre>
+<p>内建函数 <code>len</code> 可用于获取字符串长度（以字节为单位），如：</p>
+<pre><code class="language-wa">    s := &quot;abcdefg&quot;
+    println(len(s)) // 7
+</code></pre>
+<hr />
+<p>已知问题列表：</p>
+<ul>
+<li>使用 <code>[]</code> 获取字符串变量的指定字节或子串时，未执行边界检查</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="4-函数"><a class="header" href="#4-函数">4. 函数</a></h1>
+<p>函数是语句序列的打包，以便于被多次重复使用。本章介绍凹语言函数基本用法，以及函数值、匿名函数和闭包等特性。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="41-函数调用"><a class="header" href="#41-函数调用">4.1. 函数调用</a></h2>
+<p>我们在之前的章节中已接触过很多函数，比如常用的内置打印函数 <code>println</code>。函数调用的一般语法为：</p>
+<p><code>函数名(实参列表)</code></p>
+<p><code>实参</code>指函数调用时实际传入的参数，与之对应的是函数声明时定义的<code>形参</code>，形参只在函数体内有效。凹语言在调用函数时，参数使用<strong>值传递</strong>，在函数体内对形参值的变更不会影响实参的值，例如：</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+
+func Double(i: i32) =&gt; i32 {
+    i = i * 2
+    return i
+}
+
+func main {
+	j: i32 = 42
+    println(Double(j)) // 84
+    println(j)         // 42
+}
+</code></pre>
+<p>关键字 <code>return</code> 用于退出函数并返回值，一般语法为：</p>
+<pre><code class="language-wa">return 返回值列表
+</code></pre>
+<p>如果函数有多个返回值，应使用 <code>,</code> 分隔，例如：</p>
+<pre><code class="language-wa">func MulRet() =&gt; (i32, i32) {
+    return 42, 13
+}
+</code></pre>
+<p>类似于形参，函数声明时可定义具名返回值，例如：</p>
+<pre><code class="language-wa">func showAnswer() =&gt; (answer: i32) {
+    answer = 42
+    return
+}
+</code></pre>
+<p>这种写法等价于：</p>
+<pre><code class="language-wa">func showAnswer() =&gt; i32 {
+    answer: i32
+    answer = 42
+    return answer
+}
+</code></pre>
+<p>与其他变量类似，具名返回值以 0 值初始化。假如某个函数需要返回错误码、分支很多并且大多数分支错误码为 0 值，则使用具名返回值写法可以简化代码。</p>
+<p>即使声明了具名返回值，<code>return</code> 时仍然可以指定别的值，比如：</p>
+<pre><code class="language-wa">// 版权 @2019 凹语言 作者。保留所有权利。
+
+func showAnswer() =&gt; (answer: i32) {
+    answer = 13
+    return 42
+}
+
+func main {
+    println(showAnswer()) // 42
+}
+</code></pre>
+<p>因此我们可以这样来理解：具名返回值实际上是在函数体内定义了一组局部变量，当该函数内的<code>return</code> 语句未指明返回值时，自动将这一组局部变量作为返回值填入。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="42-函数值"><a class="header" href="#42-函数值">4.2. 函数值</a></h2>
+<p>在凹语言中，函数可以被当作一种特殊的值，例如：</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+
+func Inc(i: i32) =&gt; i32 { return i + 1 }
+func Dec(i: i32) =&gt; i32 { return i - 1 }
+
+func main {
+    f := Inc
+    println(f(42)) // 43
+
+    f = Dec
+    println(f(42)) // 41
+}
+</code></pre>
+<p>上例中，<code>f</code> 即为<strong>函数值</strong>，函数值可以被调用，调用方法与函数调用无异。</p>
+<p>函数的类型由其参数以及返回值类型决定，通常这些信息被称为<strong>函数签名</strong>（Signature），如果两个函数 A 和 B 拥有相同签名，意味着它们：</p>
+<ul>
+<li>参数个数相同；</li>
+<li>返回值个数相同；</li>
+<li>对于任意 n，函数 A 的第 n 个参数的类型与 B 的第 n 个参数类型相同；</li>
+<li>对于任意 m，函数 A 的第 m 个返回值的类型与 B 的第 m 个返回值类型相同。</li>
+</ul>
+<p>函数值的类型也是通过函数签名定义的，比如上例中函数值 <code>f</code> 的类型为 <code>func(i32) =&gt; i32</code>，因此上例中 <code>f</code> 的快捷声明 <code>f := Inc</code> 等价于：</p>
+<pre><code class="language-wa">    f: func(i32) =&gt; i32 // f == nil
+    f = Inc
+</code></pre>
+<blockquote>
+<p>与其他类型的值一样，函数值也为0值初始化，对应值为 <code>nil</code></p>
+</blockquote>
+<p>在凹语言中，类型不同的值不能相互赋值，这一点对函数值同样有效，由于函数类型由签名确定，因此将一个函数赋值给签名不同的函数值被视为非法，例如：</p>
+<pre><code class="language-wa">func Inc(i: i32) =&gt; i32 { return i + 1 }
+
+func main {
+    f: func(i32)
+    f = Inc // 编译错误
+}
+</code></pre>
+<p>既然被称为“值”，意味着函数值可以作为参数、和返回值在不同函数间传递，例如：</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+
+func inc(i: i32) =&gt; i32 { return i + 1 }
+func dec(i: i32) =&gt; i32 { return i - 1 }
+func getFunc(opCode: i32) =&gt; func(i32) =&gt; i32 {
+	if opCode == 0 {
+		return inc
+	} else if opCode == 1 {
+		return dec
+	} else {
+		return nil
+	}
+}
+
+func useFunc(i: i32, f: func(i32) =&gt; i32) {
+	if f == nil {
+		println(&quot;f == nil&quot;)
+		return
+	}
+	println(f(i))
+}
+
+func main {
+	useFunc(42, getFunc(0)) // 43
+	useFunc(42, getFunc(1)) // 41
+	useFunc(42, getFunc(2)) // f == nil
+	getFunc(2)(42)          // 运行时异常
+}
+</code></pre>
+<p>与其他基本类型不同，函数值只能与 <code>nil</code> 比较，既：函数值位于操作符 <code>==</code>、<code>!=</code> 左侧时，右侧只能为 <code>nil</code>，对两个非常量函数值执行比较操作被视为非法。</p>
+<p>如果被调用的函数值为 <code>nil</code>，将触发不可恢复的运行时异常。</p>
+<p>函数值与 C 系语言中的函数指针作用类似，可以更灵活的动态调整执行分支。但需要指出的时，相比于直接调用函数，调用函数值有一些额外消耗，性能敏感的场合需要格外注意。</p>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="43-匿名函数及闭包"><a class="header" href="#43-匿名函数及闭包">4.3. 匿名函数及闭包</a></h2>
+<p>上一节介绍了函数值的基本用法，既然函数可被视为值，那么，在凹语言函数内部，是否可以像声明基本类型字面量那样，声明函数字面量？答案是肯定的，例如：</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+
+func useFunc(i: i32, f: func(i32) =&gt; i32) {
+	if f == nil {
+		println(&quot;f == nil&quot;)
+		return
+	}
+	println(f(i))
+}
+
+func main {
+	f := func(i: i32) =&gt; i32 { return i * i } // 声明匿名函数并赋值给 f
+	useFunc(3, f) // 9
+}
+</code></pre>
+<p>其中快捷声明的函数值 <code>f</code>，它的初始值是字面量 <code>func(i: i32) =&gt; i32 { return i * i }</code>，既一个没有名字的函数。在凹语言中，这种没有名字的函数字面量被称为<strong>匿名函数</strong>。在访问者模式、自定义快速排序等应用场景中，经常需要传入一些函数值参数，而这些函数可能仅在当前上下文环境出现一次，为此额外定义模块级的全局函数有诸多不便，这时即可使用匿名函数。</p>
+<p><strong>在函数A内部声明的匿名函数B，可以访问A内部的局部变量</strong>，例如：</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+
+func useFunc(i: i32, f: func(i32) =&gt; i32) {
+	if f == nil {
+		println(&quot;f == nil&quot;)
+		return
+	}
+	println(f(i))
+}
+
+func main {
+	n: i32 = 0
+	f := func(i: i32) =&gt; i32 {
+		n = i * i
+		return n
+	}
+	useFunc(3, f)
+	println(n) // 9
+}
+</code></pre>
+<p>可见函数值 <code>f</code> 可以读写外层的局部变量 <code>n</code>。再来看一个更加复杂的例子：</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+func genClosure(i: i32) =&gt; func() =&gt; i32 {
+	n := i
+	return func() =&gt; i32 {
+		n = n + 1
+		return n
+	}
+}
+
+func main {
+	c := genClosure(0)
+	d := genClosure(99)
+
+	println(c()) // 1
+	println(d()) // 100
+	println(c()) // 2
+	println(d()) // 101
+}
+</code></pre>
+<p>每次调用 <code>genFunc</code> 都将生成一个函数值，这个函数值捕获了局部变量 <code>n</code>，函数值每次执行会对捕获的 <code>n</code> 执行加1，多次执行 <code>genFunc</code> 所获得的函数值，它们捕获的 <code>n</code> 是不同的，每执行一次，捕获一个新的实例。</p>
+<p>在函数内声明的匿名函数值，携带了本次运行时捕获的局部变量的状态。显然，这种函数值实质上就是闭包。</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="5-复合数据类型"><a class="header" href="#5-复合数据类型">5. 复合数据类型</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="51-引用"><a class="header" href="#51-引用">5.1. 引用</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="52-数组"><a class="header" href="#52-数组">5.2. 数组</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="53-切片"><a class="header" href="#53-切片">5.3. 切片</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="6-自定义类型"><a class="header" href="#6-自定义类型">6. 自定义类型</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="61-结构体"><a class="header" href="#61-结构体">6.1. 结构体</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="62-方法"><a class="header" href="#62-方法">6.2. 方法</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="63-方法值"><a class="header" href="#63-方法值">6.3. 方法值</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="64-嵌入结构体"><a class="header" href="#64-嵌入结构体">6.4. 嵌入结构体</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="65-匿名结构体"><a class="header" href="#65-匿名结构体">6.5. 匿名结构体</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="7-接口"><a class="header" href="#7-接口">7. 接口</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="71-接口是合约"><a class="header" href="#71-接口是合约">7.1. 接口是合约</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="72-非空接口的实现条件"><a class="header" href="#72-非空接口的实现条件">7.2. 非空接口的实现条件</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="73-空接口-万能封包器"><a class="header" href="#73-空接口-万能封包器">7.3. 空接口-万能封包器</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h2 id="74-接口类型断言总结"><a class="header" href="#74-接口类型断言总结">7.4. 接口类型断言总结</a></h2>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="与宿主环境交互"><a class="header" href="#与宿主环境交互">与宿主环境交互</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        <script type="text/javascript">
+        window.addEventListener('load', function() {
+            window.setTimeout(window.print, 100);
+        });
+        </script>
+    </body>
+</html>
