@@ -1,0 +1,6 @@
+[book]
+title = "凹语言手册"
+authors = ["凹语言开发组"]
+description = "凹语言手册"
+src = "."
+language = "zh_CN"
