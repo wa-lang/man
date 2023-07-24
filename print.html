@@ -777,7 +777,7 @@ func main() {
 	println(*q) // 9527
 }
 </code></pre>
-<p>在凹语言中，<strong>跨函数传递引用是合法操作</strong>。返回局部变量的引用安全无害，编译器和运行时会跟踪变量使用的内存，自动执行清理回收。当然这引出了引用与指针的另一个直观的不同，既：引用不能执行算术运算。</p>
+<p>在凹语言中，<strong>跨函数传递引用是合法操作</strong>。返回局部变量的引用安全无害，编译器和运行时会跟踪变量使用的内存，自动执行清理回收。当然这导致了引用与指针的另一个直观的不同，既：引用不能执行算术运算。</p>
 <p>对于引用类型 <code>*T</code>，<code>T</code> 可以是基础类型，也可以是任何复合类型或自定义类型，<code>**T</code> 这样的多级引用（类似于C语言多级指针）也是合法的。</p>
 <hr />
 <p>已知问题列表：</p>
@@ -785,6 +785,53 @@ func main() {
 <li>目前使用的RC模式无法自动回收孤环，进而导致内存泄漏。该问题不影响语法兼容性，后续对本问题的修正不影响已有源代码，凹程序开发者无须对此进行特别处理。</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="52-数组"><a class="header" href="#52-数组">5.2. 数组</a></h2>
+<p>数组类型的基本声明如下：</p>
+<pre><code class="language-wa">[N]T
+</code></pre>
+<p>其中，<code>N</code> 为数组长度（大等于0常整数），<code>T</code> 为数组元素类型；例如：</p>
+<pre><code class="language-wa">    a: [3]i32
+    a[0] = 42
+    println(a[0]) // 42
+</code></pre>
+<p>与很多语言类似，凹语言使用 <code>x[M]</code> 语法访问数组内的指定元素。数组变量声明时，可使用以下方式设定数组元素初始值：</p>
+<pre><code class="language-wa">    a: [3]i32 = 
+    println(a[0], a[1], a[2]) // 13 42 9527
+</code></pre>
+<p><code>[3]i32{13, 42, 9527}</code> 声明了一个数组字面值，因此上例中数组变量 <code>a</code> 的声明可以使用快捷声明简化为：</p>
+<pre><code class="language-wa">    a := [3]i32{13, 42, 9527}
+</code></pre>
+<p>声明数组字面值时，其后 <code>{}</code> 内所含元素的个数可以小于数组长度（但不可大于），不足的部分为 0 值，例如：</p>
+<pre><code class="language-wa">    a := [3]i32{13, 42}
+    println(a[2]) // 0
+</code></pre>
+<p>内置函数 <code>len</code> 可用于获取数组长度既数组中所含元素的个数，例如：</p>
+<pre><code class="language-wa">    a := [3]i32
+    println(len(a)) // 3
+</code></pre>
+<p>声明数组字面值时，若数组长度部分写为 <code>...</code>，则表明数组长度由其后 <code>{}</code> 内的元素个数决定，例如：</p>
+<pre><code class="language-wa">    a := [...]i32{13, 42}
+    println(len(a)) // 2
+</code></pre>
+<p><strong>在凹语言中数组是值类型</strong>，例如：</p>
+<pre><code class="language-wa">    a := [...]i32{13, 42}
+    b: [2]i32
+    b = a
+    println(b[0], b[1]) // 13 42
+    b[0] = 9527
+    println(a[0]) // 13
+</code></pre>
+<p>由此可见，将一个数组赋值给另一个数组时，会将其中的每个对应元素都进行赋值，既执行深拷贝操作。由于数组是值，赋值后的数组间不存在相互关联。</p>
+<p>元素类型相同，但长度不同的数组，被认为是不同的类型，因此下列程序非法：</p>
+<pre><code class="language-wa">    a: [2]i32
+    b: [3]i32
+    b = a // 非法，类型不同不可赋值
+</code></pre>
+<hr />
+<p>已知问题：</p>
+<ul>
+<li>通过变量下标访问数组元素时，未执行边界检查。该问题不影响语法兼容性，后续对本问题的修正不影响已有源代码，凹程序开发者无须对此进行特别处理。</li>
+<li>在目前版本的实现中，数组被展开为一组线性值，因此数组赋值时，虚拟寄存器和指令数与数组长度成整倍数关系，若长度过大，目标代码的体积会急剧膨胀。该问题不影响语法兼容性，后续对本问题的修正不影响已有源代码，在现阶段，程序开发者应关注：除全局变量外，尽可能不要使用长度大于8的数组。</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="53-切片"><a class="header" href="#53-切片">5.3. 切片</a></h2>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-自定义类型"><a class="header" href="#6-自定义类型">6. 自定义类型</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="61-结构体"><a class="header" href="#61-结构体">6.1. 结构体</a></h2>
