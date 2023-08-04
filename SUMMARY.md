@@ -41,3 +41,5 @@
   - [接口的其它特性(TODO)](chs/7.接口/7.4.接口的其它特性.md)
 * [与宿主环境交互(TODO)](chs/8.与宿主环境交互/readme.md)
 * [附录](chs/9.附录/readme.md)
+  - [语言规范](chs/9.附录/a-spec.md)
+  - [标准库](chs/9.附录/b-std.md)
