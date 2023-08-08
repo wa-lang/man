@@ -82,7 +82,7 @@ func New(text: string) => error
 
 ### B.4 regexp - 正则包
 
-正则包是 Rob Pike 最小正则实现：https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html
+正则包是 Rob Pike 最小正则实现：[https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html](https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html)
 
 #### B.4.1 函数
 
