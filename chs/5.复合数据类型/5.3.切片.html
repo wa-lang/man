@@ -156,7 +156,7 @@
 <p>切片的第一印象与数组很相似：它们都是特定类型对象的序列，但它们的实际行为存在巨大区别，<strong>切片是数组的部分引用</strong>，它时常取自于数组，例如：</p>
 <pre><code class="language-wa">    arr := [...]i32{1, 2, 3, 4}
     sl: []i32 = arr[0:2]
-    println(len(sl)) // 2
+    println(len(sl))      // 2
     println(sl[0], sl[1]) // 1 2
 </code></pre>
 <p>表达式 <code>arr[m:n]</code> 返回一个切片，切片始于数组 <code>arr</code> 的第 <code>m</code> 个元素，切片长度为 <code>n-m</code>，与字符串的类似语法相似，若省略 <code>m</code>，则表示始于数组首个元素；若省略 <code>n</code>，则终于数组最后一个元素。<code>m</code> 和 <code>n</code> 不可超过数组实际范围，否则会触发异常。</p>

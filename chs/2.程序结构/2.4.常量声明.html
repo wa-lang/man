@@ -160,9 +160,9 @@ const Answer: i32 = 42
 const aConstString: string = &quot;你好，凹语言&quot;
 
 func main {
-	println(Answer)
-	println(aConstString)
-	println(aConstInt)
+    println(Answer)
+    println(aConstString)
+    println(aConstInt)
 }
 
 const aConstInt = 13
@@ -173,10 +173,10 @@ const aConstInt = 13
 13
 </code></pre>
 <p>声明常量时，如果不指定类型（比如上例中的 <code>aConstInt</code>），那么它将是<strong>无类型常量</strong>，无类型常量有4种类型，分别为：无类型整数、无类型浮点数、无类型字符、无类型字符串，常量值写法如下：</p>
-<pre><code class="language-wa">const aUntypedInt = 11  //无类型整数
-const aUntypedFloat = 13.0  //无类型浮点数
-const aUntypedRune = 'a'  //无类型字符
-const aUntypedString = &quot;abc&quot;  //无类型字符串
+<pre><code class="language-wa">const aUntypedInt = 11       // 无类型整数
+const aUntypedFloat = 13.0   // 无类型浮点数
+const aUntypedRune = 'a'     // 无类型字符
+const aUntypedString = &quot;abc&quot; // 无类型字符串
 </code></pre>
 <p>对常量值的算数逻辑运算是在编译时完成的，比如：</p>
 <pre><code class="language-wa">// 版权 @2019 凹语言 作者。保留所有权利。
@@ -185,7 +185,7 @@ const K = 4200000000000000000000000
 const J = 4200000000000000000000000
 
 func main {
-	println(K/J)
+    println(K/J)
 }
 </code></pre>
 <p>虽然<code>K</code>和<code>J</code>的值均超过了凹中位数最多的整数类型<code>i64</code>的表达范围，但是<code>K/J</code>的值仍然能被正确打印。这也侧面体现了<strong>数值常量拥有超过变量基本类型的表达范围和精度</strong>。</p>

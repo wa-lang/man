@@ -167,30 +167,30 @@
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 type Printer interface {
-	Print()
+    Print()
 }
 
 type T1 struct {
-	i: i32
+    i: i32
 }
 
 func T1.Print {
-	println(&quot;This is T1, this.i:&quot;, this.i)
+    println(&quot;This is T1, this.i:&quot;, this.i)
 }
 
 type T2 struct {
-	s: string
+    s: string
 }
 
 func T2.Print {
-	println(&quot;This is T2, this.s:&quot;, this.s)
+    println(&quot;This is T2, this.s:&quot;, this.s)
 }
 
 func PrintObj(p: Printer) {
     p.Print()
 }
 
-func main() {
+func main {
     p: Printer
 
     v1: T1

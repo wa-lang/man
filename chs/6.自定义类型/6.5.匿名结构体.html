@@ -165,21 +165,21 @@
 
 //全局匿名结构体变量：
 global G: struct{
-	name: string
-	age: i32
+    name: string
+    age: i32
 }
 
-func main() {
-	G.name = &quot;张三&quot;
-	G.age = 88
-	println(G.name, &quot; &quot;, G.age)  //张三 88
+func main {
+    G.name = &quot;张三&quot;
+    G.age = 88
+    println(G.name, &quot; &quot;, G.age)  // 张三 88
 
-	//局部匿名结构体变量：
-	k := struct {name: string; age: i32}{name: &quot;李四&quot;, age: 66}
-	println(k.name, &quot; &quot;, k.age)  //李四 66
+    //局部匿名结构体变量：
+    k := struct {name: string; age: i32}{name: &quot;李四&quot;, age: 66}
+    println(k.name, &quot; &quot;, k.age)  // 李四 66
 
-	G = k
-	println(G.name, &quot; &quot;, G.age)  //李四 66
+    G = k
+    println(G.name, &quot; &quot;, G.age)  // 李四 66
 }
 </code></pre>
 <p>由于匿名结构体没有类型名，因此声明匿名结构体变量时只能使用 <code>变量名: struct{...}</code> 或其快捷定义形式直接指定类型（结构体）。除此之外，匿名结构体以及其成员的使用，与普通的具名结构体基本一致。匿名结构体同样遵循0值初始化规则，其字面值中，未指定初始值的成员均为0值。</p>

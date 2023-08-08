@@ -161,14 +161,14 @@ import &quot;runtime&quot;
 global year: i32 = 2023
 
 func main {
-	println(&quot;你好，凹语言！&quot;, runtime.WAOS)
-	println(add(40, 2), year)
+    println(&quot;你好，凹语言！&quot;, runtime.WAOS)
+    println(add(40, 2), year)
 
-	fmt.Println(&quot;1+1 =&quot;, 1+1)
+    fmt.Println(&quot;1+1 =&quot;, 1+1)
 }
 
 func add(a: i32, b: i32) =&gt; i32 {
-	return a+b
+    return a+b
 }
 </code></pre>
 <p>其中<code>//</code>开始的是行注释，<code>import</code>关键字导入了2个包准库的包，<code>global</code>关键字定义了一个全局变量，并给了2023的初始值。<code>func</code>关键字定义了<code>main</code>函数和<code>add</code>函数。<code>main</code>函数是程序的入口，其中通过内置的<code>println</code>函数打印了“你好，凹语言！”，同时使用<code>fmt</code>包的<code>Println</code>字符串和整数表达式的结果。在<code>main</code>函数还使用了全局的<code>year</code>变量，此外还调用了<code>add</code>函数并打印了返回值。<code>add</code>函数有2个输入参数和一个返回值。</p>

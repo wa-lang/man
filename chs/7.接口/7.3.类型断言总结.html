@@ -154,37 +154,37 @@
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 type Printer interface {
-	Print()
+    Print()
 }
 
 type T1 struct {
-	i: i32
+    i: i32
 }
 
 func T1.Print { println(&quot;This is T1, this.i:&quot;, this.i) }
 
 type T2 struct {
-	s: string
+    s: string
 }
 
 func T2.Print { println(&quot;This is T2, this.s:&quot;, this.s) }
 
 func doConcrete(p: Printer) {
-	switch v := p.(type) {
-	case *T1:
-		v.Print() // 方法直接调用，而非接口调用
+    switch v := p.(type) {
+    case *T1:
+        v.Print() // 方法直接调用，而非接口调用
 
-	case *T2:
-		v.Print()
-	}
+    case *T2:
+        v.Print()
+    }
 }
 
-func main() {
-	v1 := T1{i: 42}
-	doConcrete(&amp;v1) // This is T1, this.i: 42
+func main {
+    v1 := T1{i: 42}
+    doConcrete(&amp;v1) // This is T1, this.i: 42
 
-	v2 := T2{s: &quot;hello&quot;}
-	doConcrete(&amp;v2) // This is T2, this.s: hello
+    v2 := T2{s: &quot;hello&quot;}
+    doConcrete(&amp;v2) // This is T2, this.s: hello
 }
 </code></pre>
 <p>注意函数 <code>doConcrete</code> 中 <code>v.Print()</code> 是直接调用，而非接口调用，因为在 <code>case *T1</code> 分支中，<code>v</code> 的类型是 <code>*T1</code>。另外，非空接口值也可以通过 <code>v, ok = iface.(Type)</code> 形式进行具体类型断言，这与7.1节中空接口值的对应用法一致。</p>
@@ -192,7 +192,7 @@ func main() {
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 type I1 interface {
-	f1()
+    f1()
 }
 
 type I2 interface {
@@ -200,15 +200,15 @@ type I2 interface {
 }
 
 type T struct {
-	i: i32
+    i: i32
 }
 
 func T.f1 { println(&quot;T.f1(), T.i:&quot;, this.i) }
 
 func T.f2 { println(&quot;T.f2(), T.i:&quot;, this.i) }
 
-func main() {
-	v1 := T{i: 42}
+func main {
+    v1 := T{i: 42}
 
     i1: I1 = &amp;v1
     i1.f1() // T.f1(), T.i: 42

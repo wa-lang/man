@@ -156,12 +156,12 @@
 <p>习惯上我们一般将 <strong>接口类型变量</strong> 称为 <strong>接口值</strong>。空接口有一个非常独特的特性：<strong>任何类型的值都可以赋值给空接口值</strong>，例如下面的操做全是合法的：</p>
 <pre><code class="language-wa">    iface: interface{}
 
-    iface = 777            // 无类型整数赋值给空接口
-    iface = 13.14          // 无类型浮点数赋值给空接口
-    iface = &quot;你好，空接口&quot;  // 字符串赋值给空接口
+    iface = 777         // 无类型整数赋值给空接口
+    iface = 13.14       // 无类型浮点数赋值给空接口
+    iface = &quot;你好，空接口&quot; // 字符串赋值给空接口
 
     i: i64 = 58372665865
-    iface = i              // 64位整数赋值给空接口
+    iface = i // 64位整数赋值给空接口
 
     // 匿名结构体赋值给空接口：
     iface = struct{name: string; age: i32}{name: &quot;凹语言&quot;, age: 1}
@@ -174,43 +174,43 @@
 <pre><code class="language-wa">// 版权 @2021 凹语言 作者。保留所有权利。
 
 type T1 struct {
-	a: i32
+    a: i32
 }
 
-func main() {
-	var ival: i32 = 777
-	printConcrete(ival)         // i32: 777
-	printConcrete(&quot;你好凹语言&quot;)  // string: 你好凹语言
+func main {
+    ival: i32 = 777
+    printConcrete(ival)       // i32: 777
+    printConcrete(&quot;你好凹语言&quot;) // string: 你好凹语言
 
-	v1 := T1{a: 42}
-	printConcrete(v1)           // T1, T1.a: 42
+    v1 := T1{a: 42}
+    printConcrete(v1) // T1, T1.a: 42
 
-    printConcrete(13.14)        // 未知类型
+    printConcrete(13.14) // 未知类型
 }
 
 func printConcrete(iface: interface{}) {
-	ok: bool
-	i: i32
-	s: string
-	t: T1
+    ok: bool
+    i: i32
+    s: string
+    t: T1
 
-	i, ok = iface.(i32)
-	if ok {
-		println(&quot;i32:&quot;, i)
-		return
-	}
-
-	s, ok = iface.(string)
-	if ok {
-		println(&quot;string:&quot;, s)
+    i, ok = iface.(i32)
+    if ok {
+        println(&quot;i32:&quot;, i)
         return
-	}
+    }
 
-	t, ok = iface.(T1)
-	if ok {
-		println(&quot;T1, T1.a:&quot;, t.a)
+    s, ok = iface.(string)
+    if ok {
+        println(&quot;string:&quot;, s)
         return
-	}
+    }
+
+    t, ok = iface.(T1)
+    if ok {
+        println(&quot;T1, T1.a:&quot;, t.a)
+        return
+    }
 
     println(&quot;未知类型&quot;)
 }
@@ -225,20 +225,20 @@ func printConcrete(iface: interface{}) {
 </blockquote>
 <p>如果接口值的具体类型存在多种可能，那么使用多个类型断言加条件判断的方法无疑很累赘，在这种场景下，可以使用<code>switch...case...</code>格式的分支类型断言，例如上述 <code>printConcrete</code> 函数可以改写为：</p>
 <pre><code class="language-wa">func printConcrete(iface: interface{}) {
-	//分支类型断言
-	switch v := iface.(type) {
-		case i32:
-			println(&quot;i32:&quot;, v)
+    // 分支类型断言
+    switch v := iface.(type) {
+        case i32:
+            println(&quot;i32:&quot;, v)
 
-		case string:
-			println(&quot;string:&quot;, v)
+        case string:
+            println(&quot;string:&quot;, v)
 
-		case T1:
-			println(&quot;T1, T1.a:&quot;, v.a)
+        case T1:
+            println(&quot;T1, T1.a:&quot;, v.a)
 
-		default:
-			println(&quot;未知类型&quot;)
-	}
+        default:
+            println(&quot;未知类型&quot;)
+    }
 }
 </code></pre>
 <p>其中 <code>iface.(type)</code> 是固定写法，后续每个 <code>case</code> 分支表示具体类型满足该分支条件。</p>

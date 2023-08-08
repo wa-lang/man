@@ -273,14 +273,14 @@ OPTIONS:
 <h3 id="135-单元测试"><a class="header" href="#135-单元测试">1.3.5 单元测试</a></h3>
 <p>默认生成的工程会有一个 <code>src/zz_test.wa</code> 测试文件，内容如下：</p>
 <pre><code class="language-wa">func TestSum {
-	assert(sum(100) == 5050, &quot;sum(100) failed&quot;)
+    assert(sum(100) == 5050, &quot;sum(100) failed&quot;)
 }
 
 func ExampleSum {
-	println(sum(100))
+    println(sum(100))
 
-	// Output:
-	// 5050
+    // Output:
+    // 5050
 }
 </code></pre>
 <p>在 <code>TestSum</code> 测试函数中通过内置的 <code>assert</code> 函数测试 <code>sum(100)</code> 的结果为 5050。在 <code>ExampleSum</code> 示例测试函数中通过 <code>// Output:</code> 测试输出的内容符合期望的结果。</p>

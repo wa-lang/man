@@ -159,19 +159,19 @@
 import &quot;errors&quot;
 
 func main {
-	err := errors.New(&quot;!!!&quot;)
-	println(&quot;err:&quot;, err.Error())
+    err := errors.New(&quot;!!!&quot;)
+    println(&quot;err:&quot;, err.Error())
 }
 
 func getAnswer =&gt; i32 {
-	return 42
+    return 42
 }
 </code></pre>
 <p>程序开始处的 <code>import &quot;errors&quot;</code> 声明导入了凹的内置 <code>errors</code> 模块，后续的函数中即可使用该模块的公开对象——如例子中的 <code>errors.New</code> 函数；<code>.</code> 在这里被称为<strong>选择操作符</strong>，它的含义是从左侧的对象（模块）中选择名称与右侧相同的那个对象来使用，该操作符除了用于选择模块公开的函数、全局变量等对象，还用于选择结构体的成员（详见第6章）。</p>
 <p>导入声明应位于源文件内的所有非导入声明之前（既位于头部，紧随文件头注释之后）。若导入多个模块，可以使用括号成组导入，形如：</p>
 <pre><code class="language-wa">import (
-	&quot;errors&quot;
-	&quot;strconv&quot;
+    &quot;errors&quot;
+    &quot;strconv&quot;
 )
 </code></pre>
 <p>该声明与下述声明是等价的：</p>
@@ -183,13 +183,13 @@ import &quot;strconv&quot;
 </code></pre>
 <p>这种用法可以解决同时导入两个路径不同，但名字相同的模块时名字冲突的问题，例如：</p>
 <pre><code class="language-wa">import (
-	&quot;errors&quot;
-	&quot;mypackage/errors&quot; =&gt; myerrors
+    &quot;errors&quot;
+    &quot;mypackage/errors&quot; =&gt; myerrors
 )
 
 func main {
-	err := errors.New(&quot;!!!&quot;)  //调用内置 errors 模块
-	myerr := myerrors.New(&quot;!!!&quot;)  //调用 mypackage/errors 模块
+    err := errors.New(&quot;!!!&quot;)     // 调用内置 errors 模块
+    myerr := myerrors.New(&quot;!!!&quot;) // 调用 mypackage/errors 模块
 }
 </code></pre>
 <blockquote>

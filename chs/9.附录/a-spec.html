@@ -156,7 +156,7 @@
 <pre><code>SourceFile    = { ImportDecl &quot;;&quot; } { TopLevelDecl &quot;;&quot; } .
 
 TopLevelDecl  = Declaration | FuncDecl | MethodDecl .
-Declaration   = ConstDecl | TypeDecl | VarDecl .
+Declaration   = ConstDecl | TypeDecl | GlobalDecl .
 </code></pre>
 <p>SourceFile表示一个凹源文件，由以下两个部分组成：ImportDec（导入声明）和TopLevelDecl（顶级声明）。其中TopLevelDecl由通用声明、函数声明和方法声明组成，通用声明再分为常量、类型和变量声明。</p>
 <p>导入语法如下：</p>
@@ -177,8 +177,8 @@ const PI = 3.14
 global Length = 1 // 全局变量
 
 func main {
-	sum: int // 局部变量
-	println(sum)
+    sum: int // 局部变量
+    println(sum)
 }
 </code></pre>
 <p>只要通过每行开头的不同关键字就可以明确属于那种声明类型。</p>
@@ -274,7 +274,7 @@ Statement     = Declaration | ExpressionStmt
 </code></pre>
 <p>FnBody函数体对应一个Block语句块。每个Block语句块内部由多个语句列表StatementList组成，每个语句之间通过分号分隔。语句又可分为声明语句、标签语句、普通表达式语句和其它诸多控制流语句。需要注意的是，Block语句块也是一种合法的语句，因此函数体实际上是又Block组成的多叉树结构表示，每个Block结点又可以递归保存其他的可嵌套Block的控制流等语句。</p>
 <p>其中声明语句和表达式语句语法如下（声明语句的细节可参考语言文档，这里不做展开）：</p>
-<pre><code>Declaration  = ConstDecl | TypeDecl | VarDecl .
+<pre><code>Declaration  = ConstDecl | TypeDecl | GlobalDecl .
 TopLevelDecl = Declaration | FuncDecl | MethodDecl .
 
 ExpressionStmt = Expression .
@@ -293,7 +293,7 @@ ExpressionList = Expression { &quot;,&quot; Expression } .
 </code></pre>
 <p>if 和 return 语句的例子如下：</p>
 <pre><code>func main {
-	if 1+1 == 2 { return }
+    if 1+1 == 2 { return }
 }
 </code></pre>
 <p>for 循环语句的语法定义如下：</p>

@@ -169,16 +169,16 @@
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 func genI32Ref() =&gt; *i32 {
-	i: i32 = 9527
-	return &amp;i
+    i: i32 = 9527
+    return &amp;i
 }
 
-func main() {
-	p := genI32Ref()
-	*p = 13
-	q := genI32Ref()
-	println(*p) // 13
-	println(*q) // 9527
+func main {
+    p := genI32Ref()
+    *p = 13
+    q := genI32Ref()
+    println(*p) // 13
+    println(*q) // 9527
 }
 </code></pre>
 <p>在凹语言中，<strong>跨函数传递引用是合法操作</strong>。返回局部变量的引用安全无害，编译器和运行时会跟踪变量使用的内存，自动执行清理回收。当然这导致了引用与指针的另一个直观的不同，既：引用不能执行算术运算。</p>

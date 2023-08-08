@@ -153,9 +153,9 @@
 <li>社区共建：<a href="https://zh-lang.osanswer.net/t/topic/247">凹语言 MVP 文档共建邀请</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="前言"><a class="header" href="#前言">前言</a></h1>
-<p>凹语言 MVP 版本。</p>
+<p>MVP 是 “Minimum Viable Product” 的首字母缩写，即“最小可用产品”。我们希望发布 MVP 版本让更多的凹语言爱好者可以进行跟多的尝试和探索。感谢中国编程语言爱好者的支持，凹语言 MVP 版本是一个新的起点，欢迎大家参与共建！</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="1-安装及入门"><a class="header" href="#1-安装及入门">1. 安装及入门</a></h1>
-<p>本章讲述凹语言例子、安装凹语言程序、IDE插件、工程目录结构和命令行功能等内容。</p>
+<p>本章讲述了最简单的凹语言例子、如何安装凹语言程序、凹语言IDE插件、凹语言工程目录结构和命令行功能等内容。</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="11-你好凹语言"><a class="header" href="#11-你好凹语言">1.1. 你好，凹语言</a></h2>
 <p>打印“hello world”是C语言之后的惯用案例，凹语言例子打印的是中文“你好，凹语言！”。</p>
 <h3 id="111-你好凹语言"><a class="header" href="#111-你好凹语言">1.1.1 你好，凹语言！</a></h3>
@@ -168,14 +168,14 @@ import &quot;runtime&quot;
 global year: i32 = 2023
 
 func main {
-	println(&quot;你好，凹语言！&quot;, runtime.WAOS)
-	println(add(40, 2), year)
+    println(&quot;你好，凹语言！&quot;, runtime.WAOS)
+    println(add(40, 2), year)
 
-	fmt.Println(&quot;1+1 =&quot;, 1+1)
+    fmt.Println(&quot;1+1 =&quot;, 1+1)
 }
 
 func add(a: i32, b: i32) =&gt; i32 {
-	return a+b
+    return a+b
 }
 </code></pre>
 <p>其中<code>//</code>开始的是行注释，<code>import</code>关键字导入了2个包准库的包，<code>global</code>关键字定义了一个全局变量，并给了2023的初始值。<code>func</code>关键字定义了<code>main</code>函数和<code>add</code>函数。<code>main</code>函数是程序的入口，其中通过内置的<code>println</code>函数打印了“你好，凹语言！”，同时使用<code>fmt</code>包的<code>Println</code>字符串和整数表达式的结果。在<code>main</code>函数还使用了全局的<code>year</code>变量，此外还调用了<code>add</code>函数并打印了返回值。<code>add</code>函数有2个输入参数和一个返回值。</p>
@@ -354,14 +354,14 @@ OPTIONS:
 <h3 id="135-单元测试"><a class="header" href="#135-单元测试">1.3.5 单元测试</a></h3>
 <p>默认生成的工程会有一个 <code>src/zz_test.wa</code> 测试文件，内容如下：</p>
 <pre><code class="language-wa">func TestSum {
-	assert(sum(100) == 5050, &quot;sum(100) failed&quot;)
+    assert(sum(100) == 5050, &quot;sum(100) failed&quot;)
 }
 
 func ExampleSum {
-	println(sum(100))
+    println(sum(100))
 
-	// Output:
-	// 5050
+    // Output:
+    // 5050
 }
 </code></pre>
 <p>在 <code>TestSum</code> 测试函数中通过内置的 <code>assert</code> 函数测试 <code>sum(100)</code> 的结果为 5050。在 <code>ExampleSum</code> 示例测试函数中通过 <code>// Output:</code> 测试输出的内容符合期望的结果。</p>
@@ -410,9 +410,12 @@ version = &quot;0.0.1&quot;
 <p>根据仓库提示安装，效果如下：</p>
 <p><img src="chs/1.%E5%AE%89%E8%A3%85%E5%8F%8A%E5%85%A5%E9%97%A8/./images/fleet-wa-screenshot.png" alt="" /></p>
 <h3 id="153-vim-插件"><a class="header" href="#153-vim-插件">1.5.3 Vim 插件</a></h3>
-<p>Fleet 插件仓库：<a href="https://github.com/wa-lang/vim-wa">https://github.com/wa-lang/vim-wa</a></p>
+<p>Vim 插件仓库：<a href="https://github.com/wa-lang/vim-wa">https://github.com/wa-lang/vim-wa</a></p>
 <p>根据仓库提示安装，效果如下：</p>
 <p><img src="chs/1.%E5%AE%89%E8%A3%85%E5%8F%8A%E5%85%A5%E9%97%A8/./images/vim-wa-screenshot.png" alt="" /></p>
+<blockquote>
+<p>在编写文档过程中突然得知 Vim 的作者 Bram Moolenaar 去世，谨以此插件祝愿 Vim 永垂不朽！</p>
+</blockquote>
 <h3 id="154-其他编辑器"><a class="header" href="#154-其他编辑器">1.5.4 其他编辑器</a></h3>
 <p>MVP 之后凹语言的语法已经基本固定，希望社区可以参与其他编辑器支持共建。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="2-程序结构"><a class="header" href="#2-程序结构">2. 程序结构</a></h1>
@@ -428,16 +431,16 @@ const PI = 3.1415926
 global 终极问题的答案: i32
 
 func main {
-	终极问题的答案 = getAnswer()
-	println(&quot;宇宙的答案：&quot;, 终极问题的答案)
-	println(&quot;π:&quot;, PI)
+    终极问题的答案 = getAnswer()
+    println(&quot;宇宙的答案：&quot;, 终极问题的答案)
+    println(&quot;π:&quot;, PI)
 
-	err := errors.New(&quot;!!!&quot;)
-	println(&quot;err:&quot;, err.Error())
+    err := errors.New(&quot;!!!&quot;)
+    println(&quot;err:&quot;, err.Error())
 }
 
 func getAnswer =&gt; i32 {
-	return 42
+    return 42
 }
 </code></pre>
 <blockquote>
@@ -466,18 +469,18 @@ func getAnswer =&gt; i32 {
 <p>比如下面的例子：</p>
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
-global aInt: i32 = 42  //32位有符号整数
-global _num: f32 = 952.7  //32位浮点数
+global aInt: i32 = 42     // 32位有符号整数
+global _num: f32 = 952.7  // 32位浮点数
 
 func main {
-	println(aInt)
-	println(_num)
-	println(名字)
-	println(counter)
+    println(aInt)
+    println(_num)
+    println(名字)
+    println(counter)
 }
 
-global 名字: string = &quot;张三&quot;  //字符串
-global counter: u32  //32位无符号整数
+global 名字: string = &quot;张三&quot; // 字符串
+global counter: u32         // 32位无符号整数
 </code></pre>
 <p>该程序运行的输出如下：</p>
 <pre><code>42
@@ -498,17 +501,17 @@ global counter: u32  //32位无符号整数
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 func swap(i, j: i32) =&gt; (i32, i32) {
-	return j, i
+    return j, i
 }
 
 func main {
-	a, b := swap(4, 2)
-	println(&quot;a:&quot;, a, &quot;, b:&quot;, b)
-	println(add(a, b))
+    a, b := swap(4, 2)
+    println(&quot;a:&quot;, a, &quot;, b:&quot;, b)
+    println(add(a, b))
 }
 
 func add(i, j: i32) =&gt; i32 {
-	return i + j
+    return i + j
 }
 </code></pre>
 <p>该程序运行的输出如下：</p>
@@ -529,9 +532,9 @@ const Answer: i32 = 42
 const aConstString: string = &quot;你好，凹语言&quot;
 
 func main {
-	println(Answer)
-	println(aConstString)
-	println(aConstInt)
+    println(Answer)
+    println(aConstString)
+    println(aConstInt)
 }
 
 const aConstInt = 13
@@ -542,10 +545,10 @@ const aConstInt = 13
 13
 </code></pre>
 <p>声明常量时，如果不指定类型（比如上例中的 <code>aConstInt</code>），那么它将是<strong>无类型常量</strong>，无类型常量有4种类型，分别为：无类型整数、无类型浮点数、无类型字符、无类型字符串，常量值写法如下：</p>
-<pre><code class="language-wa">const aUntypedInt = 11  //无类型整数
-const aUntypedFloat = 13.0  //无类型浮点数
-const aUntypedRune = 'a'  //无类型字符
-const aUntypedString = &quot;abc&quot;  //无类型字符串
+<pre><code class="language-wa">const aUntypedInt = 11       // 无类型整数
+const aUntypedFloat = 13.0   // 无类型浮点数
+const aUntypedRune = 'a'     // 无类型字符
+const aUntypedString = &quot;abc&quot; // 无类型字符串
 </code></pre>
 <p>对常量值的算数逻辑运算是在编译时完成的，比如：</p>
 <pre><code class="language-wa">// 版权 @2019 凹语言 作者。保留所有权利。
@@ -554,7 +557,7 @@ const K = 4200000000000000000000000
 const J = 4200000000000000000000000
 
 func main {
-	println(K/J)
+    println(K/J)
 }
 </code></pre>
 <p>虽然<code>K</code>和<code>J</code>的值均超过了凹中位数最多的整数类型<code>i64</code>的表达范围，但是<code>K/J</code>的值仍然能被正确打印。这也侧面体现了<strong>数值常量拥有超过变量基本类型的表达范围和精度</strong>。</p>
@@ -569,19 +572,19 @@ func main {
 import &quot;errors&quot;
 
 func main {
-	err := errors.New(&quot;!!!&quot;)
-	println(&quot;err:&quot;, err.Error())
+    err := errors.New(&quot;!!!&quot;)
+    println(&quot;err:&quot;, err.Error())
 }
 
 func getAnswer =&gt; i32 {
-	return 42
+    return 42
 }
 </code></pre>
 <p>程序开始处的 <code>import &quot;errors&quot;</code> 声明导入了凹的内置 <code>errors</code> 模块，后续的函数中即可使用该模块的公开对象——如例子中的 <code>errors.New</code> 函数；<code>.</code> 在这里被称为<strong>选择操作符</strong>，它的含义是从左侧的对象（模块）中选择名称与右侧相同的那个对象来使用，该操作符除了用于选择模块公开的函数、全局变量等对象，还用于选择结构体的成员（详见第6章）。</p>
 <p>导入声明应位于源文件内的所有非导入声明之前（既位于头部，紧随文件头注释之后）。若导入多个模块，可以使用括号成组导入，形如：</p>
 <pre><code class="language-wa">import (
-	&quot;errors&quot;
-	&quot;strconv&quot;
+    &quot;errors&quot;
+    &quot;strconv&quot;
 )
 </code></pre>
 <p>该声明与下述声明是等价的：</p>
@@ -593,13 +596,13 @@ import &quot;strconv&quot;
 </code></pre>
 <p>这种用法可以解决同时导入两个路径不同，但名字相同的模块时名字冲突的问题，例如：</p>
 <pre><code class="language-wa">import (
-	&quot;errors&quot;
-	&quot;mypackage/errors&quot; =&gt; myerrors
+    &quot;errors&quot;
+    &quot;mypackage/errors&quot; =&gt; myerrors
 )
 
 func main {
-	err := errors.New(&quot;!!!&quot;)  //调用内置 errors 模块
-	myerr := myerrors.New(&quot;!!!&quot;)  //调用 mypackage/errors 模块
+    err := errors.New(&quot;!!!&quot;)     // 调用内置 errors 模块
+    myerr := myerrors.New(&quot;!!!&quot;) // 调用 mypackage/errors 模块
 }
 </code></pre>
 <blockquote>
@@ -615,15 +618,15 @@ func main {
 <p>与全部变量和常量不同的是：局部变量的声明不以关键字开始；在声明局部变量时，如果省略 <code>= 初始值</code> 部分，则该变量将以0值初始化，如：</p>
 <pre><code class="language-wa">    aI32: i32 = 42
     aString: string = &quot;你好&quot;
-    aF32: f32  //0.0
+    aF32: f32  // 0.0
 </code></pre>
 <p>另一种常用的声明局部变量的语法使用快捷定义符 <code>:=</code> ，语法如下：</p>
 <pre><code class="language-wa">局部变量名 := 表达式
 </code></pre>
 <p>使用这种写法时变量的类型将与快捷定义符右侧表达式的类型保持一致，且表达式的值将被赋为该局部变量的初始值，如：</p>
-<pre><code class="language-wa">    a := 13  //int
-    f := 3.14  //f64
-    s := genString()  //string
+<pre><code class="language-wa">    a := 13          // int
+    f := 3.14        // f64
+    s := genString() // string
 ...
 func genString() =&gt; string { return &quot;Hello&quot; }
 </code></pre>
@@ -658,12 +661,12 @@ func genString() =&gt; string { return &quot;Hello&quot; }
 </ul>
 <p>例如：</p>
 <pre><code class="language-wa">    i: u8 = 9
-    println(^i) //246
-    println(-i) //247
+    println(^i) // 246
+    println(-i) // 247
 
     j: i32 = 9
-    println(^i) //-10
-    println(-i) //-9
+    println(^i) // -10
+    println(-i) // -9
 </code></pre>
 <p>除布尔型外的整数支持以下双目算术运算：</p>
 <ul>
@@ -675,11 +678,11 @@ func genString() =&gt; string { return &quot;Hello&quot; }
 </ul>
 <p>例如：</p>
 <pre><code class="language-wa">    i, j: u8 = 9, 250
-    println(i + j) //3
-    println(i - j) //15
-    println(i * j) //202
-    println(j / i) //27
-    println(j % i) //7
+    println(i + j) // 3
+    println(i - j) // 15
+    println(i * j) // 202
+    println(j / i) // 27
+    println(j % i) // 7
 </code></pre>
 <p>除布尔型的整数支持以下双目位运算：</p>
 <ul>
@@ -692,12 +695,12 @@ func genString() =&gt; string { return &quot;Hello&quot; }
 </ul>
 <p>例如：</p>
 <pre><code class="language-wa">    i, j: u16 = 343, 47831
-	println(i &amp; j) //87
-	println(i | j) //48087
-	println(i ^ j) //48000
-	println(i &amp;^ j) //256
-	println(i &lt;&lt; 5) //10976
-	println(j &gt;&gt; 5) //1494
+    println(i &amp; j)  // 87
+    println(i | j)  // 48087
+    println(i ^ j)  // 48000
+    println(i &amp;^ j) // 256
+    println(i &lt;&lt; 5) // 10976
+    println(j &gt;&gt; 5) // 1494
 </code></pre>
 <p>加、减、乘、左移等运算的结果可能超过操作数的表达范围，此时将截取低位部分作为结果。</p>
 <p>除布尔型的整数支持以下比较运算（双目）：</p>
@@ -833,7 +836,7 @@ func Double(i: i32) =&gt; i32 {
 }
 
 func main {
-	j: i32 = 42
+    j: i32 = 42
     println(Double(j)) // 84
     println(j)         // 42
 }
@@ -917,28 +920,28 @@ func main {
 func inc(i: i32) =&gt; i32 { return i + 1 }
 func dec(i: i32) =&gt; i32 { return i - 1 }
 func getFunc(opCode: i32) =&gt; func(i32) =&gt; i32 {
-	if opCode == 0 {
-		return inc
-	} else if opCode == 1 {
-		return dec
-	} else {
-		return nil
-	}
+    if opCode == 0 {
+        return inc
+    } else if opCode == 1 {
+        return dec
+    } else {
+        return nil
+    }
 }
 
 func useFunc(i: i32, f: func(i32) =&gt; i32) {
-	if f == nil {
-		println(&quot;f == nil&quot;)
-		return
-	}
-	println(f(i))
+    if f == nil {
+        println(&quot;f == nil&quot;)
+        return
+    }
+    println(f(i))
 }
 
 func main {
-	useFunc(42, getFunc(0)) // 43
-	useFunc(42, getFunc(1)) // 41
-	useFunc(42, getFunc(2)) // f == nil
-	getFunc(2)(42)          // 运行时异常
+    useFunc(42, getFunc(0)) // 43
+    useFunc(42, getFunc(1)) // 41
+    useFunc(42, getFunc(2)) // f == nil
+    getFunc(2)(42)          // 运行时异常
 }
 </code></pre>
 <p>与其他基本类型不同，函数值只能与 <code>nil</code> 比较，既：函数值位于操作符 <code>==</code>、<code>!=</code> 左侧时，右侧只能为 <code>nil</code>，对两个非常量函数值执行比较操作被视为非法。</p>
@@ -949,16 +952,16 @@ func main {
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 func useFunc(i: i32, f: func(i32) =&gt; i32) {
-	if f == nil {
-		println(&quot;f == nil&quot;)
-		return
-	}
-	println(f(i))
+    if f == nil {
+        println(&quot;f == nil&quot;)
+        return
+    }
+    println(f(i))
 }
 
 func main {
-	f := func(i: i32) =&gt; i32 { return i * i } // 声明匿名函数并赋值给 f
-	useFunc(3, f) // 9
+    f := func(i: i32) =&gt; i32 { return i * i } // 声明匿名函数并赋值给 f
+    useFunc(3, f) // 9
 }
 </code></pre>
 <p>其中快捷声明的函数值 <code>f</code>，它的初始值是字面量 <code>func(i: i32) =&gt; i32 { return i * i }</code>，既一个没有名字的函数。在凹语言中，这种没有名字的函数字面量被称为<strong>匿名函数</strong>。在访问者模式、自定义快速排序等应用场景中，经常需要传入一些函数值参数，而这些函数可能仅在当前上下文环境出现一次，为此额外定义模块级的全局函数有诸多不便，这时即可使用匿名函数。</p>
@@ -966,41 +969,41 @@ func main {
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 func useFunc(i: i32, f: func(i32) =&gt; i32) {
-	if f == nil {
-		println(&quot;f == nil&quot;)
-		return
-	}
-	println(f(i))
+    if f == nil {
+        println(&quot;f == nil&quot;)
+        return
+    }
+    println(f(i))
 }
 
 func main {
-	n: i32 = 0
-	f := func(i: i32) =&gt; i32 {
-		n = i * i
-		return n
-	}
-	useFunc(3, f)
-	println(n) // 9
+    n: i32 = 0
+    f := func(i: i32) =&gt; i32 {
+        n = i * i
+        return n
+    }
+    useFunc(3, f)
+    println(n) // 9
 }
 </code></pre>
 <p>可见函数值 <code>f</code> 可以读写外层的局部变量 <code>n</code>。再来看一个更加复杂的例子：</p>
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 func genClosure(i: i32) =&gt; func() =&gt; i32 {
-	n := i
-	return func() =&gt; i32 {
-		n = n + 1
-		return n
-	}
+    n := i
+    return func() =&gt; i32 {
+        n = n + 1
+        return n
+    }
 }
 
 func main {
-	c := genClosure(0)
-	d := genClosure(99)
+    c := genClosure(0)
+    d := genClosure(99)
 
-	println(c()) // 1
-	println(d()) // 100
-	println(c()) // 2
-	println(d()) // 101
+    println(c()) // 1
+    println(d()) // 100
+    println(c()) // 2
+    println(d()) // 101
 }
 </code></pre>
 <p>每次调用 <code>genFunc</code> 都将生成一个函数值，这个函数值捕获了局部变量 <code>n</code>，函数值每次执行会对捕获的 <code>n</code> 执行加1，多次执行 <code>genFunc</code> 所获得的函数值，它们捕获的 <code>n</code> 是不同的，每执行一次，捕获一个新的实例。</p>
@@ -1027,16 +1030,16 @@ func main {
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 func genI32Ref() =&gt; *i32 {
-	i: i32 = 9527
-	return &amp;i
+    i: i32 = 9527
+    return &amp;i
 }
 
-func main() {
-	p := genI32Ref()
-	*p = 13
-	q := genI32Ref()
-	println(*p) // 13
-	println(*q) // 9527
+func main {
+    p := genI32Ref()
+    *p = 13
+    q := genI32Ref()
+    println(*p) // 13
+    println(*q) // 9527
 }
 </code></pre>
 <p>在凹语言中，<strong>跨函数传递引用是合法操作</strong>。返回局部变量的引用安全无害，编译器和运行时会跟踪变量使用的内存，自动执行清理回收。当然这导致了引用与指针的另一个直观的不同，既：引用不能执行算术运算。</p>
@@ -1101,7 +1104,7 @@ func main() {
 <p>切片的第一印象与数组很相似：它们都是特定类型对象的序列，但它们的实际行为存在巨大区别，<strong>切片是数组的部分引用</strong>，它时常取自于数组，例如：</p>
 <pre><code class="language-wa">    arr := [...]i32{1, 2, 3, 4}
     sl: []i32 = arr[0:2]
-    println(len(sl)) // 2
+    println(len(sl))      // 2
     println(sl[0], sl[1]) // 1 2
 </code></pre>
 <p>表达式 <code>arr[m:n]</code> 返回一个切片，切片始于数组 <code>arr</code> 的第 <code>m</code> 个元素，切片长度为 <code>n-m</code>，与字符串的类似语法相似，若省略 <code>m</code>，则表示始于数组首个元素；若省略 <code>n</code>，则终于数组最后一个元素。<code>m</code> 和 <code>n</code> 不可超过数组实际范围，否则会触发异常。</p>
@@ -1200,38 +1203,38 @@ make([]T, Len: int) =&gt; []T // 等价于 make([]T, Len, Len)
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 type Info struct {
-	name: string
-	age:  i32
+    name: string
+    age:  i32
 }
 
 func PrintInfo(i: Info) {
-	println(&quot;名字：&quot;, i.name, &quot;，年龄：&quot;, i.age)
+    println(&quot;名字：&quot;, i.name, &quot;，年龄：&quot;, i.age)
 }
 
-func main() {
-	i: Info
-	i.name = &quot;张三&quot;
-	i.age = 35
-	PrintInfo(i) // 名字： 张三 ，年龄： 35
+func main {
+    i: Info
+    i.name = &quot;张三&quot;
+    i.age = 35
+    PrintInfo(i) // 名字： 张三 ，年龄： 35
 }
 </code></pre>
 <p>与很多语言类似，凹语言 使用选择操作符 <code>.</code> 访问结构体值的成员。另外需要特别注意的是，选择操作符 <code>.</code> 也可以用于访问结构体引用的成员，例如：</p>
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 type Info struct {
-	name: string
-	age:  i32
+    name: string
+    age:  i32
 }
 
 func GetInfo() =&gt; *Info {
-	i: Info
-	i.name = &quot;李四&quot;
-	i.age = 42
+    i: Info
+    i.name = &quot;李四&quot;
+    i.age = 42
     return &amp;i
 }
 
-func main() {
-	j := GetInfo() // j 的类型是引用， *Info
+func main {
+    j := GetInfo() // j 的类型是引用， *Info
     println(j.name, j.age) // 李四 42
 }
 </code></pre>
@@ -1246,12 +1249,12 @@ func main() {
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 type Info struct {
-	name: string
-	age:  i32
+    name: string
+    age:  i32
 }
 
-func main() {
-	i := Info{name: &quot;王五&quot;}
+func main {
+    i := Info{name: &quot;王五&quot;}
     println(j.name, j.age) // 王五 0
 }
 </code></pre>
@@ -1262,18 +1265,18 @@ func main() {
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 type Info struct {
-	name: string
-	age:  i32
+    name: string
+    age:  i32
 }
 
 // 方法声明：
 func Info.Print {
-	println(&quot;名字：&quot;, this.name, &quot;，年龄：&quot;, this.age)
+    println(&quot;名字：&quot;, this.name, &quot;，年龄：&quot;, this.age)
 }
 
-func main() {
-	i := Info{name: &quot;张三&quot;, age: 35}
-	i.Print() // 名字： 张三 ，年龄： 35
+func main {
+    i := Info{name: &quot;张三&quot;, age: 35}
+    i.Print() // 名字： 张三 ，年龄： 35
 }
 </code></pre>
 <p>方法声明一般形式如下，：</p>
@@ -1284,17 +1287,17 @@ func main() {
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 type Info struct {
-	name: string
-	age:  i32
+    name: string
+    age:  i32
 }
 
 func Print(this: *Info) {
-	println(&quot;名字：&quot;, this.name, &quot;，年龄：&quot;, this.age)
+    println(&quot;名字：&quot;, this.name, &quot;，年龄：&quot;, this.age)
 }
 
-func main() {
-	i := Info{name: &quot;张三&quot;, age: 35}
-	Print(&amp;i) // 名字： 张三 ，年龄： 35
+func main {
+    i := Info{name: &quot;张三&quot;, age: 35}
+    Print(&amp;i) // 名字： 张三 ，年龄： 35
 }
 </code></pre>
 <p>如上例所示，如果把全局函数的第一个参数设为自定义类型的引用，那么它的作用和方法几乎是一致的——事实上在凹语言中，从运行时层面看，方法就是首参数为自定义类型引用的函数。既然如此，那么为何要特意引入这一概念呢？原因有两个：</p>
@@ -1393,7 +1396,7 @@ type Sp struct {
     x: i32
 }
 
-func Sp.Show() {
+func Sp.Show {
     println(this.x)
 }
 
@@ -1417,7 +1420,7 @@ type Sp struct {
     x: i32
 }
 
-func Sp.Show() {
+func Sp.Show {
     println(this.x)
 }
 
@@ -1426,8 +1429,8 @@ type Sc struct {
     x: f32
 }
 
-func Sc.Show() {
-    println(this.x)	
+func Sc.Show {
+    println(this.x)    
 }
 
 func main {
@@ -1453,21 +1456,21 @@ func main {
 
 //全局匿名结构体变量：
 global G: struct{
-	name: string
-	age: i32
+    name: string
+    age: i32
 }
 
-func main() {
-	G.name = &quot;张三&quot;
-	G.age = 88
-	println(G.name, &quot; &quot;, G.age)  //张三 88
+func main {
+    G.name = &quot;张三&quot;
+    G.age = 88
+    println(G.name, &quot; &quot;, G.age)  // 张三 88
 
-	//局部匿名结构体变量：
-	k := struct {name: string; age: i32}{name: &quot;李四&quot;, age: 66}
-	println(k.name, &quot; &quot;, k.age)  //李四 66
+    //局部匿名结构体变量：
+    k := struct {name: string; age: i32}{name: &quot;李四&quot;, age: 66}
+    println(k.name, &quot; &quot;, k.age)  // 李四 66
 
-	G = k
-	println(G.name, &quot; &quot;, G.age)  //李四 66
+    G = k
+    println(G.name, &quot; &quot;, G.age)  // 李四 66
 }
 </code></pre>
 <p>由于匿名结构体没有类型名，因此声明匿名结构体变量时只能使用 <code>变量名: struct{...}</code> 或其快捷定义形式直接指定类型（结构体）。除此之外，匿名结构体以及其成员的使用，与普通的具名结构体基本一致。匿名结构体同样遵循0值初始化规则，其字面值中，未指定初始值的成员均为0值。</p>
@@ -1475,6 +1478,7 @@ func main() {
 <p>具名类型位于模块的名字空间下，但匿名结构体因为没有名字，其定义实际上位于全局空间，因此内存布局完全一致（既成员个数、对应成员名、对应成员类型均一致）的两个匿名结构体变量，被认为属于同一个类型，可以互相赋值（例如上例中的全局变量 <code>G</code> 和 局部变量 <code>k</code>），哪怕这两个变量位于不同模块中，该特性依然成立；这引出了匿名结构体的另一个使用场景：跨模块传递参数。</p>
 <p>由于匿名结构体没有类型名，因此按照语法规则，无法为其添加方法。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="7-接口"><a class="header" href="#7-接口">7. 接口</a></h1>
+<p>接口是凹语言抽象的灵魂。在接口之前的凹语言代码都是纯正的写实派，但是有了接口之后就可以通过鸭子类型的面向对象来达到抽象的目的。本章讲述接口的基本用法。</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="71-空接口-万能封包器"><a class="header" href="#71-空接口-万能封包器">7.1. 空接口-万能封包器</a></h2>
 <p>在凹语言中，最简单的接口是空接口，既 <code>interface {}</code>，声明接口类型变量的方法跟其它类型一致，例如下面的代码声明了一个名为 <code>i</code> 的空接口变量：</p>
 <pre><code class="language-wa">    i: interface{}
@@ -1482,12 +1486,12 @@ func main() {
 <p>习惯上我们一般将 <strong>接口类型变量</strong> 称为 <strong>接口值</strong>。空接口有一个非常独特的特性：<strong>任何类型的值都可以赋值给空接口值</strong>，例如下面的操做全是合法的：</p>
 <pre><code class="language-wa">    iface: interface{}
 
-    iface = 777            // 无类型整数赋值给空接口
-    iface = 13.14          // 无类型浮点数赋值给空接口
-    iface = &quot;你好，空接口&quot;  // 字符串赋值给空接口
+    iface = 777         // 无类型整数赋值给空接口
+    iface = 13.14       // 无类型浮点数赋值给空接口
+    iface = &quot;你好，空接口&quot; // 字符串赋值给空接口
 
     i: i64 = 58372665865
-    iface = i              // 64位整数赋值给空接口
+    iface = i // 64位整数赋值给空接口
 
     // 匿名结构体赋值给空接口：
     iface = struct{name: string; age: i32}{name: &quot;凹语言&quot;, age: 1}
@@ -1500,43 +1504,43 @@ func main() {
 <pre><code class="language-wa">// 版权 @2021 凹语言 作者。保留所有权利。
 
 type T1 struct {
-	a: i32
+    a: i32
 }
 
-func main() {
-	var ival: i32 = 777
-	printConcrete(ival)         // i32: 777
-	printConcrete(&quot;你好凹语言&quot;)  // string: 你好凹语言
+func main {
+    ival: i32 = 777
+    printConcrete(ival)       // i32: 777
+    printConcrete(&quot;你好凹语言&quot;) // string: 你好凹语言
 
-	v1 := T1{a: 42}
-	printConcrete(v1)           // T1, T1.a: 42
+    v1 := T1{a: 42}
+    printConcrete(v1) // T1, T1.a: 42
 
-    printConcrete(13.14)        // 未知类型
+    printConcrete(13.14) // 未知类型
 }
 
 func printConcrete(iface: interface{}) {
-	ok: bool
-	i: i32
-	s: string
-	t: T1
+    ok: bool
+    i: i32
+    s: string
+    t: T1
 
-	i, ok = iface.(i32)
-	if ok {
-		println(&quot;i32:&quot;, i)
-		return
-	}
-
-	s, ok = iface.(string)
-	if ok {
-		println(&quot;string:&quot;, s)
+    i, ok = iface.(i32)
+    if ok {
+        println(&quot;i32:&quot;, i)
         return
-	}
+    }
 
-	t, ok = iface.(T1)
-	if ok {
-		println(&quot;T1, T1.a:&quot;, t.a)
+    s, ok = iface.(string)
+    if ok {
+        println(&quot;string:&quot;, s)
         return
-	}
+    }
+
+    t, ok = iface.(T1)
+    if ok {
+        println(&quot;T1, T1.a:&quot;, t.a)
+        return
+    }
 
     println(&quot;未知类型&quot;)
 }
@@ -1551,20 +1555,20 @@ func printConcrete(iface: interface{}) {
 </blockquote>
 <p>如果接口值的具体类型存在多种可能，那么使用多个类型断言加条件判断的方法无疑很累赘，在这种场景下，可以使用<code>switch...case...</code>格式的分支类型断言，例如上述 <code>printConcrete</code> 函数可以改写为：</p>
 <pre><code class="language-wa">func printConcrete(iface: interface{}) {
-	//分支类型断言
-	switch v := iface.(type) {
-		case i32:
-			println(&quot;i32:&quot;, v)
+    // 分支类型断言
+    switch v := iface.(type) {
+        case i32:
+            println(&quot;i32:&quot;, v)
 
-		case string:
-			println(&quot;string:&quot;, v)
+        case string:
+            println(&quot;string:&quot;, v)
 
-		case T1:
-			println(&quot;T1, T1.a:&quot;, v.a)
+        case T1:
+            println(&quot;T1, T1.a:&quot;, v.a)
 
-		default:
-			println(&quot;未知类型&quot;)
-	}
+        default:
+            println(&quot;未知类型&quot;)
+    }
 }
 </code></pre>
 <p>其中 <code>iface.(type)</code> 是固定写法，后续每个 <code>case</code> 分支表示具体类型满足该分支条件。</p>
@@ -1590,30 +1594,30 @@ func printConcrete(iface: interface{}) {
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 type Printer interface {
-	Print()
+    Print()
 }
 
 type T1 struct {
-	i: i32
+    i: i32
 }
 
 func T1.Print {
-	println(&quot;This is T1, this.i:&quot;, this.i)
+    println(&quot;This is T1, this.i:&quot;, this.i)
 }
 
 type T2 struct {
-	s: string
+    s: string
 }
 
 func T2.Print {
-	println(&quot;This is T2, this.s:&quot;, this.s)
+    println(&quot;This is T2, this.s:&quot;, this.s)
 }
 
 func PrintObj(p: Printer) {
     p.Print()
 }
 
-func main() {
+func main {
     p: Printer
 
     v1: T1
@@ -1634,37 +1638,37 @@ func main() {
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 type Printer interface {
-	Print()
+    Print()
 }
 
 type T1 struct {
-	i: i32
+    i: i32
 }
 
 func T1.Print { println(&quot;This is T1, this.i:&quot;, this.i) }
 
 type T2 struct {
-	s: string
+    s: string
 }
 
 func T2.Print { println(&quot;This is T2, this.s:&quot;, this.s) }
 
 func doConcrete(p: Printer) {
-	switch v := p.(type) {
-	case *T1:
-		v.Print() // 方法直接调用，而非接口调用
+    switch v := p.(type) {
+    case *T1:
+        v.Print() // 方法直接调用，而非接口调用
 
-	case *T2:
-		v.Print()
-	}
+    case *T2:
+        v.Print()
+    }
 }
 
-func main() {
-	v1 := T1{i: 42}
-	doConcrete(&amp;v1) // This is T1, this.i: 42
+func main {
+    v1 := T1{i: 42}
+    doConcrete(&amp;v1) // This is T1, this.i: 42
 
-	v2 := T2{s: &quot;hello&quot;}
-	doConcrete(&amp;v2) // This is T2, this.s: hello
+    v2 := T2{s: &quot;hello&quot;}
+    doConcrete(&amp;v2) // This is T2, this.s: hello
 }
 </code></pre>
 <p>注意函数 <code>doConcrete</code> 中 <code>v.Print()</code> 是直接调用，而非接口调用，因为在 <code>case *T1</code> 分支中，<code>v</code> 的类型是 <code>*T1</code>。另外，非空接口值也可以通过 <code>v, ok = iface.(Type)</code> 形式进行具体类型断言，这与7.1节中空接口值的对应用法一致。</p>
@@ -1672,7 +1676,7 @@ func main() {
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 type I1 interface {
-	f1()
+    f1()
 }
 
 type I2 interface {
@@ -1680,15 +1684,15 @@ type I2 interface {
 }
 
 type T struct {
-	i: i32
+    i: i32
 }
 
 func T.f1 { println(&quot;T.f1(), T.i:&quot;, this.i) }
 
 func T.f2 { println(&quot;T.f2(), T.i:&quot;, this.i) }
 
-func main() {
-	v1 := T{i: 42}
+func main {
+    v1 := T{i: 42}
 
     i1: I1 = &amp;v1
     i1.f1() // T.f1(), T.i: 42
@@ -1733,7 +1737,7 @@ type I2 interface {
 <pre><code>SourceFile    = { ImportDecl &quot;;&quot; } { TopLevelDecl &quot;;&quot; } .
 
 TopLevelDecl  = Declaration | FuncDecl | MethodDecl .
-Declaration   = ConstDecl | TypeDecl | VarDecl .
+Declaration   = ConstDecl | TypeDecl | GlobalDecl .
 </code></pre>
 <p>SourceFile表示一个凹源文件，由以下两个部分组成：ImportDec（导入声明）和TopLevelDecl（顶级声明）。其中TopLevelDecl由通用声明、函数声明和方法声明组成，通用声明再分为常量、类型和变量声明。</p>
 <p>导入语法如下：</p>
@@ -1754,8 +1758,8 @@ const PI = 3.14
 global Length = 1 // 全局变量
 
 func main {
-	sum: int // 局部变量
-	println(sum)
+    sum: int // 局部变量
+    println(sum)
 }
 </code></pre>
 <p>只要通过每行开头的不同关键字就可以明确属于那种声明类型。</p>
@@ -1851,7 +1855,7 @@ Statement     = Declaration | ExpressionStmt
 </code></pre>
 <p>FnBody函数体对应一个Block语句块。每个Block语句块内部由多个语句列表StatementList组成，每个语句之间通过分号分隔。语句又可分为声明语句、标签语句、普通表达式语句和其它诸多控制流语句。需要注意的是，Block语句块也是一种合法的语句，因此函数体实际上是又Block组成的多叉树结构表示，每个Block结点又可以递归保存其他的可嵌套Block的控制流等语句。</p>
 <p>其中声明语句和表达式语句语法如下（声明语句的细节可参考语言文档，这里不做展开）：</p>
-<pre><code>Declaration  = ConstDecl | TypeDecl | VarDecl .
+<pre><code>Declaration  = ConstDecl | TypeDecl | GlobalDecl .
 TopLevelDecl = Declaration | FuncDecl | MethodDecl .
 
 ExpressionStmt = Expression .
@@ -1870,7 +1874,7 @@ ExpressionList = Expression { &quot;,&quot; Expression } .
 </code></pre>
 <p>if 和 return 语句的例子如下：</p>
 <pre><code>func main {
-	if 1+1 == 2 { return }
+    if 1+1 == 2 { return }
 }
 </code></pre>
 <p>for 循环语句的语法定义如下：</p>
@@ -1966,7 +1970,7 @@ func panic(msg: string)
 <li>New 创建一个错误对象</li>
 </ul>
 <h3 id="b4-regexp---正则包"><a class="header" href="#b4-regexp---正则包">B.4 regexp - 正则包</a></h3>
-<p>正则包是 Rob Pike 最小正则实现：https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html</p>
+<p>正则包是 Rob Pike 最小正则实现：<a href="https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html">https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html</a></p>
 <h4 id="b41-函数"><a class="header" href="#b41-函数">B.4.1 函数</a></h4>
 <pre><code class="language-wa">func Match(regexp, text: string) =&gt; bool
 </code></pre>

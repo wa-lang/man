@@ -154,16 +154,16 @@
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 func useFunc(i: i32, f: func(i32) =&gt; i32) {
-	if f == nil {
-		println(&quot;f == nil&quot;)
-		return
-	}
-	println(f(i))
+    if f == nil {
+        println(&quot;f == nil&quot;)
+        return
+    }
+    println(f(i))
 }
 
 func main {
-	f := func(i: i32) =&gt; i32 { return i * i } // 声明匿名函数并赋值给 f
-	useFunc(3, f) // 9
+    f := func(i: i32) =&gt; i32 { return i * i } // 声明匿名函数并赋值给 f
+    useFunc(3, f) // 9
 }
 </code></pre>
 <p>其中快捷声明的函数值 <code>f</code>，它的初始值是字面量 <code>func(i: i32) =&gt; i32 { return i * i }</code>，既一个没有名字的函数。在凹语言中，这种没有名字的函数字面量被称为<strong>匿名函数</strong>。在访问者模式、自定义快速排序等应用场景中，经常需要传入一些函数值参数，而这些函数可能仅在当前上下文环境出现一次，为此额外定义模块级的全局函数有诸多不便，这时即可使用匿名函数。</p>
@@ -171,41 +171,41 @@ func main {
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 
 func useFunc(i: i32, f: func(i32) =&gt; i32) {
-	if f == nil {
-		println(&quot;f == nil&quot;)
-		return
-	}
-	println(f(i))
+    if f == nil {
+        println(&quot;f == nil&quot;)
+        return
+    }
+    println(f(i))
 }
 
 func main {
-	n: i32 = 0
-	f := func(i: i32) =&gt; i32 {
-		n = i * i
-		return n
-	}
-	useFunc(3, f)
-	println(n) // 9
+    n: i32 = 0
+    f := func(i: i32) =&gt; i32 {
+        n = i * i
+        return n
+    }
+    useFunc(3, f)
+    println(n) // 9
 }
 </code></pre>
 <p>可见函数值 <code>f</code> 可以读写外层的局部变量 <code>n</code>。再来看一个更加复杂的例子：</p>
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
 func genClosure(i: i32) =&gt; func() =&gt; i32 {
-	n := i
-	return func() =&gt; i32 {
-		n = n + 1
-		return n
-	}
+    n := i
+    return func() =&gt; i32 {
+        n = n + 1
+        return n
+    }
 }
 
 func main {
-	c := genClosure(0)
-	d := genClosure(99)
+    c := genClosure(0)
+    d := genClosure(99)
 
-	println(c()) // 1
-	println(d()) // 100
-	println(c()) // 2
-	println(d()) // 101
+    println(c()) // 1
+    println(d()) // 100
+    println(c()) // 2
+    println(d()) // 101
 }
 </code></pre>
 <p>每次调用 <code>genFunc</code> 都将生成一个函数值，这个函数值捕获了局部变量 <code>n</code>，函数值每次执行会对捕获的 <code>n</code> 执行加1，多次执行 <code>genFunc</code> 所获得的函数值，它们捕获的 <code>n</code> 是不同的，每执行一次，捕获一个新的实例。</p>

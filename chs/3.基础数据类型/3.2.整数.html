@@ -177,12 +177,12 @@
 </ul>
 <p>例如：</p>
 <pre><code class="language-wa">    i: u8 = 9
-    println(^i) //246
-    println(-i) //247
+    println(^i) // 246
+    println(-i) // 247
 
     j: i32 = 9
-    println(^i) //-10
-    println(-i) //-9
+    println(^i) // -10
+    println(-i) // -9
 </code></pre>
 <p>除布尔型外的整数支持以下双目算术运算：</p>
 <ul>
@@ -194,11 +194,11 @@
 </ul>
 <p>例如：</p>
 <pre><code class="language-wa">    i, j: u8 = 9, 250
-    println(i + j) //3
-    println(i - j) //15
-    println(i * j) //202
-    println(j / i) //27
-    println(j % i) //7
+    println(i + j) // 3
+    println(i - j) // 15
+    println(i * j) // 202
+    println(j / i) // 27
+    println(j % i) // 7
 </code></pre>
 <p>除布尔型的整数支持以下双目位运算：</p>
 <ul>
@@ -211,12 +211,12 @@
 </ul>
 <p>例如：</p>
 <pre><code class="language-wa">    i, j: u16 = 343, 47831
-	println(i &amp; j) //87
-	println(i | j) //48087
-	println(i ^ j) //48000
-	println(i &amp;^ j) //256
-	println(i &lt;&lt; 5) //10976
-	println(j &gt;&gt; 5) //1494
+    println(i &amp; j)  // 87
+    println(i | j)  // 48087
+    println(i ^ j)  // 48000
+    println(i &amp;^ j) // 256
+    println(i &lt;&lt; 5) // 10976
+    println(j &gt;&gt; 5) // 1494
 </code></pre>
 <p>加、减、乘、左移等运算的结果可能超过操作数的表达范围，此时将截取低位部分作为结果。</p>
 <p>除布尔型的整数支持以下比较运算（双目）：</p>
