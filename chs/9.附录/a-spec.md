@@ -10,7 +10,7 @@
 SourceFile    = { ImportDecl ";" } { TopLevelDecl ";" } .
 
 TopLevelDecl  = Declaration | FuncDecl | MethodDecl .
-Declaration   = ConstDecl | TypeDecl | VarDecl .
+Declaration   = ConstDecl | TypeDecl | GlobalDecl .
 ```
 
 SourceFile表示一个凹源文件，由以下两个部分组成：ImportDec（导入声明）和TopLevelDecl（顶级声明）。其中TopLevelDecl由通用声明、函数声明和方法声明组成，通用声明再分为常量、类型和变量声明。
@@ -39,8 +39,8 @@ const PI = 3.14
 global Length = 1 // 全局变量
 
 func main {
-	sum: int // 局部变量
-	println(sum)
+    sum: int // 局部变量
+    println(sum)
 }
 ```
 
@@ -175,7 +175,7 @@ FnBody函数体对应一个Block语句块。每个Block语句块内部由多个�
 其中声明语句和表达式语句语法如下（声明语句的细节可参考语言文档，这里不做展开）：
 
 ```
-Declaration  = ConstDecl | TypeDecl | VarDecl .
+Declaration  = ConstDecl | TypeDecl | GlobalDecl .
 TopLevelDecl = Declaration | FuncDecl | MethodDecl .
 
 ExpressionStmt = Expression .
@@ -203,7 +203,7 @@ if 和 return 语句的例子如下：
 
 ```
 func main {
-	if 1+1 == 2 { return }
+    if 1+1 == 2 { return }
 }
 ```
 
