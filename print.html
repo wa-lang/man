@@ -1650,7 +1650,7 @@ func printConcrete(iface: interface{}) {
 </blockquote>
 <p>如果接口值的具体类型存在多种可能，那么使用多个类型断言加条件判断的方法无疑很累赘，在这种场景下，可以使用<code>switch...case...</code>格式的分支类型断言，例如上述 <code>printConcrete</code> 函数可以改写为：</p>
 <pre><code class="language-wa">func printConcrete(iface: interface{}) {
-	//分支类型断言
+    //分支类型断言
     switch v := iface.(type) {
     case i32:
         println(&quot;i32:&quot;, v)  // v是iface的具体值，该分支下，其类型为 i32，下同
