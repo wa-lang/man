@@ -89,11 +89,11 @@ func Person.GetName() => string { return this.name }
 关键字是语法的组成元素，不能用于标识符。凹语言目前有19个关键字：
 
 ```
-break     defer  import     struct
-case      else   interface  switch
-const     for    map        type
-continue  func   range      global
-default   if     return
+break     defer  if        return 
+case      else   import    struct 
+const     for    interface switch
+continue  func   map       type
+default   global range
 ```
 
 以下是凹语言的运算符和与标点：
