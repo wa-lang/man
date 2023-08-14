@@ -196,7 +196,7 @@ make([]T, Len: int) =&gt; []T // 等价于 make([]T, Len, Len)
 <p>另一个与切片密切相关的内建函数是 <code>append</code>，它用于向切片中追加元素，形式签名为：</p>
 <pre><code class="language-wa">append(sl []T, e T) =&gt; []T
 </code></pre>
-<p>该函数将元素 <code>e</code> 追加至切片 <code>s</code> 的尾部，并返回一个新的切片。由于凹语言的函数调用使用值传递，追加行为不会影响源切片 <code>s</code> 上，因此实际常用的写法如下例：</p>
+<p>该函数将元素 <code>e</code> 追加至切片 <code>s</code> 的尾部，并返回一个新的切片。由于凹语言的函数调用使用值传递，追加行为不会影响源切片 <code>s</code>，因此实际常用的写法如下例：</p>
 <pre><code class="language-wa">    sl: []i32
     //...
     sl = append(sl, 42)
