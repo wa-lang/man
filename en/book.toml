@@ -1,7 +1,7 @@
 [book]
-title = "凹语言手册"
-authors = ["凹语言开发组"]
-description = "凹语言手册"
+title = "Wa-lang's Manual"
+authors = ["The Wa Authors"]
+description = "Wa-lang's Manual"
 src = "."
 language = "en"
 
