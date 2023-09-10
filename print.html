@@ -354,7 +354,7 @@ OPTIONS:
 </code></pre>
 <p>命令行参数是要进行格式化的路径：</p>
 <ul>
-<li><code>wa fmt faile.wa</code> 格式化指定的凹语言文件</li>
+<li><code>wa fmt file.wa</code> 格式化指定的凹语言文件</li>
 <li><code>wa fmt path</code> 格式化指定目录下的全部凹语言文件</li>
 <li><code>wa fmt path/...</code> 递归格式化指定路径的凹语言文件，含子目录</li>
 </ul>
@@ -1261,7 +1261,7 @@ make([]T, Len: int) =&gt; []T // 等价于 make([]T, Len, Len)
 <p>当被追加对象是切片时，应在变量名后添加 <code>...</code>。</p>
 <p>由于切片底层引用了一个长度固定的数组，如果使用 <code>append</code> 追加元素后，切片的长度未超过数组可用容量，那么数组对应元素的内容将被替换为追加元素，例如：</p>
 <pre><code class="language-wa">    arr := [...]i32{1, 2, 3}
-    sl1 := arr[0:3]
+    sl1 := arr[0:2]
     sl1 = append(sl1, 5)
     println(arr[2]) // 5    
 </code></pre>
@@ -1295,7 +1295,7 @@ make([]T, Len: int) =&gt; []T // 等价于 make([]T, Len, Len)
 <li>使用 <code>[]</code> 从数组或切片中获取新切片时，未执行边界检查。该问题不影响语法兼容性，后续对本问题的修正不影响已有源代码，凹程序开发者无须对此进行特别处理。</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-自定义类型"><a class="header" href="#6-自定义类型">6. 自定义类型</a></h1>
-<p>自定义类型主要是结构体、以及围绕结构体方法产生的接口抽象。</p>
+<p>自定义类型包括结构体、以及围绕结构体方法产生的接口。</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="61-结构体"><a class="header" href="#61-结构体">6.1. 结构体</a></h2>
 <p>凹语言中结构体声明的一般形式为：</p>
 <pre><code class="language-wa">type 类型名 struct {
@@ -1382,7 +1382,7 @@ func main {
     i.Print() // 名字： 张三 ，年龄： 35
 }
 </code></pre>
-<p>方法声明一般形式如下，：</p>
+<p>方法声明一般形式如下：</p>
 <pre><code class="language-wa">func 类型名.方法名(参数列表) =&gt; (返回值列表) {方法函数体}
 </code></pre>
 <p>方法声明与普通全局函数声明的区别是函数名的部分增加了 <code>类型名.</code> 。在方法体内部，<code>this</code> 是方法所属类型的引用，通过 <code>this.</code> 可读写其成员。</p>
@@ -1578,10 +1578,10 @@ func main {
 </code></pre>
 <p>由于匿名结构体没有类型名，因此声明匿名结构体变量时只能使用 <code>变量名: struct{...}</code> 或其快捷定义形式直接指定类型（结构体）。除此之外，匿名结构体以及其成员的使用，与普通的具名结构体基本一致。匿名结构体同样遵循0值初始化规则，其字面值中，未指定初始值的成员均为0值。</p>
 <p>匿名结构体最常用的场景是全局配置变量。很多全局配置变量的类型，仅仅在声明该全局变量时会被使用一次，为仅存在一个实例的变量单独定义一个类型略显繁琐，此时即可使用匿名结构体替代（例如上例中的全局变量 <code>G</code>）。</p>
-<p>具名类型位于模块的名字空间下，但匿名结构体因为没有名字，其定义实际上位于全局空间，因此内存布局完全一致（既成员个数、对应成员名、对应成员类型均一致）的两个匿名结构体变量，被认为属于同一个类型，可以互相赋值（例如上例中的全局变量 <code>G</code> 和 局部变量 <code>k</code>），哪怕这两个变量位于不同模块中，该特性依然成立；这引出了匿名结构体的另一个使用场景：跨模块传递参数。</p>
+<p>具名类型位于模块的名字空间下，但匿名结构体因为没有名字，其定义实际上位于全局空间，因此如果两个匿名结构体变量的内存布局完全一致（既成员个数、对应成员名、对应成员类型均一致），它们将被认为属于同一个类型，可以互相赋值（例如上例中的全局变量 <code>G</code> 和 局部变量 <code>k</code>），哪怕这两个变量位于不同模块中，该特性依然成立；这引出了匿名结构体的另一个使用场景：跨模块传递参数。</p>
 <p>由于匿名结构体没有类型名，因此按照语法规则，无法为其添加方法。</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="7-接口"><a class="header" href="#7-接口">7. 接口</a></h1>
-<p>接口是凹语言抽象的灵魂。在接口之前的凹语言代码都是纯正的写实派，但是有了接口之后就可以通过鸭子类型的面向对象来达到抽象的目的。本章讲述接口的基本用法。</p>
+<p>接口是凹语言抽象能力的灵魂。未使用接口的凹语言代码都是纯正的写实派，但是有了接口之后就可以通过鸭子类型的面向对象来达到抽象的目的。本章讲述接口的基本用法。</p>
 <div style="break-before: page; page-break-before: always;"></div><h2 id="71-空接口-万能封包器"><a class="header" href="#71-空接口-万能封包器">7.1. 空接口-万能封包器</a></h2>
 <p>在凹语言中，最简单的接口是空接口，既 <code>interface {}</code>，声明接口类型变量的方法跟其它类型一致，例如下面的代码声明了一个名为 <code>i</code> 的空接口变量：</p>
 <pre><code class="language-wa">    i: interface{}
@@ -1685,7 +1685,7 @@ func printConcrete(iface: interface{}) {
     方法集合
 }
 </code></pre>
-<p>在<code>方法集合</code>中方法，其属性包括方法名以及方法的函数签名，比如我们定义一个接口如下：</p>
+<p>在<code>方法集合</code>中的方法，其属性包括方法名以及方法的函数签名，比如我们定义一个接口如下：</p>
 <pre><code class="language-wa">type Stringer interface {
     String() =&gt; string
 }
