@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html lang="en" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Non-null interface - 凹语言手册</title>
+                
+
+        <!-- Custom HTML head -->
+        
+
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="凹语言手册">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+                <link rel="icon" href="../favicon.svg">
+                        <link rel="shortcut icon" href="../favicon.png">
+                <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+                <link rel="stylesheet" href="../css/print.css" media="print">
+        
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+                <link rel="stylesheet" href="../fonts/fonts.css">
+        
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        
+            </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">Wa-lang's manual</a></li><li class="chapter-item expanded affix "><a href="../preface.html">Preface</a></li><li class="chapter-item expanded "><a href="../1.InstallAndGetStart/index.html"><strong aria-hidden="true">1.</strong> 1.Install And Get Start</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../1.InstallAndGetStart/1.1.HelloWorld.html"><strong aria-hidden="true">1.1.</strong> hello world</a></li><li class="chapter-item expanded "><a href="../1.InstallAndGetStart/1.2.Install.html"><strong aria-hidden="true">1.2.</strong> Install Wa-lang Compiler</a></li><li class="chapter-item expanded "><a href="../1.InstallAndGetStart/1.3.Command.html"><strong aria-hidden="true">1.3.</strong> wa command line</a></li><li class="chapter-item expanded "><a href="../1.InstallAndGetStart/1.4.ProjectStructure.html"><strong aria-hidden="true">1.4.</strong> Project directory structure</a></li><li class="chapter-item expanded "><a href="../1.InstallAndGetStart/1.5.Plugins.html"><strong aria-hidden="true">1.5.</strong> Plug-ins for IDE</a></li></ol></li><li class="chapter-item expanded "><a href="../2.ProgramStructure/index.html"><strong aria-hidden="true">2.</strong> Program structure</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2.ProgramStructure/2.1.GlobalDeclaration.html"><strong aria-hidden="true">2.1.</strong> Global declaration</a></li><li class="chapter-item expanded "><a href="../2.ProgramStructure/2.2.GlobalVariableDeclaration.html"><strong aria-hidden="true">2.2.</strong> Global variable declaration</a></li><li class="chapter-item expanded "><a href="../2.ProgramStructure/2.3.FunctionDeclaration.html"><strong aria-hidden="true">2.3.</strong> Function declaration</a></li><li class="chapter-item expanded "><a href="../2.ProgramStructure/2.4.ConstDeclaration.html"><strong aria-hidden="true">2.4.</strong> Constant declaration</a></li><li class="chapter-item expanded "><a href="../2.ProgramStructure/2.5.ImportDeclaration.html"><strong aria-hidden="true">2.5.</strong> Import declaration</a></li></ol></li><li class="chapter-item expanded "><a href="../3.BasicTypes/index.html"><strong aria-hidden="true">3.</strong> Basic types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../3.BasicTypes/3.1.LocalVariableDeclaration.html"><strong aria-hidden="true">3.1.</strong> Local variable declaration</a></li><li class="chapter-item expanded "><a href="../3.BasicTypes/3.2.Integers.html"><strong aria-hidden="true">3.2.</strong> Integers</a></li><li class="chapter-item expanded "><a href="../3.BasicTypes/3.3.FloatingPointNumbers.html"><strong aria-hidden="true">3.3.</strong> Floating point number</a></li><li class="chapter-item expanded "><a href="../3.BasicTypes/3.4.String.html"><strong aria-hidden="true">3.4.</strong> String</a></li></ol></li><li class="chapter-item expanded "><a href="../4.Function/index.html"><strong aria-hidden="true">4.</strong> Function</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../4.Function/4.1.FunctionCall.html"><strong aria-hidden="true">4.1.</strong> Function call</a></li><li class="chapter-item expanded "><a href="../4.Function/4.2.FunctionValues.html"><strong aria-hidden="true">4.2.</strong> Function values</a></li><li class="chapter-item expanded "><a href="../4.Function/4.3.AnonymousFunctionsAndClosures.html"><strong aria-hidden="true">4.3.</strong> Anonymous functions and closures</a></li><li class="chapter-item expanded "><a href="../4.Function/4.4.ifStatements.html"><strong aria-hidden="true">4.4.</strong> if statements</a></li><li class="chapter-item expanded "><a href="../4.Function/4.5.forStatements.html"><strong aria-hidden="true">4.5.</strong> for statements</a></li><li class="chapter-item expanded "><a href="../4.Function/4.6.switchStatements.html"><strong aria-hidden="true">4.6.</strong> switch statements</a></li></ol></li><li class="chapter-item expanded "><a href="../5.CompositeTypes/index.html"><strong aria-hidden="true">5.</strong> Composite types</a></li><li class="chapter-item expanded "><a href="../6.CustomTypes/index.html"><strong aria-hidden="true">6.</strong> Custom types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../6.CustomTypes/6.1.Structure.html"><strong aria-hidden="true">6.1.</strong> Structure</a></li><li class="chapter-item expanded "><a href="../6.CustomTypes/6.2.Method.html"><strong aria-hidden="true">6.2.</strong> Method</a></li><li class="chapter-item expanded "><a href="../6.CustomTypes/6.3.MethodValues.html"><strong aria-hidden="true">6.3.</strong> Method values</a></li><li class="chapter-item expanded "><a href="../6.CustomTypes/6.4.EmbeddedStructure.html"><strong aria-hidden="true">6.4.</strong> Embedded structure</a></li><li class="chapter-item expanded "><a href="../6.CustomTypes/6.5.AnonymousStructure.html"><strong aria-hidden="true">6.5.</strong> Anonymous structure</a></li></ol></li><li class="chapter-item expanded "><a href="../7.Interface/index.html"><strong aria-hidden="true">7.</strong> Interface</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../7.Interface/7.1.NullInterface.html"><strong aria-hidden="true">7.1.</strong> Null interface - universal wrapper</a></li><li class="chapter-item expanded "><a href="../7.Interface/7.2.Non-nullInterface.html" class="active"><strong aria-hidden="true">7.2.</strong> Non-null interface</a></li><li class="chapter-item expanded "><a href="../7.Interface/7.3.TypeAssertions.html"><strong aria-hidden="true">7.3.</strong> Summary of type assertions</a></li><li class="chapter-item expanded "><a href="../7.Interface/7.4.OtherFeatures.html"><strong aria-hidden="true">7.4.</strong> Other features of interface</a></li></ol></li></ol>            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                                            </div>
+
+                    <h1 class="menu-title">凹语言手册</h1>
+
+                    <div class="right-buttons">
+                                                <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                                                                        <a href="https://github.com/wa-lang/man" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                                                                        <a href="https://github.com/wa-lang/man/edit/master/./7.Interface/7.2.Non-nullInterface.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+
+                                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<h2 id="72-non-null-interface"><a class="header" href="#72-non-null-interface">7.2. Non-null interface</a></h2>
+<p>An interface is a collection of methods. The general form of an interface declaration is as follows:</p>
+<pre><code class="language-wa">type InterfaceName interface {
+    MethodSet
+}
+</code></pre>
+<p>The attributes of methods in the <code>MethodSet</code> include the method name and the function signature of the method. For example, we define an interface as follows:</p>
+<pre><code class="language-wa">type Stringer interface {
+    String() =&gt; string
+}
+</code></pre>
+<p>The interface is named <code>Stringer</code> and contains a method named <code>String</code>, which has no input parameters and returns a string.</p>
+<p>If a method set of a concrete type <code>T</code> is a superset of the method set MethodSet_i of a certain interface <code>I</code>, then we say: <strong>Type <code>T</code> satisfies the interface <code>I</code></strong>. In other words, let the method set of type <code>T</code> be <code>St</code>, the method set of interface <code>I</code> be <code>Si</code>, and the necessary and sufficient condition for type <code>T</code> to satisfy interface <code>I</code> is: any <code>m ∈ Si </code>, there exists <code>m' ∈ St</code>, such that <code>m</code> and <code>m'</code> have the same name and the same function signature.</p>
+<p><strong>If the type <code>T</code> satisfies the interface <code>I</code>, then the value of type <code>T</code> will be assigned to the interface value of type <code>I</code></strong>. When performing the assignment operation, the value of type <code>T</code> will be Copy to the interface value; this is also the reason why the empty interface is the universal wrapper in the previous section, because according to the above definition, the method set of <code>interface{}</code> is empty, and any type can satisfy it.</p>
+<p>Interface methods can be called, and the call will dynamically switch to the method with the same name of the concrete value contained in the interface value (if the concrete value contained in the interface value is nil, then the call will trigger a runtime exception). Non-null interface is an important abstraction method in Wa-lang. Different types of objects can satisfy the same interface, so that callers can use different types of objects in a unified way through the interface. Therefore, the essence of the interface is a set of method conventions, and the check of this convention (whether the concrete type satisfies a certain interface), which is completed at compile time. Here is a example:</p>
+<pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
+
+type Printer interface {
+    Print()
+}
+
+type T1 struct {
+    i: i32
+}
+
+func T1.Print {
+    println(&quot;This is T1, this.i:&quot;, this.i)
+}
+
+type T2 struct {
+    s: string
+}
+
+func T2.Print {
+    println(&quot;This is T2, this.s:&quot;, this.s)
+}
+
+func PrintObj(p: Printer) {
+    p.Print()
+}
+
+func main {
+    p: Printer
+
+    v1: T1
+    v1.i = 42
+    p = &amp;v1
+    PrintObj(p) // This is T1, this.i: 42
+
+    v2: T2
+    v2.s = &quot;你好&quot;
+    p = &amp;v2
+    PrintObj(p) // This is T2, this.s: 你好
+}
+</code></pre>
+<p>It can be seen that when different objects are encapsulated in the same interface value <code>p</code>, and it is used in the same way, its behavior will also change with different object types.</p>
+<p>Since the named type itself cannot have methods, but only its reference can have methods (refer to Section 6.2), in the above example, <code>v1</code> cannot be assigned to <code>p</code>, but only its reference <code>&amp;v1</code> can. If you try to assign <code>v1</code> to <code>p</code>, a compilation error will occur.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                                                    <a rel="prev" href="../7.Interface/7.1.NullInterface.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                                                    <a rel="next" href="../7.Interface/7.3.TypeAssertions.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                                    <a rel="prev" href="../7.Interface/7.1.NullInterface.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                                    <a rel="next" href="../7.Interface/7.3.TypeAssertions.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                            </nav>
+
+        </div>
+
+        
+        
+        
+                <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        
+        
+                <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+        
+        
+    </body>
+</html>

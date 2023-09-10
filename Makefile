@@ -4,12 +4,14 @@ default:
 build:
 	-rm book
 	mdbook build
+	make -C en build
 	-rm book/.gitignore
 	-rm -rf book/.git
 
 deploy:
 	-rm book
 	mdbook build
+	make -C en build
 	-rm book/.gitignore
 	-rm -rf book/.git
 
