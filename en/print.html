@@ -1142,7 +1142,7 @@ func main {
 <h2 id="51-reference"><a class="header" href="#51-reference">5.1. Reference</a></h2>
 <p>In Wa-lang, adding the <code>&amp;</code> symbol before a variable is called a <strong>reference</strong> operation. Assume that the type of the variable is <code>T</code>, and the type of the return value of the reference operation is <code>*T</code>, which is called It is a <strong>T-type reference</strong>, for example:</p>
 <pre><code class="language-wa">    i: i32 = 42
-    j := &amp;i // j的类型为 *i32 ，既：i32型引用
+    j := &amp;i // The type of j is *i32, that is: reference of i32
 </code></pre>
 <p>Adding the <code>*</code> symbol before a reference variable is called a <strong>dereference</strong> operation. The value of the dereference expression is the value of the original variable it refers to, for example:</p>
 <pre><code class="language-wa">    i: i32 = 42
