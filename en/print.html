@@ -155,15 +155,18 @@
 <li>Github Repo: <a href="https://github.com/wa-lang/man">https://github.com/wa-lang/man</a></li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h1 id="preface"><a class="header" href="#preface">Preface</a></h1>
 <p>The Wa-lang is a general statically typed compiled language designed for the WebAssembly platform. It is a project initiated by a group of programming language enthusiasts in China, and its design focuses on reducing the mental burden on users.</p>
 <p>The project was established at the end of 2018, and preliminary preparations began in 2019. New members will be added in 2020. In 2021, the project co-founders publish a book <a href="https://github.com/chai2010/go-ast-book">《Go语言定制指南》(&quot;Go Language Customization Guide&quot;)</a>, the project was officially launched in 2022 and open sourced on July 20. Wa-lang is taking one step at a time. Among similar projects in China, it is the first to accomplish compilation and execution in web page.</p>
 <p>On the first anniversary of open source, Wa-lang released <a href="https://github.com/wa-lang/wa/releases">MVP version</a> on August 12 (MVP means &quot;Minimum Viable Product&quot;). We hope that the release of the MVP version will allow everyone to try and explore more and imagine more possibilities for future development.</p>
 <p>Finally, thanks to the support of Chinese programming language enthusiasts, the Wa-lang MVP version is a new starting point. Everyone is welcome to participate in the co-construction!</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: https://github.com/wa-lang/man/tree/master/en</em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h1 id="1-install-and-get-start"><a class="header" href="#1-install-and-get-start">1. Install and get start</a></h1>
 <p>This chapter describes the simplest Wa-lang example, how to install the Wa-lang compiler, plug-ins for IDE, project directory structure and command line functions, etc.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="11-hello-world"><a class="header" href="#11-hello-world">1.1. hello world</a></h2>
 <p>Printing &quot;hello world&quot; is a common example for PL. The Wa-lang example prints &quot;你好，凹语言！&quot; in Chinese, means &quot;Hello, Wa-lang&quot;.</p>
 <h3 id="111-你好凹语言"><a class="header" href="#111-你好凹语言">1.1.1 你好，凹语言！</a></h3>
@@ -203,6 +206,7 @@ func add(a: i32, b: i32) =&gt; i32 {
 <li>The online playground only supports single file mode and does not support multi-file project mode yet. This problem does not affect syntax compatibility. Subsequent corrections to this problem will not affect the existing source code. Developers using Wa-lang do not need to deal with this issue specially.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="12-install-wa-lang-compiler"><a class="header" href="#12-install-wa-lang-compiler">1.2. Install Wa-lang Compiler</a></h2>
 <p>In addition to accessing the online Wa-lang playground, you can also install the compiler locally.</p>
 <h3 id="121-install-binaries"><a class="header" href="#121-install-binaries">1.2.1 Install binaries</a></h3>
@@ -245,6 +249,7 @@ scoop install wa-lang/wa
 <p><img src="1.InstallAndGetStart/./images/playground-local-01.png" alt="" /></p>
 <p>Click the &quot;Execute&quot; button to see the output results.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="13-wa-command-line"><a class="header" href="#13-wa-command-line">1.3. wa command line</a></h2>
 <p>This section introduces the main functions of the <code>wa</code> command.</p>
 <h3 id="131-help-message"><a class="header" href="#131-help-message">1.3.1. Help message</a></h3>
@@ -389,6 +394,7 @@ ok   myapp 104ms
 <h3 id="137-print-logo"><a class="header" href="#137-print-logo">1.3.7 Print Logo</a></h3>
 <p><code>wa logo</code> can output some logo patterns in text format, and readers can explore by themselves through the <code>wa logo -h</code> command.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="14-project-directory-structure"><a class="header" href="#14-project-directory-structure">1.4. Project directory structure</a></h2>
 <p>The project directory structure is the basis for the work of the entire peripheral tools. For example, init generates projects based on this structure, and the package management tool manages dependencies in turn.</p>
 <h3 id="141-project-directory-structure"><a class="header" href="#141-project-directory-structure">1.4.1 Project directory structure</a></h3>
@@ -416,6 +422,7 @@ version = &quot;0.0.1&quot;
 <h3 id="142-package-management-tool"><a class="header" href="#142-package-management-tool">1.4.2 Package management tool</a></h3>
 <p>Wa-lang currently does not have a package management tool. If you rely on third-party packages, you need to manually synchronize the vendor directory. The development team hopes to start developing package management tool after the MVP version.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="15-plug-ins-for-ide"><a class="header" href="#15-plug-ins-for-ide">1.5. Plug-ins for IDE</a></h2>
 <p>Modern programming languages generally provide extensions for various IDEs and editors to improve the programming experience. The Wa-lang provides basic plug-in support for VS Code, Fleet and Vim.</p>
 <h3 id="151-plug-in-for-vscode"><a class="header" href="#151-plug-in-for-vscode">1.5.1 Plug-in for VSCode</a></h3>
@@ -433,9 +440,11 @@ version = &quot;0.0.1&quot;
 <h3 id="154-other-plug-ins"><a class="header" href="#154-other-plug-ins">1.5.4 Other Plug-ins</a></h3>
 <p>After the MVP, the syntax of the Wa-lang has been stablized, and we hope that the community can participate in the co-construction of other editors to support it.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h1 id="2-program-structure"><a class="header" href="#2-program-structure">2. Program structure</a></h1>
 <p>Like other programming languages, a Wa-lang program is composed of many small parts. This chapter introduces global variable declarations, function declarations, constant declarations, import declarations, and type declarations.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="21-global-declaration"><a class="header" href="#21-global-declaration">2.1. Global declaration</a></h2>
 <p>A typical Wa-lang program source code is as follows:</p>
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
@@ -479,6 +488,7 @@ func getAnswer =&gt; i32 {
 </ul>
 <p>The following sections of this chapter will introduce global variable declarations, function declarations, constant declarations, and import declarations in sequence. Type declarations will be explained separately in Chapter 6.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="22-global-variable-declaration"><a class="header" href="#22-global-variable-declaration">2.2. Global variable declaration</a></h2>
 <p>Global variable declaration starts with the keyword <code>global</code>, and the general syntax is as follows:</p>
 <pre><code class="language-wa">global VarName: Type = initial value expression
@@ -511,6 +521,7 @@ global counter: u32         // 32-bit unsigned integer
 <p>In Wa-lang, variables that are not given an initial value are always initialized with a value of 0, which helps eliminate uncertainty.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="23-function-declaration"><a class="header" href="#23-function-declaration">2.3. Function declaration</a></h2>
 <p>The function declaration starts with the keyword <code>func</code>, and the general syntax is as follows:</p>
 <pre><code class="language-wa">func FunctionName (parameter list) =&gt; (return value list) {function body}
@@ -540,6 +551,7 @@ func add(i, j: i32) =&gt; i32 {
 <p>Like global variables, functions can be declared in any source file within a package and do not require &quot;declare before use&quot;.</p>
 <p>See Chapter 4 for more information about functions.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="24-constant-declaration"><a class="header" href="#24-constant-declaration">2.4. Constant declaration</a></h2>
 <p>The constant declaration starts with the keyword <code>const</code>, and the general syntax is as follows:</p>
 <pre><code class="language-wa">const 常量名: 类型 = 常量值
@@ -582,6 +594,7 @@ func main {
 <p>Although the values of <code>K</code> and <code>J</code> both exceed the expression range of <code>i64</code>(the largest type in Wa-lang), the value of <code>K/J</code> can still be printed correctly. This also reflects that <strong>numeric constants have an expression range and precision that exceeds the basic type of variables</strong>.</p>
 <p>The relevant rules when assigning constants to variables will be discussed in detail in Chapter 3.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="25-import-declaration"><a class="header" href="#25-import-declaration">2.5. Import declaration</a></h2>
 <p>The import declaration starts with the keyword <code>import</code>, and the general syntax is as follows:</p>
 <pre><code class="language-wa">import path
@@ -630,9 +643,11 @@ func main {
 </blockquote>
 <p>In Wa-lang, every module imported by a source file must be used, that is, if a module is imported but none of its objects are used, it will be considered a syntax error.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h1 id="3-basic-types"><a class="header" href="#3-basic-types">3. Basic types</a></h1>
 <p>At a low level, all data is made up of bits. The corresponding basic data types of Wa-lang include integers, floating point numbers, strings, etc. This chapter introduces basic data types and the use of local variables.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="31-local-variable-declaration"><a class="header" href="#31-local-variable-declaration">3.1. Local variable declaration</a></h2>
 <p>Chapter 2 introduces global variable and constant declarations. Also commonly used is local variable (variables defined within a function) declaration. Its general syntax is:</p>
 <pre><code class="language-wa">VarName: Type = initial Value
@@ -656,6 +671,7 @@ func genString() =&gt; string { return &quot;Hello&quot; }
 <p>Wa-lang is a statically typed language. The type of a legal expressions can be inferred at compile time, so the type of a expression is determined. The <code>:=</code> syntax is similar to C++'s <code>auto</code> type.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="32-integers"><a class="header" href="#32-integers">3.2. Integers</a></h2>
 <p>Wa-lang currently supports the following integer types:</p>
 <ul>
@@ -758,6 +774,7 @@ func genString() =&gt; string { return &quot;Hello&quot; }
 ||
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="33-floating-point-number"><a class="header" href="#33-floating-point-number">3.3. Floating point number</a></h2>
 <p>Wa-lang currently supports the following types of floating point numbers (both are IEEE 754 standards):</p>
 <ul>
@@ -801,6 +818,7 @@ func genString() =&gt; string { return &quot;Hello&quot; }
 <pre><code class="language-wa">    f: f64 = 1.5
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="34-string"><a class="header" href="#34-string">3.4. String</a></h2>
 <p>Strings are regarded as basic data types in Wa-lang. The type name is: <code>string</code>. String literal constants are defined by double quotes <code>&quot;&quot;</code> and are encoded in UTF-8, for example:</p>
 <pre><code class="language-wa">    s: string = &quot;你好，凹语言&quot;
@@ -848,9 +866,11 @@ func genString() =&gt; string { return &quot;Hello&quot; }
 <li>Bounds checking was not performed when using <code>[]</code> to obtain the specified bytes or substring of a string variable. This problem does not affect syntax compatibility. Subsequent corrections to this problem will not affect the existing source code. Developers using Wa-lang do not need to deal with this issue specially.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
-<h1 id="4-function"><a class="header" href="#4-function">4. Function</a></h1>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
+<h1 id="4-functions"><a class="header" href="#4-functions">4. Functions</a></h1>
 <p>Functions are sequences of statements designed to be reused many times. This chapter introduces the basic usage of Wa-lang functions, as well as features such as function values, anonymous functions, and closures.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="41-function-call"><a class="header" href="#41-function-call">4.1. Function call</a></h2>
 <p>We have come across many functions in previous chapters, such as the commonly used built-in printing function <code>println</code>. The general syntax for function calls is:</p>
 <p><code>FunctionName (actual parameter list)</code></p>
@@ -904,6 +924,7 @@ func main {
 </code></pre>
 <p>So we can understand it this way: the named return value actually defines a set of local variables in the function body. When the <code>return</code> statement within the function does not specify a return value, this set of local variables is automatically filled in as the return value.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="42-function-values"><a class="header" href="#42-function-values">4.2. Function values</a></h2>
 <p>In Wa-lang, functions can be treated as special values, for example:</p>
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
@@ -976,6 +997,7 @@ func main {
 <p>If the called function value is <code>nil</code>, an unrecoverable runtime exception will be triggered.</p>
 <p>Function values are similar to function pointers in C language, and can dynamically adjust execution branches more flexibly. However, it needs to be pointed out that compared to calling the function directly, calling the function value has some additional consumption, and performance-sensitive occasions require special attention.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="43-anonymous-functions-and-closures"><a class="header" href="#43-anonymous-functions-and-closures">4.3. Anonymous functions and closures</a></h2>
 <p>The previous section introduced the basic usage of function values. Since functions can be regarded as values, can function literals be declared inside functions in the same way as basic type literals? The answer is yes, for example:</p>
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
@@ -1038,6 +1060,7 @@ func main {
 <p>Each call to <code>genFunc</code> will generate a function value. This function value captures the local variable <code>n</code>. Each time the function value is executed, the captured <code>n</code> will be incremented by 1. The function obtained by executing <code>genFunc</code> multiple times value, the <code>n</code> they capture is different, and each time it is executed, a new instance is captured.</p>
 <p>The anonymous function value declared within the function carries the state of the local variables captured during this run. Obviously, this function value is essentially a closure.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="44-if-statements"><a class="header" href="#44-if-statements">4.4. if statements</a></h2>
 <p>The general form of conditional statements is:</p>
 <pre><code class="language-wa">     if initial statement, conditional expression {
@@ -1060,7 +1083,8 @@ func main {
 }
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
-<h2 id="45-for-statement"><a class="header" href="#45-for-statement">4.5. for statement</a></h2>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
+<h2 id="45-for-statements"><a class="header" href="#45-for-statements">4.5. for statements</a></h2>
 <p>There are three basic forms of loop statements:</p>
 <pre><code class="language-wa">     for { code block }
      for ConditionalExpression { code block }
@@ -1106,6 +1130,7 @@ func main {
 2
 </code></pre>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="46-switch-statements"><a class="header" href="#46-switch-statements">4.6. switch statements</a></h2>
 <p>swtich statements are often used to replace multiple conditional statements. The general form is:</p>
 <pre><code class="language-wa">     switch InitialStatement, ConditionalExpression {
@@ -1136,9 +1161,11 @@ func main {
 <p>Note that switch statements in Wa-lang languages ​​jump out by default: after entering a certain branch and executing the corresponding code block, the branch statement will jump out directly (that is, implicit <code>break</code>), which is opposite to the default behavior of C language.</p>
 <p>Another special use of branch statements for type assertions will be described in Section 7.1.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h1 id="5-composite-types"><a class="header" href="#5-composite-types">5. Composite types</a></h1>
 <p>Composite types are built-in complex types.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="51-reference"><a class="header" href="#51-reference">5.1. Reference</a></h2>
 <p>In Wa-lang, adding the <code>&amp;</code> symbol before a variable is called a <strong>reference</strong> operation. Assume that the type of the variable is <code>T</code>, and the type of the return value of the reference operation is <code>*T</code>, which is called It is a <strong>T-type reference</strong>, for example:</p>
 <pre><code class="language-wa">    i: i32 = 42
@@ -1179,6 +1206,7 @@ func main {
 <li>The currently used RC mode cannot automatically recycle orphaned rings, causing memory leaks. This problem does not affect syntax compatibility. Subsequent corrections to this problem will not affect the existing source code. Developers using Wa-lang do not need to deal with this issue specially.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="52-array"><a class="header" href="#52-array">5.2. Array</a></h2>
 <p>The basic declaration of an array type is as follows:</p>
 <pre><code class="language-wa">[N]T
@@ -1228,6 +1256,7 @@ func main {
 <li>In the current version of the implementation, the array is expanded into a set of linear values. Therefore, when the array is assigned, the number of virtual registers and instructions is an integral multiple of the array length. If the length is too large, the size of the target code will expand rapidly. This problem does not affect syntax compatibility, and subsequent corrections to this problem will not affect existing source code. At this stage, program developers should pay attention to: except for global variables, try not to use arrays with a length greater than 8.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="53-slice"><a class="header" href="#53-slice">5.3. Slice</a></h2>
 <p>The basic declaration of the slice type is as follows, <code>T</code> is the element type:</p>
 <pre><code class="language-wa">[]T
@@ -1323,9 +1352,11 @@ make([]T, Len: int) =&gt; []T // Equivalent to make([]T, Len, Len)
 <li>No bounds checking was performed when using <code>[]</code> to get a new slice from an array or slice. This problem does not affect syntax compatibility. Subsequent corrections to this problem will not affect the existing source code. Developers using Wa-lang do not need to deal with this issue specially.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h1 id="6-custom-types"><a class="header" href="#6-custom-types">6. Custom types</a></h1>
 <p>Custom types include structures and interfaces generated around structure methods.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="61-structure"><a class="header" href="#61-structure">6.1. Structure</a></h2>
 <p>The general form of structure declaration in Wa-lang is:</p>
 <pre><code class="language-wa">type StructName struct {
@@ -1394,6 +1425,7 @@ func main {
 <p>When declaring a structure literal, <code>{}</code> contains a list of member literals, and unlisted members have a value of 0.</p>
 <p>If all member variables in the structure are comparable (that is, the <code>==</code> operation can be performed between variables of the member type), then the variables of the structure are also comparable. Among the data types introduced so far, slices are incomparable types, so structures that directly or indirectly contain slices are not comparable. Similar to other types of declarations, structures can be declared in any file within the module, and there is no need to &quot;declare before using&quot;.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="62-method"><a class="header" href="#62-method">6.2. Method</a></h2>
 <p>In addition to encapsulating member data, the biggest role of structures is that they can have methods. In Wa-lang, <strong>method</strong> is a special type of function that is attached to a specific type, see the following example:</p>
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
@@ -1443,6 +1475,7 @@ func main {
 <p>It is important to note that according to the concave language syntax, the method declared using <code>func T.xxx()...</code> does not belong to type <code>T</code>, but to type <code>*T</code>; That is to say, the named type itself cannot have methods, and only the reference of the named type can have methods.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="63-method-values"><a class="header" href="#63-method-values">6.3. Method values</a></h2>
 <p>Since methods are also functions, you can use them following the pattern in Section 4.2, for example:</p>
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
@@ -1488,6 +1521,7 @@ func main {
 <p><code>v.Scale</code> and <code>v.Sub</code> are methods of the structure variable <code>v</code>. When they are used as values, they are called <strong>method values</strong>. For example, in the above example, they are assigned to <code>op</code>. The method value can be called like an ordinary function value, and the call can affect the reference associated with the method (just like calling the original method directly). It can be seen that the method value captures the original object reference and is <code>stateful</code>. At this point, method values are similar to closures.</p>
 <p>From the above example, we can also know that function value variables (such as <code>op</code> in the example) can store both function values and method values. For the caller, there is no difference between the two.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="64-embedded-structure"><a class="header" href="#64-embedded-structure">6.4. Embedded structure</a></h2>
 <p>When declaring a structure type, if the type of a member is a structure but the name of it is omitted, this usage is called <strong>embedded structure</strong>. For example, in the following code, the structure <code>Sc</code> is embedded The <code>Sp</code> member:</p>
 <pre><code class="language-wa">type Sp struct {
@@ -1577,6 +1611,7 @@ func main {
 </code></pre>
 <p>In order to achieve object reuse, Wa-lang does not adopt inheritance (which is different from C++), but uses combination. The embedded structure is a concrete manifestation of <strong>combination</strong>. The embedded structure reuses the memory layout and method set of the embedded type. Together with the interface (to be introduced in Chapter 7), it constitutes Wa-lang's foundation of abstraction and reusing of objects.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="65-anonymous-structure"><a class="header" href="#65-anonymous-structure">6.5. Anonymous structure</a></h2>
 <p>In the previous sections of this chapter, the structures we used were declared in the following form:</p>
 <pre><code class="language-wa">type StructName struct {
@@ -1615,9 +1650,11 @@ func main {
 <p>The named type is located in the namespace of the module, but because the anonymous structure has no name, its definition is actually located in the global space. Therefore, if the memory layout of the two anonymous structure variables is exactly the same (that is, the number of members, corresponding member names, and corresponding members types are consistent), they will be considered to belong to the same type and can be assigned to each other (such as the global variable <code>G</code> and the local variable <code>k</code> in the above example). This feature still holds even if the two variables are located in different modules. ; This leads to another usage scenario of anonymous structures: passing parameters across modules.</p>
 <p>Since an anonymous structure has no type name, according to the syntax rules, methods cannot be added to it.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h1 id="7-interface"><a class="header" href="#7-interface">7. Interface</a></h1>
 <p>Interface is the soul of the abstract ability of the language. Wa-lang codes that do not use interfaces are pure realism, but with interfaces, abstraction can be achieved through duck-type object-oriented code. This chapter describes the basic usage of interfaces.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="71-null-interface---universal-wrapper"><a class="header" href="#71-null-interface---universal-wrapper">7.1. Null interface - universal wrapper</a></h2>
 <p>In Wa-lang, the simplest interface is the null interface, namely <code>interface {}</code>. The method of declaring interface type variables is the same as other types. For example, the following code declares an null interface variable named <code>i</code>:</p>
 <pre><code class="language-wa">    i: interface{}
@@ -1716,6 +1753,7 @@ func printConcrete(iface: interface{}) {
 <p>In this article, &quot;<strong>null interface</strong>&quot; refers to <code>interface{}</code>, which is an interface type whose method set is empty. &quot;<strong>non-null interface</strong>&quot; in the next section refers to an interface type whose method set is not empty; When we want to describe an interface value with a value of 0, we will use &quot;<strong>0 value interface</strong>&quot;, or &quot;<strong>nil interface</strong>&quot;, please pay attention to the distinction.</p>
 </blockquote>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="72-non-null-interface"><a class="header" href="#72-non-null-interface">7.2. Non-null interface</a></h2>
 <p>An interface is a collection of methods. The general form of an interface declaration is as follows:</p>
 <pre><code class="language-wa">type InterfaceName interface {
@@ -1774,6 +1812,7 @@ func main {
 <p>It can be seen that when different objects are encapsulated in the same interface value <code>p</code>, and it is used in the same way, its behavior will also change with different object types.</p>
 <p>Since the named type itself cannot have methods, but only its reference can have methods (refer to Section 6.2), in the above example, <code>v1</code> cannot be assigned to <code>p</code>, but only its reference <code>&amp;v1</code> can. If you try to assign <code>v1</code> to <code>p</code>, a compilation error will occur.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="73-summary-of-type-assertions"><a class="header" href="#73-summary-of-type-assertions">7.3. Summary of type assertions</a></h2>
 <p>Section 7.1 introduces how to obtain the specific value contained in an interface value of type <code>interface{}</code> through type assertion. This usage still holds for non-null interface values, for example:</p>
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
@@ -1850,6 +1889,7 @@ func main {
 </code></pre>
 <p>This mode omits the <code>ok</code> flag indicating whether the operation was successful and only returns the value of the asserted type. If a type assertion fails, a runtime exception will be triggered, and it is recommended to only use this pattern if you are absolutely certain that the assertion will not fail.</p>
 <div style="break-before: page; page-break-before: always;"></div><p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
+<p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2 id="74-other-features-of-interface"><a class="header" href="#74-other-features-of-interface">7.4. Other features of interface</a></h2>
 <p>When declaring an interface, the interface's method set can contain another interface, for example:</p>
 <pre><code class="language-wa">type I1 interface {
