@@ -1,5 +1,7 @@
 *The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: [https://github.com/wa-lang/man/tree/master/en](https://github.com/wa-lang/man/tree/master/en)*
 
+***Ending's law: "Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually."***
+
 # Preface
 
 The Wa-lang is a general statically typed compiled language designed for the WebAssembly platform. It is a project initiated by a group of programming language enthusiasts in China, and its design focuses on reducing the mental burden on users.
