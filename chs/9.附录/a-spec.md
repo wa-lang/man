@@ -25,7 +25,7 @@ ImportPath  = string_lit .
 PackageName = identifier .
 ```
 
-imort 关键字用于导入包，导入的包还可以被重新命名（对应PackageName）。
+import 关键字用于导入包，导入的包还可以被重新命名（对应PackageName）。
 
 以下代码是一个凹源文件的对应例子：
 
