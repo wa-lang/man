@@ -31,7 +31,7 @@
 
 <!-- 中间图像 -->
 <!--
-// 外部图像Chrome之间打开可以, 但是有些场景不能工作. 最终输出改成 Base64 内联.
+// 外部图像Chrome直接打开可以, 但是有些场景不能工作. 最终输出改成 Base64 内联.
 // base64 -i input-file -o output.txt
 
 <image x="150" y="320" width="220" height="220" href="icons/logo-round-color-LightSeaGreen.svg" />
