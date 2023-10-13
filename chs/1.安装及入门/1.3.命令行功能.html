@@ -1,38 +1,31 @@
 <!DOCTYPE HTML>
-<html lang="zh_CN" class="sidebar-visible no-js light">
+<html lang="zh" class="sidebar-visible no-js light">
     <head>
-        <!-- Book generated using mdBook -->
+        <!-- Book generated using mnbook-go -->
         <meta charset="UTF-8">
         <title>命令行功能 - 凹语言手册</title>
-                
-
         <!-- Custom HTML head -->
-        
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <meta name="description" content="凹语言手册">
+        <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-                <link rel="icon" href="../../favicon.svg">
-                        <link rel="shortcut icon" href="../../favicon.png">
-                <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
         <link rel="stylesheet" href="../../css/general.css">
         <link rel="stylesheet" href="../../css/chrome.css">
-                <link rel="stylesheet" href="../../css/print.css" media="print">
-        
+        <link rel="stylesheet" href="../../css/print.css" media="print">
         <!-- Fonts -->
         <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
-                <link rel="stylesheet" href="../../fonts/fonts.css">
-        
+        <link rel="stylesheet" href="../../fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="../../highlight.css">
         <link rel="stylesheet" href="../../tomorrow-night.css">
         <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
-            </head>
+    </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
@@ -43,15 +36,15 @@
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
-                var theme = localStorage.getItem('mdbook-theme');
-                var sidebar = localStorage.getItem('mdbook-sidebar');
+                var theme = localStorage.getItem('mnbook-theme');
+                var sidebar = localStorage.getItem('mnbook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                    localStorage.setItem('mnbook-theme', theme.slice(1, theme.length - 1));
                 }
 
                 if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                    localStorage.setItem('mnbook-sidebar', sidebar.slice(1, sidebar.length - 1));
                 }
             } catch (e) { }
         </script>
@@ -59,7 +52,7 @@
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script type="text/javascript">
             var theme;
-            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            try { theme = localStorage.getItem('mnbook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
@@ -73,7 +66,7 @@
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                try { sidebar = localStorage.getItem('mnbook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             }
             html.classList.remove('sidebar-visible');
@@ -82,14 +75,164 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">凹语言手册</a></li><li class="chapter-item expanded affix "><a href="../../preface.html">前言</a></li><li class="chapter-item expanded "><a href="../../chs/1.安装及入门/index.html"><strong aria-hidden="true">1.</strong> 安装及入门</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/1.安装及入门/1.1.你好凹语言.html"><strong aria-hidden="true">1.1.</strong> 你好，凹语言</a></li><li class="chapter-item expanded "><a href="../../chs/1.安装及入门/1.2.安装凹语言.html"><strong aria-hidden="true">1.2.</strong> 安装凹语言</a></li><li class="chapter-item expanded "><a href="../../chs/1.安装及入门/1.3.命令行功能.html" class="active"><strong aria-hidden="true">1.3.</strong> 命令行功能</a></li><li class="chapter-item expanded "><a href="../../chs/1.安装及入门/1.4.工程目录结构.html"><strong aria-hidden="true">1.4.</strong> 工程目录结构</a></li><li class="chapter-item expanded "><a href="../../chs/1.安装及入门/1.5.IDE插件.html"><strong aria-hidden="true">1.5.</strong> IDE插件</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/2.程序结构/index.html"><strong aria-hidden="true">2.</strong> 程序结构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/2.程序结构/2.1.全局声明.html"><strong aria-hidden="true">2.1.</strong> 全局声明</a></li><li class="chapter-item expanded "><a href="../../chs/2.程序结构/2.2.全局变量声明.html"><strong aria-hidden="true">2.2.</strong> 全局变量声明</a></li><li class="chapter-item expanded "><a href="../../chs/2.程序结构/2.3.函数声明.html"><strong aria-hidden="true">2.3.</strong> 函数声明</a></li><li class="chapter-item expanded "><a href="../../chs/2.程序结构/2.4.常量声明.html"><strong aria-hidden="true">2.4.</strong> 常量声明</a></li><li class="chapter-item expanded "><a href="../../chs/2.程序结构/2.5.导入声明.html"><strong aria-hidden="true">2.5.</strong> 导入声明</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/3.基础数据类型/index.html"><strong aria-hidden="true">3.</strong> 基础数据类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/3.基础数据类型/3.1.局部变量声明.html"><strong aria-hidden="true">3.1.</strong> 局部变量声明</a></li><li class="chapter-item expanded "><a href="../../chs/3.基础数据类型/3.2.整数.html"><strong aria-hidden="true">3.2.</strong> 整数</a></li><li class="chapter-item expanded "><a href="../../chs/3.基础数据类型/3.3.浮点数.html"><strong aria-hidden="true">3.3.</strong> 浮点数</a></li><li class="chapter-item expanded "><a href="../../chs/3.基础数据类型/3.4.字符串.html"><strong aria-hidden="true">3.4.</strong> 字符串</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/4.函数/index.html"><strong aria-hidden="true">4.</strong> 函数</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/4.函数/4.1.函数调用.html"><strong aria-hidden="true">4.1.</strong> 函数调用</a></li><li class="chapter-item expanded "><a href="../../chs/4.函数/4.2.函数值.html"><strong aria-hidden="true">4.2.</strong> 函数值</a></li><li class="chapter-item expanded "><a href="../../chs/4.函数/4.3.匿名函数及闭包.html"><strong aria-hidden="true">4.3.</strong> 匿名函数及闭包</a></li><li class="chapter-item expanded "><a href="../../chs/4.函数/4.4.条件语句.html"><strong aria-hidden="true">4.4.</strong> 条件语句</a></li><li class="chapter-item expanded "><a href="../../chs/4.函数/4.5.循环语句.html"><strong aria-hidden="true">4.5.</strong> 循环语句</a></li><li class="chapter-item expanded "><a href="../../chs/4.函数/4.6.分支语句.html"><strong aria-hidden="true">4.6.</strong> 分支语句</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/5.复合数据类型/index.html"><strong aria-hidden="true">5.</strong> 复合数据类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/5.复合数据类型/5.1.引用.html"><strong aria-hidden="true">5.1.</strong> 引用</a></li><li class="chapter-item expanded "><a href="../../chs/5.复合数据类型/5.2.数组.html"><strong aria-hidden="true">5.2.</strong> 数组</a></li><li class="chapter-item expanded "><a href="../../chs/5.复合数据类型/5.3.切片.html"><strong aria-hidden="true">5.3.</strong> 切片</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/index.html"><strong aria-hidden="true">6.</strong> 自定义类型</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/6.1.结构体.html"><strong aria-hidden="true">6.1.</strong> 结构体</a></li><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/6.2.方法.html"><strong aria-hidden="true">6.2.</strong> 方法</a></li><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/6.3.方法值.html"><strong aria-hidden="true">6.3.</strong> 方法值</a></li><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/6.4.嵌入结构体.html"><strong aria-hidden="true">6.4.</strong> 嵌入结构体</a></li><li class="chapter-item expanded "><a href="../../chs/6.自定义类型/6.5.匿名结构体.html"><strong aria-hidden="true">6.5.</strong> 匿名结构体</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/7.接口/index.html"><strong aria-hidden="true">7.</strong> 接口</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/7.接口/7.1.空接口-万能封包器.html"><strong aria-hidden="true">7.1.</strong> 空接口-万能封包器</a></li><li class="chapter-item expanded "><a href="../../chs/7.接口/7.2.非空接口.html"><strong aria-hidden="true">7.2.</strong> 非空接口</a></li><li class="chapter-item expanded "><a href="../../chs/7.接口/7.3.类型断言总结.html"><strong aria-hidden="true">7.3.</strong> 类型断言总结</a></li><li class="chapter-item expanded "><a href="../../chs/7.接口/7.4.接口的其它特性.html"><strong aria-hidden="true">7.4.</strong> 接口的其它特性</a></li></ol></li><li class="chapter-item expanded "><a href="../../chs/9.附录/index.html"><strong aria-hidden="true">8.</strong> 附录</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../chs/9.附录/a-spec.html"><strong aria-hidden="true">8.1.</strong> 语言规范</a></li><li class="chapter-item expanded "><a href="../../chs/9.附录/b-std.html"><strong aria-hidden="true">8.2.</strong> 标准库</a></li></ol></li></ol>            </div>
+                <ol class="chapter">
+  <li class="chapter-item expanded ">
+    <a href="../../index.html" >凹语言手册</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../../preface.html" >前言</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/1.安装及入门/readme.html" ><strong aria-hidden="true">1.</strong> 安装及入门</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/1.安装及入门/1.1.你好凹语言.html" ><strong aria-hidden="true">1.1.</strong> 你好，凹语言</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/1.安装及入门/1.2.安装凹语言.html" ><strong aria-hidden="true">1.2.</strong> 安装凹语言</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/1.安装及入门/1.3.命令行功能.html" class="active"><strong aria-hidden="true">1.3.</strong> 命令行功能</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/1.安装及入门/1.4.工程目录结构.html" ><strong aria-hidden="true">1.4.</strong> 工程目录结构</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/1.安装及入门/1.5.IDE插件.html" ><strong aria-hidden="true">1.5.</strong> IDE插件</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/2.程序结构/readme.html" ><strong aria-hidden="true">2.</strong> 程序结构</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/2.程序结构/2.1.全局声明.html" ><strong aria-hidden="true">2.1.</strong> 全局声明</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/2.程序结构/2.2.全局变量声明.html" ><strong aria-hidden="true">2.2.</strong> 全局变量声明</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/2.程序结构/2.3.函数声明.html" ><strong aria-hidden="true">2.3.</strong> 函数声明</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/2.程序结构/2.4.常量声明.html" ><strong aria-hidden="true">2.4.</strong> 常量声明</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/2.程序结构/2.5.导入声明.html" ><strong aria-hidden="true">2.5.</strong> 导入声明</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/3.基础数据类型/readme.html" ><strong aria-hidden="true">3.</strong> 基础数据类型</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/3.基础数据类型/3.1.局部变量声明.html" ><strong aria-hidden="true">3.1.</strong> 局部变量声明</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/3.基础数据类型/3.2.整数.html" ><strong aria-hidden="true">3.2.</strong> 整数</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/3.基础数据类型/3.3.浮点数.html" ><strong aria-hidden="true">3.3.</strong> 浮点数</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/3.基础数据类型/3.4.字符串.html" ><strong aria-hidden="true">3.4.</strong> 字符串</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/4.函数/readme.html" ><strong aria-hidden="true">4.</strong> 函数</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/4.函数/4.1.函数调用.html" ><strong aria-hidden="true">4.1.</strong> 函数调用</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/4.函数/4.2.函数值.html" ><strong aria-hidden="true">4.2.</strong> 函数值</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/4.函数/4.3.匿名函数及闭包.html" ><strong aria-hidden="true">4.3.</strong> 匿名函数及闭包</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/4.函数/4.4.条件语句.html" ><strong aria-hidden="true">4.4.</strong> 条件语句</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/4.函数/4.5.循环语句.html" ><strong aria-hidden="true">4.5.</strong> 循环语句</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/4.函数/4.6.分支语句.html" ><strong aria-hidden="true">4.6.</strong> 分支语句</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/5.复合数据类型/readme.html" ><strong aria-hidden="true">5.</strong> 复合数据类型</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/5.复合数据类型/5.1.引用.html" ><strong aria-hidden="true">5.1.</strong> 引用</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/5.复合数据类型/5.2.数组.html" ><strong aria-hidden="true">5.2.</strong> 数组</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/5.复合数据类型/5.3.切片.html" ><strong aria-hidden="true">5.3.</strong> 切片</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/6.自定义类型/readme.html" ><strong aria-hidden="true">6.</strong> 自定义类型</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/6.自定义类型/6.1.结构体.html" ><strong aria-hidden="true">6.1.</strong> 结构体</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/6.自定义类型/6.2.方法.html" ><strong aria-hidden="true">6.2.</strong> 方法</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/6.自定义类型/6.3.方法值.html" ><strong aria-hidden="true">6.3.</strong> 方法值</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/6.自定义类型/6.4.嵌入结构体.html" ><strong aria-hidden="true">6.4.</strong> 嵌入结构体</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/6.自定义类型/6.5.匿名结构体.html" ><strong aria-hidden="true">6.5.</strong> 匿名结构体</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/7.接口/readme.html" ><strong aria-hidden="true">7.</strong> 接口</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/7.接口/7.1.空接口-万能封包器.html" ><strong aria-hidden="true">7.1.</strong> 空接口-万能封包器</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/7.接口/7.2.非空接口.html" ><strong aria-hidden="true">7.2.</strong> 非空接口</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/7.接口/7.3.类型断言总结.html" ><strong aria-hidden="true">7.3.</strong> 类型断言总结</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/7.接口/7.4.接口的其它特性.html" ><strong aria-hidden="true">7.4.</strong> 接口的其它特性</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/9.附录/readme.html" ><strong aria-hidden="true">8.</strong> 附录</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/9.附录/a-spec.html" ><strong aria-hidden="true">8.1.</strong> 语言规范</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/9.附录/b-std.html" ><strong aria-hidden="true">8.2.</strong> 标准库</a>
+    </li>
+  </ol>
+</ol>
+
+            </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
 
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
                 <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
@@ -101,43 +244,24 @@
                         </button>
                         <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
                             <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
-                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                                                <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
-                            <i class="fa fa-search"></i>
-                        </button>
-                                            </div>
+                    </div>
 
-                    <h1 class="menu-title">凹语言手册</h1>
+                    <h1 class="menu-title"><a href="../../index.html">凹语言手册</a></h1>
 
                     <div class="right-buttons">
-                                                <a href="../../print.html" title="Print this book" aria-label="Print this book">
-                            <i id="print-button" class="fa fa-print"></i>
-                        </a>
-                                                                        <a href="https://gitee.com/wa-lang/wa" title="Git repository" aria-label="Git repository">
+                        <a href="https://gitee.com/wa-lang/wa" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                                                                        <a href="https://gitee.com/wa-lang/man/edit/master/./chs/1.安装及入门/1.3.命令行功能.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://gitee.com/wa-lang/man/edit/master/chs/1.安装及入门/1.3.命令行功能.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
-                        
                     </div>
                 </div>
 
-                                <div id="search-wrapper" class="hidden">
-                    <form id="searchbar-outer" class="searchbar-outer">
-                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
-                    </form>
-                    <div id="searchresults-outer" class="searchresults-outer hidden">
-                        <div id="searchresults-header" class="searchresults-header"></div>
-                        <ul id="searchresults">
-                        </ul>
-                    </div>
-                </div>
-                
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
                     document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
@@ -149,9 +273,9 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h2 id="13-命令行功能"><a class="header" href="#13-命令行功能">1.3. 命令行功能</a></h2>
+                        <h2>1.3. 命令行功能</h2>
 <p>本节介绍 <code>wa</code> 命令主要功能。</p>
-<h3 id="131-帮助信息"><a class="header" href="#131-帮助信息">1.3.1. 帮助信息</a></h3>
+<h3>1.3.1. 帮助信息</h3>
 <p>输入 <code>wa</code> 命令或 <code>wa -h</code> 可查看命令行帮助信息，如下：</p>
 <pre><code>$ wa
 NAME:
@@ -196,7 +320,7 @@ See &quot;https://wa-lang.org&quot; for more information.
 <li>logo：打印凹语言文字版本的Logo。</li>
 </ul>
 <p>其中 build 命令在 1.1.1 节展示过，play 命令已经在 1.2.5 节展示过，本节简要介绍之外的子命令。</p>
-<h3 id="132-初始化工程"><a class="header" href="#132-初始化工程">1.3.2 初始化工程</a></h3>
+<h3>1.3.2 初始化工程</h3>
 <p>在 1.1.1 节已经展示过 <code>wa run hello.wa</code> 执行一个独立文件的凹语言程序。但是单文件的凹语言程序有一个巨大的限制——它只有一个文件且不能引用非标准库的代码。对于更大的凹程序推荐用凹工程的方式组织。</p>
 <p>使用 <code>wa init</code> 命令可以初始化一个凹工程，先看看命令行帮助：</p>
 <pre><code>$ wa init -h
@@ -234,7 +358,7 @@ hello
 7 directories, 8 files
 </code></pre>
 <p>工程的结构在 1.4 节介绍。</p>
-<h3 id="133-编译和执行"><a class="header" href="#133-编译和执行">1.3.3 编译和执行</a></h3>
+<h3>1.3.3 编译和执行</h3>
 <p>命令行环境进入 hello 目录，输入 <code>wa build</code> 将在 output 目录构建出 wasm 模块：</p>
 <pre><code>$ wa build
 $ tree output/
@@ -251,7 +375,7 @@ output/
 ...
 </code></pre>
 <p>如果不带参赛执行 <code>wa run</code> 命令，表示编译并执行当前凹语言工程，会先构建出 <code>output/hello.wasm</code> 然后再执行。</p>
-<h3 id="134-格式化代码"><a class="header" href="#134-格式化代码">1.3.4 格式化代码</a></h3>
+<h3>1.3.4 格式化代码</h3>
 <p><code>wa fmt</code> 命令用于格式化代码，其命令行帮助信息如下：</p>
 <pre><code>$ wa fmt -h
 NAME:
@@ -270,7 +394,7 @@ OPTIONS:
 <li><code>wa fmt path/...</code> 递归格式化指定路径的凹语言文件，含子目录</li>
 </ul>
 <p>如果不指定参数，则默认格式化当前目录下全部的凹语言文件。如果当前目录属于凹语言工程中，则默认格式化全部子目录的凹语言文件。</p>
-<h3 id="135-单元测试"><a class="header" href="#135-单元测试">1.3.5 单元测试</a></h3>
+<h3>1.3.5 单元测试</h3>
 <p>默认生成的工程会有一个 <code>src/zz_test.wa</code> 测试文件，内容如下：</p>
 <pre><code class="language-wa">func TestSum {
     assert(sum(100) == 5050, &quot;sum(100) failed&quot;)
@@ -288,20 +412,23 @@ func ExampleSum {
 <pre><code>$ wa test
 ok   myapp 104ms
 </code></pre>
-<h3 id="136-凹语言版本的-yacc"><a class="header" href="#136-凹语言版本的-yacc">1.3.6 凹语言版本的 yacc</a></h3>
+<h3>1.3.6 凹语言版本的 yacc</h3>
 <p>yacc 是用于生成语法解析器的程序，是编译器爱好者的工具。凹语言的 yacc 从 goyacc 移植而来，详细的用法可以参考凹语言官网碎碎念部分的 <a href="https://wa-lang.org/smalltalk/st0021.html">相关文章</a>。</p>
-<h3 id="137-打印-logo"><a class="header" href="#137-打印-logo">1.3.7 打印 Logo</a></h3>
+<h3>1.3.7 打印 Logo</h3>
 <p><code>wa logo</code> 可以输出一些文本格式的 Logo 图案，读者可以通过 <code>wa logo -h</code> 命令帮助自行探索。</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                                                    <a rel="prev" href="../../chs/1.安装及入门/1.2.安装凹语言.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        
+                            <a rel="prev" href="../../chs/1.安装及入门/1.2.安装凹语言.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
-                                                    <a rel="next" href="../../chs/1.安装及入门/1.4.工程目录结构.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        
+                            <!-- ../../chs/1.安装及入门/1.4.工程目录结构.html -->
+                            <a rel="next" href="../../chs/1.安装及入门/1.4.工程目录结构.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -311,35 +438,28 @@ ok   myapp 104ms
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                                    <a rel="prev" href="../../chs/1.安装及入门/1.2.安装凹语言.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                
+                    <a rel="prev" href="../../chs/1.安装及入门/1.2.安装凹语言.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
-                                    <a rel="next" href="../../chs/1.安装及入门/1.4.工程目录结构.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                
+                    <a rel="next" href="../../chs/1.安装及入门/1.4.工程目录结构.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                            </nav>
+                
+            </nav>
 
         </div>
 
-        
-        
-        
-                <script type="text/javascript">
+        <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
-        
-                <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
-        
         <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
-        
     </body>
 </html>
