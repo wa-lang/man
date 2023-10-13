@@ -1,4 +1,4 @@
-name: mdbook
+name: mnbook
 on:
   push:
     branches:
@@ -24,7 +24,7 @@ jobs:
           go-version: 1.17
 
       - run: go version
-      - run: go go install github.com/wa-lang/mnbook@latest
+      - run: go install github.com/wa-lang/mnbook@latest
 
       - run: make build
 
