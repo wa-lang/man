@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh" class="sidebar-visible no-js light">
     <head>
-        <!-- Book generated using mnbook-go -->
+        <!-- Book generated using https://github.com/wa-lang/mnbook -->
         <meta charset="UTF-8">
         <title>整数 - 凹语言手册</title>
         <!-- Custom HTML head -->
@@ -329,7 +329,7 @@
 <li><code>&amp;</code>：按位取与，两个操作数类型必须一致，返回值类型与操作数一致；</li>
 <li><code>|</code>：按位取或，两个操作数类型必须一致，返回值类型与操作数一致；</li>
 <li><code>^</code>：按位取异或，两个操作数类型必须一致，返回值类型与操作数一致；</li>
-<li><code>&amp;^</code>：按位清空，两个操作数类型必须一致，返回值类型与操作数一致。对 <code>z = x ^&amp; y</code>，设 <code>xn</code>、<code>yn</code>、<code>zn</code> 分别为 <code>x</code>、<code>y</code>、<code>z</code> 的第n位，则当 <code>yn</code> 为1时 <code>zn</code> 为0，否则 <code>zn</code> 等于 <code>xn</code>。该运算等价于 <code>z = x &amp; (^y)</code>；</li>
+<li><code>&amp;^</code>：按位清空，两个操作数类型必须一致，返回值类型与操作数一致。对 <code>z = x &amp;^ y</code>，设 <code>xn</code>、<code>yn</code>、<code>zn</code> 分别为 <code>x</code>、<code>y</code>、<code>z</code> 的第n位，则当 <code>yn</code> 为1时 <code>zn</code> 为0，否则 <code>zn</code> 等于 <code>xn</code>。该运算等价于 <code>z = x &amp; (^y)</code>；</li>
 <li><code>&lt;&lt;</code>：左移，对 <code>z = x &lt;&lt; y</code>，<code>z</code> 的类型与 <code>x</code> 一致，<code>y</code> 必须为大于0的整数，移位时低位补0；</li>
 <li><code>&gt;&gt;</code>：右移，对 <code>z = x &gt;&gt; y</code>，<code>z</code> 的类型与 <code>x</code> 一致，<code>y</code> 必须为大于0的整数，移位时高位补0。</li>
 </ul>

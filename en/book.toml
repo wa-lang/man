@@ -1,0 +1,11 @@
+[book]
+title = "Wa-lang's Manual"
+authors = ["The Wa Authors"]
+description = "Wa-lang's Manual"
+src = "."
+language = "en"
+
+[output.html]
+git-repository-url = "https://github.com/wa-lang/man"
+edit-url-template = "https://github.com/wa-lang/man/edit/master/en/{path}"
+git-repository-icon = "fa-github"

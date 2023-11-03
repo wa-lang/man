@@ -1,0 +1,11 @@
+[book]
+title = "凹语言手册"
+authors = ["凹语言开发组"]
+description = "凹语言手册"
+src = "."
+language = "zh_CN"
+
+[output.html]
+git-repository-url = "https://gitee.com/wa-lang/wa"
+edit-url-template = "https://gitee.com/wa-lang/man/edit/master/{path}"
+git-repository-icon = "fa-github"

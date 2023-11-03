@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh" class="sidebar-visible no-js light">
     <head>
-        <!-- Book generated using mnbook-go -->
+        <!-- Book generated using https://github.com/wa-lang/mnbook -->
         <meta charset="UTF-8">
         <title>Integers - Wa-lang's Manual</title>
         <!-- Custom HTML head -->
@@ -320,7 +320,7 @@
 <li><code>&amp;</code>: bitwise AND, the two operand types must be consistent, the type of return value is same with operands;</li>
 <li><code>|</code>: Bitwise OR, the two operand types must be consistent, the type of return value is same with operands;</li>
 <li><code>^</code>: Bitwise XOR, the two operand types must be consistent, the type of return value is same with operands;</li>
-<li><code>&amp;^</code>: clear bitwise, the two operand types must be consistent, the type of return value is same with operands. For <code>z = x ^&amp; y</code>, let <code>xn</code>, <code>yn</code>, <code>zn</code> be the nth bit of <code>x</code>, <code>y</code>, <code>z</code> respectively, then when <code>yn</code> is 1, <code>zn </code> is 0, otherwise <code>zn</code> is equal to <code>xn</code>. This operation is equivalent to <code>z = x &amp; (^y)</code>;</li>
+<li><code>&amp;^</code>: clear bitwise, the two operand types must be consistent, the type of return value is same with operands. For <code>z = x &amp;^ y</code>, let <code>xn</code>, <code>yn</code>, <code>zn</code> be the nth bit of <code>x</code>, <code>y</code>, <code>z</code> respectively, then when <code>yn</code> is 1, <code>zn </code> is 0, otherwise <code>zn</code> is equal to <code>xn</code>. This operation is equivalent to <code>z = x &amp; (^y)</code>;</li>
 <li><code>&lt;&lt;</code>: Left shift, for <code>z = x &lt;&lt; y</code>, the type of <code>z</code> is consistent with <code>x</code>, <code>y</code> must be an integer greater than 0, and the low-order bit is filled with 0 when shifting;</li>
 <li><code>&gt;&gt;</code>: Right shift, for <code>z = x &gt;&gt; y</code>, the type of <code>z</code> is consistent with <code>x</code>, <code>y</code> must be an integer greater than 0, and the high bit is filled with 0 when shifting.</li>
 </ul>

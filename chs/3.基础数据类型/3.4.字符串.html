@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh" class="sidebar-visible no-js light">
     <head>
-        <!-- Book generated using mnbook-go -->
+        <!-- Book generated using https://github.com/wa-lang/mnbook -->
         <meta charset="UTF-8">
         <title>字符串 - 凹语言手册</title>
         <!-- Custom HTML head -->
@@ -296,7 +296,7 @@
 <pre><code class="language-wa">    s := &quot;你好&quot;
     println(s[1:3]) // ��
 </code></pre>
-<p><code>s[m:n]</code> 用法从第<code>n</code>个字节处开始截取，返回的字串长度为 <code>n-m</code> 字节。若省略 <code>m</code> 则表示从字符串开始截取，若省略 <code>n</code> 则表示截取至字符串末尾，例如：</p>
+<p><code>s[m:n]</code> 用法从第<code>m</code>个字节处开始截取，返回的字串长度为 <code>n-m</code> 字节。若省略 <code>m</code> 则表示从字符串开始截取，若省略 <code>n</code> 则表示截取至字符串末尾，例如：</p>
 <pre><code class="language-wa">    s := &quot;abcdefg&quot;
     println(s[:3]) // abc
     println(s[3:]) // defg

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh" class="sidebar-visible no-js light">
     <head>
-        <!-- Book generated using mnbook-go -->
+        <!-- Book generated using https://github.com/wa-lang/mnbook -->
         <meta charset="UTF-8">
         <title>局部变量声明 - 凹语言手册</title>
         <!-- Custom HTML head -->
@@ -277,12 +277,12 @@
 <p>第2章介绍了全局变量和常量声明，同样常用的还有局部变量（函数内部定义的变量）声明，它的一般语法为：</p>
 <pre><code class="language-wa">局部变量名: 数据类型 = 初始值
 </code></pre>
-<p>与全部变量和常量不同的是：局部变量的声明不以关键字开始；在声明局部变量时，如果省略 <code>= 初始值</code> 部分，则该变量将以0值初始化，如：</p>
+<p>与全局变量和常量不同的是：局部变量的声明不以关键字开始；在声明局部变量时，如果省略 <code>= 初始值</code> 部分，则该变量将以0值初始化，如：</p>
 <pre><code class="language-wa">    aI32: i32 = 42
     aString: string = &quot;你好&quot;
     aF32: f32  // 0.0
 </code></pre>
-<p>另一种常用的声明局部变量的语法使用快捷定义符 <code>:=</code> ，语法如下：</p>
+<p>另一种常用的声明局部变量的语法是使用快捷定义符 <code>:=</code> ，语法如下：</p>
 <pre><code class="language-wa">局部变量名 := 表达式
 </code></pre>
 <p>使用这种写法时变量的类型将与快捷定义符右侧表达式的类型保持一致，且表达式的值将被赋为该局部变量的初始值，如：</p>
