@@ -1,10 +1,10 @@
 default:
-	mdbook serve
+	mnbook serve
 
 build:
-	-rm ../book/en
+	-rm -rf ../book/en
 	mkdir -p ../book/en
-	mdbook build -d ../book/en
+	mnbook build && mv ./book ./en && mv ./en ../book/
 	-rm ../book/en/.gitignore
 
 clean:

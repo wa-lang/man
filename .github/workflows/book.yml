@@ -1,4 +1,4 @@
-name: mdbook
+name: mnbook
 on:
   push:
     branches:
@@ -18,11 +18,13 @@ jobs:
       - name: Git checkout
         uses: actions/checkout@v2
 
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1
+      - name: Set up Go
+        uses: actions/setup-go@v2
         with:
-          mdbook-version: '0.4.10'
-          # mdbook-version: 'latest'
+          go-version: 1.21
+
+      - run: go version
+      - run: go install github.com/wa-lang/mnbook@latest
 
       - run: make build
 

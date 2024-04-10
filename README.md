@@ -1,6 +1,6 @@
 # Wa-lang's Manual
 
-![](en/cover.png)
+<img width="520px"  height="660px" src="en/cover.svg" />
 
 - Online manual：[https://wa-lang.github.io/man/en/](https://wa-lang.github.io/man/en/)
 - Online manual(Chinese)：[https://wa-lang.org/man/](https://wa-lang.org/man/)
@@ -8,7 +8,7 @@
 
 # 凹语言手册
 
-![](cover.png)
+<img width="520px"  height="660px" src="cover.svg" />
 
 - 在线地址：[https://wa-lang.org/man/](https://wa-lang.org/man/)
 - 在线地址(英文)：[https://wa-lang.github.io/man/en/](https://wa-lang.github.io/man/en/)

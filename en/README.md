@@ -2,6 +2,8 @@
 
 ***Ending's law: "Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually."***
 
-![](cover.png)
+<img width="520px"  height="660px" src="cover.svg" />
 
-- Online manual：[https://wa-lang.org/man/](https://wa-lang.org/man/)
+- Github: [https://github.com/wa-lang/wa](https://github.com/wa-lang/wa)
+- Online manual: [https://wa-lang.github.io/man/en/](https://wa-lang.github.io/man/en/)
+- Online manual(Chinese): [https://wa-lang.org/man/](https://wa-lang.org/man/)
