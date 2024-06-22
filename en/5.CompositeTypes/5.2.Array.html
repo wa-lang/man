@@ -274,7 +274,7 @@
     println(a[0]) // 42
 </code></pre>
 <p>Like many languages, Wa-lang use the <code>x[M]</code> syntax to access specific elements within an array. When declaring an array variable, you can use the following methods to set the initial value of the array element:</p>
-<pre><code class="language-wa">    a: [3]i32 = 
+<pre><code class="language-wa">    a: [3]i32 = [3]i32{13, 42, 9527}
     println(a[0], a[1], a[2]) // 13 42 9527
 </code></pre>
 <p><code>[3]i32{13, 42, 9527}</code> declares an array literal, so the declaration of the array variable <code>a</code> in the above example can be simplified to:</p>
