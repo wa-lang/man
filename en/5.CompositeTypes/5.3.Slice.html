@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh" class="sidebar-visible no-js light">
     <head>
-        <!-- Book generated using https://github.com/wa-lang/mnbook -->
+        <!-- Book generated using https://github.com/wa-lang/wabook -->
         <meta charset="UTF-8">
         <title>Slice - Wa-lang's Manual</title>
         <!-- Custom HTML head -->
@@ -12,17 +12,17 @@
 
         <link rel="icon" href="../favicon.svg">
         <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
-        <link rel="stylesheet" href="../css/print.css" media="print">
+        <link rel="stylesheet" href="../static/wabook/css/variables.css">
+        <link rel="stylesheet" href="../static/wabook/css/general.css">
+        <link rel="stylesheet" href="../static/wabook/css/chrome.css">
+        <link rel="stylesheet" href="../static/wabook/css/print.css" media="print">
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../static/wabook/FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../static/wabook/fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" href="../static/wabook/highlight.css">
+        <link rel="stylesheet" href="../static/wabook/tomorrow-night.css">
+        <link rel="stylesheet" href="../static/wabook/ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
     </head>
@@ -36,15 +36,15 @@
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
-                var theme = localStorage.getItem('mnbook-theme');
-                var sidebar = localStorage.getItem('mnbook-sidebar');
+                var theme = localStorage.getItem('wabook-theme');
+                var sidebar = localStorage.getItem('wabook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mnbook-theme', theme.slice(1, theme.length - 1));
+                    localStorage.setItem('wabook-theme', theme.slice(1, theme.length - 1));
                 }
 
                 if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mnbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                    localStorage.setItem('wabook-sidebar', sidebar.slice(1, sidebar.length - 1));
                 }
             } catch (e) { }
         </script>
@@ -52,7 +52,7 @@
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script type="text/javascript">
             var theme;
-            try { theme = localStorage.getItem('mnbook-theme'); } catch(e) { }
+            try { theme = localStorage.getItem('wabook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
@@ -66,7 +66,7 @@
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mnbook-sidebar'); } catch(e) { }
+                try { sidebar = localStorage.getItem('wabook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             }
             html.classList.remove('sidebar-visible');
@@ -261,7 +261,12 @@
                 </script>
 
                 <div id="content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
                     <main>
+                        
+
                         <p><em>The content on this page is written in Chinese, and then traslated into English by machine. More accurate traslations are welcome at: <a href="https://github.com/wa-lang/man/tree/master/en">https://github.com/wa-lang/man/tree/master/en</a></em></p>
 <p><em><strong>Ending's law: &quot;Any application that can be compiled to WebAssembly, will be compiled to WebAssembly eventually.&quot;</strong></em></p>
 <h2>5.3. Slice</h2>
@@ -359,6 +364,12 @@ make([]T, Len: int) =&gt; []T // Equivalent to make([]T, Len, Len)
 <li>No bounds checking was performed when using <code>[]</code> to get a new slice from an array or slice. This problem does not affect syntax compatibility. Subsequent corrections to this problem will not affect the existing source code. Developers using Wa-lang do not need to deal with this issue specially.</li>
 </ul>
 
+
+                        
+
+                        
+
+                        
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -397,11 +408,17 @@ make([]T, Len: int) =&gt; []T // Equivalent to make([]T, Len, Len)
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/wabook/mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/wabook/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/wabook/highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../static/wabook/book.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+            var pagePath = "5.CompositeTypes/5.3.Slice.md"
+        </script>
 
         <!-- Custom JS scripts -->
+        
+
     </body>
 </html>

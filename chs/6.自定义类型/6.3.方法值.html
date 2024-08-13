@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh" class="sidebar-visible no-js light">
     <head>
-        <!-- Book generated using https://github.com/wa-lang/mnbook -->
+        <!-- Book generated using https://github.com/wa-lang/wabook -->
         <meta charset="UTF-8">
         <title>方法值 - 凹语言手册</title>
         <!-- Custom HTML head -->
@@ -12,17 +12,17 @@
 
         <link rel="icon" href="../../favicon.svg">
         <link rel="shortcut icon" href="../../favicon.png">
-        <link rel="stylesheet" href="../../css/variables.css">
-        <link rel="stylesheet" href="../../css/general.css">
-        <link rel="stylesheet" href="../../css/chrome.css">
-        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <link rel="stylesheet" href="../../static/wabook/css/variables.css">
+        <link rel="stylesheet" href="../../static/wabook/css/general.css">
+        <link rel="stylesheet" href="../../static/wabook/css/chrome.css">
+        <link rel="stylesheet" href="../../static/wabook/css/print.css" media="print">
         <!-- Fonts -->
-        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <link rel="stylesheet" href="../../static/wabook/FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../static/wabook/fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css">
-        <link rel="stylesheet" href="../../tomorrow-night.css">
-        <link rel="stylesheet" href="../../ayu-highlight.css">
+        <link rel="stylesheet" href="../../static/wabook/highlight.css">
+        <link rel="stylesheet" href="../../static/wabook/tomorrow-night.css">
+        <link rel="stylesheet" href="../../static/wabook/ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
     </head>
@@ -36,15 +36,15 @@
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
-                var theme = localStorage.getItem('mnbook-theme');
-                var sidebar = localStorage.getItem('mnbook-sidebar');
+                var theme = localStorage.getItem('wabook-theme');
+                var sidebar = localStorage.getItem('wabook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mnbook-theme', theme.slice(1, theme.length - 1));
+                    localStorage.setItem('wabook-theme', theme.slice(1, theme.length - 1));
                 }
 
                 if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mnbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                    localStorage.setItem('wabook-sidebar', sidebar.slice(1, sidebar.length - 1));
                 }
             } catch (e) { }
         </script>
@@ -52,7 +52,7 @@
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script type="text/javascript">
             var theme;
-            try { theme = localStorage.getItem('mnbook-theme'); } catch(e) { }
+            try { theme = localStorage.getItem('wabook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
@@ -66,7 +66,7 @@
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mnbook-sidebar'); } catch(e) { }
+                try { sidebar = localStorage.getItem('wabook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             }
             html.classList.remove('sidebar-visible');
@@ -272,7 +272,12 @@
                 </script>
 
                 <div id="content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
                     <main>
+                        
+
                         <h2>6.3. 方法值</h2>
 <p>由于方法也是函数，因此可以仿照 4.2 节的模式使用它，例如：</p>
 <pre><code class="language-wa">// 版权 @2023 凹语言 作者。保留所有权利。
@@ -318,6 +323,12 @@ func main {
 <p><code>v.Scale</code>、<code>v.Sub</code> 是结构体变量 <code>v</code> 的方法，当它们被当成值来使用时，被称为<strong>方法值</strong>，比如上例中，它们先后被赋值给了 <code>op</code>。方法值可以像普通函数值那样被调用，并且调用时可以影响方法上关联的引用（就如同直接调用原始方法那样），由此可见方法值捕获了原始对象引用，是<code>带状态</code>的，在这一点上，方法值与闭包存在相似性。</p>
 <p>从上例中还可以得知：函数值变量（比如例中的 <code>op</code>），既可以存储函数值，也可以存储方法值，对调用方（caller）来说，二者没有区别。</p>
 
+
+                        
+
+                        
+
+                        
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -356,11 +367,17 @@ func main {
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../static/wabook/mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../static/wabook/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../static/wabook/highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../static/wabook/book.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+            var pagePath = "chs/6.自定义类型/6.3.方法值.md"
+        </script>
 
         <!-- Custom JS scripts -->
+        
+
     </body>
 </html>

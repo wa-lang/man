@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="zh" class="sidebar-visible no-js light">
     <head>
-        <!-- Book generated using https://github.com/wa-lang/mnbook -->
+        <!-- Book generated using https://github.com/wa-lang/wabook -->
         <meta charset="UTF-8">
         <title>空接口-万能封包器 - 凹语言手册</title>
         <!-- Custom HTML head -->
@@ -12,17 +12,17 @@
 
         <link rel="icon" href="../../favicon.svg">
         <link rel="shortcut icon" href="../../favicon.png">
-        <link rel="stylesheet" href="../../css/variables.css">
-        <link rel="stylesheet" href="../../css/general.css">
-        <link rel="stylesheet" href="../../css/chrome.css">
-        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <link rel="stylesheet" href="../../static/wabook/css/variables.css">
+        <link rel="stylesheet" href="../../static/wabook/css/general.css">
+        <link rel="stylesheet" href="../../static/wabook/css/chrome.css">
+        <link rel="stylesheet" href="../../static/wabook/css/print.css" media="print">
         <!-- Fonts -->
-        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <link rel="stylesheet" href="../../static/wabook/FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../static/wabook/fonts/fonts.css">
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css">
-        <link rel="stylesheet" href="../../tomorrow-night.css">
-        <link rel="stylesheet" href="../../ayu-highlight.css">
+        <link rel="stylesheet" href="../../static/wabook/highlight.css">
+        <link rel="stylesheet" href="../../static/wabook/tomorrow-night.css">
+        <link rel="stylesheet" href="../../static/wabook/ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
     </head>
@@ -36,15 +36,15 @@
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
         <script type="text/javascript">
             try {
-                var theme = localStorage.getItem('mnbook-theme');
-                var sidebar = localStorage.getItem('mnbook-sidebar');
+                var theme = localStorage.getItem('wabook-theme');
+                var sidebar = localStorage.getItem('wabook-sidebar');
 
                 if (theme.startsWith('"') && theme.endsWith('"')) {
-                    localStorage.setItem('mnbook-theme', theme.slice(1, theme.length - 1));
+                    localStorage.setItem('wabook-theme', theme.slice(1, theme.length - 1));
                 }
 
                 if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
-                    localStorage.setItem('mnbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                    localStorage.setItem('wabook-sidebar', sidebar.slice(1, sidebar.length - 1));
                 }
             } catch (e) { }
         </script>
@@ -52,7 +52,7 @@
         <!-- Set the theme before any content is loaded, prevents flash -->
         <script type="text/javascript">
             var theme;
-            try { theme = localStorage.getItem('mnbook-theme'); } catch(e) { }
+            try { theme = localStorage.getItem('wabook-theme'); } catch(e) { }
             if (theme === null || theme === undefined) { theme = default_theme; }
             var html = document.querySelector('html');
             html.classList.remove('no-js')
@@ -66,7 +66,7 @@
             var html = document.querySelector('html');
             var sidebar = 'hidden';
             if (document.body.clientWidth >= 1080) {
-                try { sidebar = localStorage.getItem('mnbook-sidebar'); } catch(e) { }
+                try { sidebar = localStorage.getItem('wabook-sidebar'); } catch(e) { }
                 sidebar = sidebar || 'visible';
             }
             html.classList.remove('sidebar-visible');
@@ -272,7 +272,12 @@
                 </script>
 
                 <div id="content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
                     <main>
+                        
+
                         <h2>7.1. 空接口-万能封包器</h2>
 <p>在凹语言中，最简单的接口是空接口，既 <code>interface {}</code>，声明接口类型变量的方法跟其它类型一致，例如下面的代码声明了一个名为 <code>i</code> 的空接口变量：</p>
 <pre><code class="language-wa">    i: interface{}
@@ -371,6 +376,12 @@ func printConcrete(iface: interface{}) {
 <p>本文中“<strong>空接口</strong>”指 <code>interface{}</code>，既方法集为空的接口类型，下一节中的“<strong>非空接口</strong>”指方法集不为空的接口类型；当我们要描述值为0的接口值时，将使用“<strong>0值接口</strong>”，或“<strong>nil接口</strong>”，请注意区分。</p>
 </blockquote>
 
+
+                        
+
+                        
+
+                        
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
@@ -409,11 +420,17 @@ func printConcrete(iface: interface{}) {
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../static/wabook/mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../static/wabook/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../static/wabook/highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../static/wabook/book.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+            var pagePath = "chs/7.接口/7.1.空接口-万能封包器.md"
+        </script>
 
         <!-- Custom JS scripts -->
+        
+
     </body>
 </html>
