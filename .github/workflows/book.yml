@@ -1,4 +1,4 @@
-name: mnbook
+name: wabook
 on:
   push:
     branches:
@@ -24,7 +24,7 @@ jobs:
           go-version: 1.21
 
       - run: go version
-      - run: go install github.com/wa-lang/mnbook@latest
+      - run: go install github.com/wa-lang/wabook@latest
 
       - run: make build
 
