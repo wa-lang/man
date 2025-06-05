@@ -1,0 +1,488 @@
+<!DOCTYPE HTML>
+<html lang="zh" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using https://github.com/wa-lang/wabook -->
+        <meta charset="UTF-8">
+        <title>命令行功能 - 凹语言手册</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../static/wabook/css/variables.css">
+        <link rel="stylesheet" href="../../static/wabook/css/general.css">
+        <link rel="stylesheet" href="../../static/wabook/css/chrome.css">
+        <link rel="stylesheet" href="../../static/wabook/css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../static/wabook/FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../static/wabook/fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../static/wabook/highlight.css">
+        <link rel="stylesheet" href="../../static/wabook/tomorrow-night.css">
+        <link rel="stylesheet" href="../../static/wabook/ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+    </head>
+    <body>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('wabook-theme');
+                var sidebar = localStorage.getItem('wabook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('wabook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('wabook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('wabook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('wabook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter">
+  <li class="chapter-item expanded ">
+    <a href="../../index.html" >凹语言手册</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../../preface.html" >前言</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/1.概述/readme.html" ><strong aria-hidden="true">1.</strong> 概述</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/2.安装及入门/readme.html" ><strong aria-hidden="true">2.</strong> 安装及入门</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/2.安装及入门/2.1.安装凹语言.html" ><strong aria-hidden="true">2.1.</strong> 安装凹语言</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/2.安装及入门/2.2.你好凹语言.html" ><strong aria-hidden="true">2.2.</strong> 你好，凹语言</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/2.安装及入门/2.3.命令行功能.html" class="active"><strong aria-hidden="true">2.3.</strong> 命令行功能</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/2.安装及入门/2.4.工程目录结构.html" ><strong aria-hidden="true">2.4.</strong> 工程目录结构</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/2.安装及入门/2.5.IDE插件.html" ><strong aria-hidden="true">2.5.</strong> IDE插件</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/3.程序结构/readme.html" ><strong aria-hidden="true">3.</strong> 程序结构</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/3.程序结构/3.1.全局声明.html" ><strong aria-hidden="true">3.1.</strong> 全局声明</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/3.程序结构/3.2.全局变量声明.html" ><strong aria-hidden="true">3.2.</strong> 全局变量声明</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/3.程序结构/3.3.函数声明.html" ><strong aria-hidden="true">3.3.</strong> 函数声明</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/3.程序结构/3.4.常量声明.html" ><strong aria-hidden="true">3.4.</strong> 常量声明</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/3.程序结构/3.5.导入声明.html" ><strong aria-hidden="true">3.5.</strong> 导入声明</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/4.基础数据类型/readme.html" ><strong aria-hidden="true">4.</strong> 基础数据类型</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/4.基础数据类型/4.1.局部变量声明.html" ><strong aria-hidden="true">4.1.</strong> 局部变量声明</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/4.基础数据类型/4.2.整数.html" ><strong aria-hidden="true">4.2.</strong> 整数</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/4.基础数据类型/4.3.浮点数.html" ><strong aria-hidden="true">4.3.</strong> 浮点数</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/4.基础数据类型/4.4.字符串.html" ><strong aria-hidden="true">4.4.</strong> 字符串</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/5.函数/readme.html" ><strong aria-hidden="true">5.</strong> 函数</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/5.函数/5.1.函数调用.html" ><strong aria-hidden="true">5.1.</strong> 函数调用</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/5.函数/5.2.函数值.html" ><strong aria-hidden="true">5.2.</strong> 函数值</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/5.函数/5.3.匿名函数及闭包.html" ><strong aria-hidden="true">5.3.</strong> 匿名函数及闭包</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/5.函数/5.4.条件语句.html" ><strong aria-hidden="true">5.4.</strong> 条件语句</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/5.函数/5.5.循环语句.html" ><strong aria-hidden="true">5.5.</strong> 循环语句</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/5.函数/5.6.分支语句.html" ><strong aria-hidden="true">5.6.</strong> 分支语句</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/6.复合数据类型/readme.html" ><strong aria-hidden="true">6.</strong> 复合数据类型</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/6.复合数据类型/6.1.引用.html" ><strong aria-hidden="true">6.1.</strong> 引用</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/6.复合数据类型/6.2.数组.html" ><strong aria-hidden="true">6.2.</strong> 数组</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/6.复合数据类型/6.3.切片.html" ><strong aria-hidden="true">6.3.</strong> 切片</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/7.自定义类型/readme.html" ><strong aria-hidden="true">7.</strong> 自定义类型</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/7.自定义类型/7.1.结构体.html" ><strong aria-hidden="true">7.1.</strong> 结构体</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/7.自定义类型/7.2.方法.html" ><strong aria-hidden="true">7.2.</strong> 方法</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/7.自定义类型/7.3.方法值.html" ><strong aria-hidden="true">7.3.</strong> 方法值</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/7.自定义类型/7.4.嵌入结构体.html" ><strong aria-hidden="true">7.4.</strong> 嵌入结构体</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/7.自定义类型/7.5.匿名结构体.html" ><strong aria-hidden="true">7.5.</strong> 匿名结构体</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/8.接口/readme.html" ><strong aria-hidden="true">8.</strong> 接口</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/8.接口/8.1.空接口-万能封包器.html" ><strong aria-hidden="true">8.1.</strong> 空接口-万能封包器</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/8.接口/8.2.非空接口.html" ><strong aria-hidden="true">8.2.</strong> 非空接口</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/8.接口/8.3.类型断言总结.html" ><strong aria-hidden="true">8.3.</strong> 类型断言总结</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/8.接口/8.4.接口的其它特性.html" ><strong aria-hidden="true">8.4.</strong> 接口的其它特性</a>
+    </li>
+  </ol>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/9.与宿主环境交互/readme.html" ><strong aria-hidden="true">9.</strong> 与宿主环境交互</a>
+  </li>
+  <li class="chapter-item expanded ">
+    <a href="../../chs/10.附录/readme.html" ><strong aria-hidden="true">10.</strong> 附录</a>
+  </li>
+  <ol class="section">
+    <li class="chapter-item expanded ">
+      <a href="../../chs/10.附录/a-spec.html" ><strong aria-hidden="true">10.1.</strong> 语言规范</a>
+    </li>
+    <li class="chapter-item expanded ">
+      <a href="../../chs/10.附录/b-std.html" ><strong aria-hidden="true">10.2.</strong> 标准库</a>
+    </li>
+  </ol>
+</ol>
+
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                    </div>
+
+                    <h1 class="menu-title"><a href="../../index.html">凹语言手册</a></h1>
+
+                    <div class="right-buttons">
+                        <a href="https://gitee.com/wa-lang/wa" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://gitee.com/wa-lang/man/edit/master/chs/2.安装及入门/2.3.命令行功能.md" title="Suggest an edit" aria-label="Suggest an edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <!-- Page table of contents -->
+                    <div class="sidetoc"><nav class="pagetoc"></nav></div>
+
+                    <main>
+                        
+
+                        <h2>2.3. 命令行功能</h2>
+<p>本节介绍 <code>wa</code> 命令主要功能。</p>
+<h3>2.3.1. 帮助信息</h3>
+<p>输入 <code>wa</code> 命令或 <code>wa -h</code> 可查看命令行帮助信息，如下：</p>
+<pre><code>$ wa
+NAME:
+   Wa - Wa is a tool for managing Wa source code.
+
+USAGE:
+   wa [global options] command [command options] [arguments...]
+
+VERSION:
+   v0.8.1-mvp
+
+COMMANDS:
+   play   start Wa playground
+   init   init a sketch Wa module
+   build  compile Wa source code
+   run    compile and run Wa program
+   fmt    format Wa source code file
+   test   test Wa packages
+   yacc   generates parsers for LALR(1) grammars
+   logo   print Wa text format logo
+
+GLOBAL OPTIONS:
+   --debug, -d              set debug mode (default: false)
+   --trace value, -t value  set trace mode (*|app|compiler|loader)
+   --help, -h               show help (default: false)
+   --version, -v            print the version (default: false)
+
+COPYRIGHT:
+   Copyright 2018 The Wa Authors. All rights reserved.
+
+See &quot;https://wa-lang.org&quot; for more information.
+</code></pre>
+<p>主要有以下子命令：</p>
+<ul>
+<li>play：启动本地版本的 playground；</li>
+<li>init：初始化一个凹语言工程；</li>
+<li>build：编译凹语言程序；</li>
+<li>run：编译并执行凹语言程序；</li>
+<li>fmt：格式化凹语言源代码文件；</li>
+<li>test：执行凹语言工程的单元测试；</li>
+<li>yacc：凹语言版本的 yacc，用于生成 LALR(1) 语法规则的解析器代码；</li>
+<li>logo：打印凹语言文字版本的Logo。</li>
+</ul>
+<p>其中 build 命令在 1.1.1 节展示过，play 命令已经在 1.2.5 节展示过，本节简要介绍之外的子命令。</p>
+<h3>2.3.2 初始化工程</h3>
+<p>在 1.1.1 节已经展示过 <code>wa run hello.wa</code> 执行一个独立文件的凹语言程序。但是单文件的凹语言程序有一个巨大的限制——它只有一个文件且不能引用非标准库的代码。对于更大的凹程序推荐用凹工程的方式组织。</p>
+<p>使用 <code>wa init</code> 命令可以初始化一个凹工程，先看看命令行帮助：</p>
+<pre><code>$ wa init -h
+NAME:
+   wa init - init a sketch Wa module
+
+USAGE:
+   wa init [command options] [arguments...]
+
+OPTIONS:
+   --name value, -n value     set app name (default: &quot;hello&quot;)
+   --pkgpath value, -p value  set pkgpath file (default: &quot;myapp&quot;)
+   --update, -u               update example (default: false)
+   --help, -h                 show help (default: false)
+</code></pre>
+<p>该命令有 <code>-name</code> 和 <code>-pkgpath</code> 两个重要的参数，分别对应工程的名字和对应的包路径。每个参数都有默认值，可以用 <code>wa init</code> 生成一个 hello 工程。</p>
+<pre><code>$ wa init
+$ tree hello
+hello
+├── LICENSE
+├── README.md
+├── src
+│   ├── main.wa
+│   ├── mymath
+│   │   └── math.wa
+│   ├── mypkg
+│   │   └── pkg.wa
+│   └── zz_test.wa
+├── vendor
+│   └── 3rdparty
+│       └── pkg
+│           └── pkg.wa
+└── wa.mod
+
+7 directories, 8 files
+</code></pre>
+<p>工程的结构在 1.4 节介绍。</p>
+<h3>2.3.3 编译和执行</h3>
+<p>命令行环境进入 hello 目录，输入 <code>wa build</code> 将在 output 目录构建出 wasm 模块：</p>
+<pre><code>$ wa build
+$ tree output/
+output/
+├── hello.wasm
+└── hello.wat
+
+1 directory, 2 files
+</code></pre>
+<p>默认输出的是 WASI 规范的 <code>output/hello.wat</code> 和 <code>output/hello.wasm</code> 文件。可以用标准的工具执行输出的 wasm 模块。也可以用 <code>wa</code> 命令执行：</p>
+<pre><code>$ wa run ./output/hello.wasm
+你好，凹语言！
+5050
+...
+</code></pre>
+<p>如果不带参数执行 <code>wa run</code> 命令，表示编译并执行当前凹语言工程，会先构建出 <code>output/hello.wasm</code> 然后再执行。</p>
+<h3>2.3.4 格式化代码</h3>
+<p><code>wa fmt</code> 命令用于格式化代码，其命令行帮助信息如下：</p>
+<pre><code>$ wa fmt -h
+NAME:
+   wa fmt - format Wa source code file
+
+USAGE:
+   wa fmt [command options] [&lt;file.wa&gt;|&lt;path&gt;|&lt;path&gt;/...]
+
+OPTIONS:
+   --help, -h  show help (default: false)
+</code></pre>
+<p>命令行参数是要进行格式化的路径：</p>
+<ul>
+<li><code>wa fmt file.wa</code> 格式化指定的凹语言文件</li>
+<li><code>wa fmt path</code> 格式化指定目录下的全部凹语言文件</li>
+<li><code>wa fmt path/...</code> 递归格式化指定路径的凹语言文件，含子目录</li>
+</ul>
+<p>如果不指定参数，则默认格式化当前目录下全部的凹语言文件。如果当前目录属于凹语言工程中，则默认格式化全部子目录的凹语言文件。</p>
+<h3>2.3.5 单元测试</h3>
+<p>默认生成的工程会有一个 <code>src/zz_test.wa</code> 测试文件，内容如下：</p>
+<pre><code class="language-wa">func TestSum {
+    assert(sum(100) == 5050, &quot;sum(100) failed&quot;)
+}
+
+func ExampleSum {
+    println(sum(100))
+
+    // Output:
+    // 5050
+}
+</code></pre>
+<p>在 <code>TestSum</code> 测试函数中通过内置的 <code>assert</code> 函数测试 <code>sum(100)</code> 的结果为 5050。在 <code>ExampleSum</code> 示例测试函数中通过 <code>// Output:</code> 测试输出的内容符合期望的结果。</p>
+<p>在工程目录的命令行环境通过 <code>wa test</code> 命令执行测试：</p>
+<pre><code>$ wa test
+ok   myapp 104ms
+</code></pre>
+<h3>2.3.6 凹语言版本的 yacc</h3>
+<p>yacc 是用于生成语法解析器的程序，是编译器爱好者的工具。凹语言的 yacc 从 goyacc 移植而来，详细的用法可以参考凹语言官网碎碎念部分的 <a href="https://wa-lang.org/smalltalk/st0021.html">相关文章</a>。</p>
+<h3>2.3.7 打印 Logo</h3>
+<p><code>wa logo</code> 可以输出一些文本格式的 Logo 图案，读者可以通过 <code>wa logo -h</code> 命令帮助自行探索。</p>
+
+
+                        
+
+                        
+
+                        
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../../chs/2.安装及入门/2.2.你好凹语言.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                        
+                        
+                            <!-- ../../chs/2.安装及入门/2.4.工程目录结构.html -->
+                            <a rel="next" href="../../chs/2.安装及入门/2.4.工程目录结构.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../../chs/2.安装及入门/2.2.你好凹语言.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                
+                
+                    <a rel="next" href="../../chs/2.安装及入门/2.4.工程目录结构.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+                
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../static/wabook/mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../static/wabook/clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../static/wabook/highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../static/wabook/book.js" type="text/javascript" charset="utf-8"></script>
+        
+        <script type="text/javascript" charset="utf-8">
+            var pagePath = "chs/2.安装及入门/2.3.命令行功能.md"
+        </script>
+
+        <!-- Custom JS scripts -->
+        
+
+    </body>
+</html>

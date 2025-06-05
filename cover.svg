@@ -30,14 +30,23 @@
 <text x="320" y="620" fill="black" font-style="italic" font-size="20px">凹语言开发组 著</text>
 
 <!-- 中间图像 -->
-<!--
-// 外部图像Chrome直接打开可以, 但是有些场景不能工作. 最终输出改成 Base64 内联.
-// base64 -i input-file -o output.txt
+<g transform="translate(140,280) scale(0.6,0.6)"
+fill="#000000" stroke="none">
 
-<image x="150" y="320" width="220" height="220" href="icons/logo-round-color-LightSeaGreen.svg" />
--->
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M50 70C50 58.9543 58.9543 50 70 50H130C141.046 50 150 58.9543 150 70V74V130V150H250V130V74V70C250 58.9543 258.954 50 270 50H330C341.046 50 350 58.9543 350 70V94V130V330C350 341.046 341.046 350 330 350H70C58.9543 350 50 341.046 50 330V130V94V70Z" fill="LightSeaGreen" />
 
-<image x="150" y="320" width="220" height="220" href="data:image/svg+xml;base64,
-CjwhLS0KLy8g54mI5p2DIEAyMDE5IOWHueivreiogCDkvZzogIXjgILkv53nlZnmiYDmnInmnYPliKnjgIIKLy8gaHR0cHM6Ly93YS1sYW5nLm9yZwotLT4KCjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIgoJdmlld0JveD0iMCAwIDQwMCA0MDAiIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAwIgoJc3R5bGU9ImJvcmRlcjogMHB4IHNvbGlkIHJlZCIKPgoKPHBhdGgKCXN0cm9rZT0ibm9uZSIgZmlsbD0iTGlnaHRTZWFHcmVlbiIKCWQ9Ik02MCw1MCBoOTAgdjEwMCBoMTAwIHYtMTAwIGg5MCBsMTAsMTAgdjI4MCBsLTEwLDEwIGgtMjgwIGwtMTAsLTEwIHYtMjgwIgovPgoKPHBhdGgKCXN0cm9rZT0ibm9uZSIgZmlsbD0id2hpdGUiCglkPSJNMTAwLDEwMCBtLTUsLTUgaDEwIHYxMCBoLTEwIgovPgoKPHBhdGgKCXN0cm9rZT0ibm9uZSIgZmlsbD0id2hpdGUiCglkPSJNNDAwLDEwMCBtLTEwMCwwIG0tNSwtNSBoMTAgdjEwIGgtMTAiCi8+Cgo8cGF0aAoJc3Ryb2tlPSJ3aGl0ZSIgZmlsbD0ibm9uZSIgc3Ryb2tlLXdpZHRoPSI4IiBzdHJva2UtbGluZWNhcD0icm91bmQiCglkPSJNMjAwLDIzMCBsMzQsMzQgbDM0LC0zNCBNMjAwLDIzMCBsLTM0LDM0IGwtMzQsLTM0IgovPgoKPC9zdmc+Cg==" />
+  <circle cx="100" cy="100" r="5" stroke="black" stroke-width="0" fill="white">
+    <animate attributeName="r" values="0;5;5;0" dur="1s" repeatCount="1" />
+  </circle>
+
+  <circle cx="300" cy="100" r="5" stroke="black" stroke-width="0" fill="white">
+    <animate attributeName="r" values="0;5;5;0" dur="1s" repeatCount="1" />
+  </circle>
+
+  <path d="M200 230L234 264L268 230M200 230L166 264L132 230" fill="none" stroke="white" stroke-width="8" stroke-linecap="round" stroke-dasharray="0,0,0,192">
+    <animate attributeType="XML" attributeName="stroke-dasharray" values="0,0,0,192;0,96,96,0; 192,0,0,0" keyTimes="0; 0.5;1" fill="freeze" dur="1.5s" repeatCount="1" />
+  </path>
+
+</g>
 
 </svg>
