@@ -5,8 +5,8 @@
 [Preface](preface.md)
 
 * [Install And Get Start](./1.InstallAndGetStart/readme.md)
-  - [hello world](./1.InstallAndGetStart/1.1.HelloWorld.md)
-  - [Install Wa-lang Compiler](./1.InstallAndGetStart/1.2.Install.md)
+  - [Install Wa-lang Compiler](./1.InstallAndGetStart/1.1.Install.md)
+  - [hello world](./1.InstallAndGetStart/1.2.HelloWorld.md)
   - [wa command line](./1.InstallAndGetStart/1.3.Command.md)
   - [Project directory structure](./1.InstallAndGetStart/1.4.ProjectStructure.md)
   - [Plug-ins for IDE](./1.InstallAndGetStart/1.5.Plugins.md)
