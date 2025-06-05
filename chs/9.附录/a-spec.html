@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using https://github.com/wa-lang/wabook -->
         <meta charset="UTF-8">
-        <title>附录 - 凹语言手册</title>
+        <title>语言规范 - 凹语言手册</title>
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
@@ -217,17 +217,14 @@
     </li>
   </ol>
   <li class="chapter-item expanded ">
-    <a href="../../chs/9.与宿主环境交互/readme.html" ><strong aria-hidden="true">9.</strong> 与宿主环境交互</a>
-  </li>
-  <li class="chapter-item expanded ">
-    <a href="../../chs/10.附录/readme.html" class="active"><strong aria-hidden="true">10.</strong> 附录</a>
+    <a href="../../chs/9.附录/readme.html" ><strong aria-hidden="true">9.</strong> 附录</a>
   </li>
   <ol class="section">
     <li class="chapter-item expanded ">
-      <a href="../../chs/10.附录/a-spec.html" ><strong aria-hidden="true">10.1.</strong> 语言规范</a>
+      <a href="../../chs/9.附录/a-spec.html" class="active"><strong aria-hidden="true">9.1.</strong> 语言规范</a>
     </li>
     <li class="chapter-item expanded ">
-      <a href="../../chs/10.附录/b-std.html" ><strong aria-hidden="true">10.2.</strong> 标准库</a>
+      <a href="../../chs/9.附录/b-std.html" ><strong aria-hidden="true">9.2.</strong> 标准库</a>
     </li>
   </ol>
 </ol>
@@ -262,7 +259,7 @@
                         <a href="https://gitee.com/wa-lang/wa" title="Git repository" aria-label="Git repository">
                             <i id="git-repository-button" class="fa fa-github"></i>
                         </a>
-                        <a href="https://gitee.com/wa-lang/man/edit/master/chs/10.附录/readme.md" title="Suggest an edit" aria-label="Suggest an edit">
+                        <a href="https://gitee.com/wa-lang/man/edit/master/chs/9.附录/a-spec.md" title="Suggest an edit" aria-label="Suggest an edit">
                             <i id="git-edit-button" class="fa fa-edit"></i>
                         </a>
                     </div>
@@ -284,8 +281,177 @@
                     <main>
                         
 
-                        <h1>附录</h1>
-<p>附录包含语法规范简介和标准库简介。</p>
+                        <h2>A. 语法规范</h2>
+<p>这里是简化的凹语言语法规范，主要是作为理解参考。</p>
+<h3>A.1 文件结构</h3>
+<p>凹语言是一个精心设计的语言，语法非常利于理解和解析。一个凹语言文件中，顶级的语法元素只有5种：import、type、const、var以及fn。每个文件的语法规范定义如下：</p>
+<pre><code>SourceFile    = { ImportDecl &quot;;&quot; } { TopLevelDecl &quot;;&quot; } .
+
+TopLevelDecl  = Declaration | FuncDecl | MethodDecl .
+Declaration   = ConstDecl | TypeDecl | GlobalDecl .
+</code></pre>
+<p>SourceFile表示一个凹源文件，由以下两个部分组成：ImportDec（导入声明）和TopLevelDecl（顶级声明）。其中TopLevelDecl由通用声明、函数声明和方法声明组成，通用声明再分为常量、类型和变量声明。</p>
+<p>导入语法如下：</p>
+<pre><code>ImportDecl  = &quot;import&quot; ( ImportSpec | &quot;(&quot; { ImportSpec &quot;;&quot; } &quot;)&quot; ) .
+ImportSpec  = ImportPath [ &quot;=&gt;&quot; PackageName ] .
+ImportPath  = string_lit .
+
+PackageName = identifier .
+</code></pre>
+<p>import 关键字用于导入包，导入的包还可以被重新命名（对应PackageName）。</p>
+<p>以下代码是一个凹源文件的对应例子：</p>
+<pre><code>// 凹语言例子
+
+import (&quot;a&quot;, &quot;b&quot;)
+
+type SomeType int
+const PI = 3.14
+global Length = 1 // 全局变量
+
+func main {
+    sum: int // 局部变量
+    println(sum)
+}
+</code></pre>
+<p>只要通过每行开头的不同关键字就可以明确属于那种声明类型。</p>
+<h3>A.2 函数和方法</h3>
+<p>函数是所有编程语言中的核心，因为只有函数的语句才有了计算的功能。凹语言的函数也是一种值数据，可以定义包级别的函数，也可以为自定义的类型定义方法，同时还可以在局部作用域内定义闭包函数。在顶级声明中包含函数和方法的声明，从语法角度看函数是没有接收者参数的方法特例。</p>
+<p>函数的语法规则如下：</p>
+<pre><code>FuncDecl     = &quot;func&quot; MethodName [ Signature ] [ FnBody ] .
+MethodDecl = &quot;func&quot; Receiver &quot;.&quot; MethodName [ Signature ] [ FnBody ] .
+
+MethodName     = identifier .
+Receiver       = identifier .
+Signature      = Parameters [ &quot;=&gt;&quot; Result ] .
+Result         = Parameters | &quot;:&quot; Type .
+Parameters     = &quot;(&quot; [ ParameterList [ &quot;,&quot; ] ] &quot;)&quot; .
+ParameterList  = ParameterDecl { &quot;,&quot; ParameterDecl } .
+ParameterDecl  = [ IdentifierList ] &quot;:&quot; [ &quot;...&quot; ] Type .
+</code></pre>
+<p>其中FnDecl表示函数，而MethodDecl表示方法。MethodDecl表示的方法规范比函数多了Receiver语法结构，Receiver表示方法的接收者参数。然后是MethodName表示的函数或方法名，Signature表示函数的签名（或者叫类型），最后是函数的主体。需要注意的是函数的签名只有输入参数和返回值部分，因此函数或方法的名字、以及方法的接收者类型都不是函数签名的组成部分。从以上定义还可以发现，Receiver、Parameters和Result都是ParameterList定义，因此有着相同的语法结构（在语法树中也是有着相同的结构）。</p>
+<p>下面是函数和方法的常见形式：</p>
+<pre><code># 函数声明
+func()
+func(x :int) =&gt; int
+func(a, _ :int, z :f32) =&gt; bool
+func(a, b :int, z :f32) =&gt; (bool)
+func(prefix :string, values :...int)
+func(a, b :int, z :f64, opt :...any) =&gt; (success bool)
+func(int, int, f64) =&gt; (f64, *[]int)
+func(n :int) =&gt; func(p :*T)
+
+# 方法定义
+func Person.GetName() =&gt; string { return this.name }
+</code></pre>
+<h3>A.3 关键字和运算符</h3>
+<p>关键字是语法的组成元素，不能用于标识符。凹语言目前有19个关键字：</p>
+<pre><code>break     defer  if        return 
+case      else   import    struct 
+const     for    interface switch
+continue  func   map       type
+default   global range
+</code></pre>
+<p>以下是凹语言的运算符和与标点：</p>
+<pre><code>+    &amp;     +=    &amp;=     &amp;&amp;    ==    !=    (    )
+-    |     -=    |=     ||    &lt;     &lt;=    [    ]
+*    ^     *=    ^=     &lt;-    &gt;     &gt;=    {    }
+/    &lt;&lt;    /=    &lt;&lt;=    ++    =     :=    ,    ;
+%    &gt;&gt;    %=    &gt;&gt;=    --    !     ...   .    :
+     &amp;^          &amp;^=                      =&gt;
+</code></pre>
+<p>运算符用于组成表达式，标点用于组成或分隔语句。</p>
+<h3>A.4 数据类型</h3>
+<p>除了布尔类型、字符、整数、浮点数、字符串等基础类型，凹语言还提供了指针、数组、切片、结构体、map、函数和接口等复合类型。复合类型的语法定义如下：</p>
+<pre><code>TypeDecl  = &quot;type&quot; ( TypeSpec | &quot;(&quot; { TypeSpec &quot;;&quot; } &quot;)&quot; ) .
+TypeSpec  = AliasDecl | TypeDef .
+
+AliasDecl = identifier &quot;=&quot; Type .
+TypeDef   = identifier &quot;:&quot; Type .
+
+Type      = TypeName | TypeLit | &quot;(&quot; Type &quot;)&quot; .
+TypeName  = identifier | PackageName &quot;.&quot; identifier .
+TypeLit   = PointerType | ArrayType | SliceType
+          | StructType | MapType | FnType | InterfaceType
+          .
+</code></pre>
+<p>其中TypeDecl定义了类型声明的语法规范，可以是每个类型独立定义或通过小括弧包含按组定义。其中AliasDecl是定义类型的别名（名字和类型中间有个赋值符号），而TypeDef则是定义一个新的类型。而基础的Type就是由标识符或者是小括弧包含的其它类型表示。TypeName不仅仅可以从当前空间的标识符定义新类型，还支持从其它包导入的标识符定义类型。而TypeLit表示类型面值，比如基于已有类型的指针，或者是匿名的结构体都属于类型的面值。</p>
+<p>下面以结构体为例展示复合类型的语法：</p>
+<pre><code>StructType     = &quot;struct&quot; &quot;{&quot; { FieldDecl &quot;;&quot; } &quot;}&quot; .
+FieldDecl      = (IdentifierList &quot;:&quot; Type | EmbeddedField) [ Tag ] .
+EmbeddedField  = [ &quot;*&quot; ] TypeName .
+Tag            = string_lit .
+
+IdentifierList = identifier { &quot;,&quot; identifier } .
+TypeName       = identifier | PackageName &quot;.&quot; identifier .
+</code></pre>
+<p>结构体通过struct关键字开始定义，然后在大括弧中包含成员的定义。每一个FieldDecl表示一组有着相同类型和Tag字符串的标识符名字，或者是嵌入的匿名类型或类型指针。</p>
+<p>以下是结构体的例子：</p>
+<pre><code>type MyStruct struct {
+    a, b : int &quot;int value&quot;
+    string
+}
+</code></pre>
+<p>其中a和b成员不仅仅有着相同的int类型，同时还有着相同的Tag字符串，最后的成员是嵌入一个匿名的字符串。</p>
+<h3>A.5 语句块和语句</h3>
+<p>语句近似看作是函数体内可独立执行的代码，语句块是由大括弧定义的语句容器，语句块和语句只能在函数体内部定义。语句块和语句是在函数体部分定义，函数体就是一个语句块。语句块的语法规范如下：</p>
+<pre><code>FnBody  = Block .
+
+Block         = &quot;{&quot; StatementList &quot;}&quot; .
+StatementList = { Statement &quot;;&quot; } .
+
+Statement     = Declaration | ExpressionStmt
+              | IfStmt | Block | ReturnStmt
+              | ForStmt | BreakStmt | ContinueStmt
+              .
+</code></pre>
+<p>FnBody函数体对应一个Block语句块。每个Block语句块内部由多个语句列表StatementList组成，每个语句之间通过分号分隔。语句又可分为声明语句、标签语句、普通表达式语句和其它诸多控制流语句。需要注意的是，Block语句块也是一种合法的语句，因此函数体实际上是又Block组成的多叉树结构表示，每个Block结点又可以递归保存其他的可嵌套Block的控制流等语句。</p>
+<p>其中声明语句和表达式语句语法如下（声明语句的细节可参考语言文档，这里不做展开）：</p>
+<pre><code>Declaration  = ConstDecl | TypeDecl | GlobalDecl .
+TopLevelDecl = Declaration | FuncDecl | MethodDecl .
+
+ExpressionStmt = Expression .
+</code></pre>
+<p>下面是声明语句和表达式语句的例子：</p>
+<pre><code>const Pi = 3.14
+type MyInt int32
+global x = 123 // 全局变量
+
+x = x + 1
+</code></pre>
+<p>if 和 return 语句的语法定义如下：</p>
+<pre><code>IfStmt         = &quot;if&quot; [ SimpleStmt &quot;;&quot; ] Expression Block [ &quot;else&quot; ( IfStmt | Block ) ] .
+ReturnStmt     = &quot;return&quot; [ ExpressionList ] .
+ExpressionList = Expression { &quot;,&quot; Expression } .
+</code></pre>
+<p>if 和 return 语句的例子如下：</p>
+<pre><code>func main {
+    if 1+1 == 2 { return }
+}
+</code></pre>
+<p>for 循环语句的语法定义如下：</p>
+<pre><code>ForStmt     = &quot;for&quot; [ Condition | ForClause | RangeClause ] Block .
+
+Condition   = Expression .
+
+ForClause   = [ InitStmt ] &quot;;&quot; [ Condition ] &quot;;&quot; [ PostStmt ] .
+InitStmt    = SimpleStmt .
+PostStmt    = SimpleStmt .
+
+RangeClause = [ ExpressionList &quot;=&quot; | IdentifierList &quot;:=&quot; ] &quot;range&quot; Expression .
+</code></pre>
+<p>循环的例子如下：</p>
+<pre><code>for {}          # 死循环
+for true {}     # 死循环
+for ; true ; {} # 死循环
+
+# C 语言风格循环
+for i := 0; i &lt; 10; i++ {}
+
+# 循环迭代列表的元素
+list := make([]int, 10)
+for i, v := range list {}
+</code></pre>
+<p>基于声明、定义、分支、循环这些基本的语句，就可以构造出任意复杂的程序。</p>
 
 
                         
@@ -298,13 +464,13 @@
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../../chs/9.与宿主环境交互/readme.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../chs/9.附录/readme.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
                         
-                            <!-- ../../chs/10.附录/a-spec.html -->
-                            <a rel="next" href="../../chs/10.附录/a-spec.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <!-- ../../chs/9.附录/b-std.html -->
+                            <a rel="next" href="../../chs/9.附录/b-std.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
                         
@@ -315,12 +481,12 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../../chs/9.与宿主环境交互/readme.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../chs/9.附录/readme.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
                 
-                    <a rel="next" href="../../chs/10.附录/a-spec.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../chs/9.附录/b-std.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
                 
@@ -337,7 +503,7 @@
         <script src="../../static/wabook/book.js" type="text/javascript" charset="utf-8"></script>
         
         <script type="text/javascript" charset="utf-8">
-            var pagePath = "chs/10.附录/readme.md"
+            var pagePath = "chs/9.附录/a-spec.md"
         </script>
 
         <!-- Custom JS scripts -->

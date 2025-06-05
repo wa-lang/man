@@ -217,17 +217,14 @@
     </li>
   </ol>
   <li class="chapter-item expanded ">
-    <a href="../../chs/9.与宿主环境交互/readme.html" ><strong aria-hidden="true">9.</strong> 与宿主环境交互</a>
-  </li>
-  <li class="chapter-item expanded ">
-    <a href="../../chs/10.附录/readme.html" ><strong aria-hidden="true">10.</strong> 附录</a>
+    <a href="../../chs/9.附录/readme.html" ><strong aria-hidden="true">9.</strong> 附录</a>
   </li>
   <ol class="section">
     <li class="chapter-item expanded ">
-      <a href="../../chs/10.附录/a-spec.html" ><strong aria-hidden="true">10.1.</strong> 语言规范</a>
+      <a href="../../chs/9.附录/a-spec.html" ><strong aria-hidden="true">9.1.</strong> 语言规范</a>
     </li>
     <li class="chapter-item expanded ">
-      <a href="../../chs/10.附录/b-std.html" ><strong aria-hidden="true">10.2.</strong> 标准库</a>
+      <a href="../../chs/9.附录/b-std.html" ><strong aria-hidden="true">9.2.</strong> 标准库</a>
     </li>
   </ol>
 </ol>
@@ -327,7 +324,7 @@ func main {
 <p>如上例所示，如果把全局函数的第一个参数设为自定义类型的引用，那么它的作用和方法几乎是一致的——事实上在凹语言中，从运行时层面看，方法就是首参数为自定义类型引用的函数。既然如此，那么为何要特意引入这一概念呢？原因有两个：</p>
 <ol>
 <li>方法有助于聚合对象的功能；</li>
-<li><code>接口</code> 这一概念直接依赖于方法——类型的方法集合决定了它所实现的接口，第7章将对此进行介绍。</li>
+<li><code>接口</code> 这一概念直接依赖于方法——类型的方法集合决定了它所实现的接口，第8章将对此进行介绍。</li>
 </ol>
 <blockquote>
 <p>需要特别注意的是，按照凹语言语法，使用 <code>func T.xxx()...</code> 声明的方法并不属于类型 <code>T</code>，而是属于类型 <code>*T</code>——既 <code>T</code> 的引用；也就是说具名类型本身不能拥有方法，拥有方法的只能是具名类型的引用。</p>
