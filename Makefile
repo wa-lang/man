@@ -29,7 +29,9 @@ to-word:
 
 	mkdir -p book
 
-	cat chs/1.*/readme.md chs/1.*/?.*.md > book/ch1-tmp.md
+	cp -r chs/2.*/images book/
+
+	cat chs/1.*/readme.md                > book/ch1-tmp.md
 	cat chs/2.*/readme.md chs/2.*/?.*.md > book/ch2-tmp.md
 	cat chs/3.*/readme.md chs/3.*/?.*.md > book/ch3-tmp.md
 	cat chs/4.*/readme.md chs/4.*/?.*.md > book/ch4-tmp.md
@@ -37,7 +39,7 @@ to-word:
 	cat chs/6.*/readme.md chs/6.*/?.*.md > book/ch6-tmp.md
 	cat chs/7.*/readme.md chs/7.*/?.*.md > book/ch7-tmp.md
 	cat chs/8.*/readme.md chs/8.*/?.*.md > book/ch8-tmp.md
-	cat chs/9.*/readme.md chs/9.*/?.*.md > book/ch9-tmp.md
+	cat chs/9.*/readme.md chs/9.*/?-*.md > book/ch9-tmp.md
 
 	cat book/ch*-tmp.md > book/doc-chx-tmp.md
 
