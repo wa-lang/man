@@ -286,42 +286,36 @@
 
                         <h2>2.1. 安装凹语言</h2>
 <p>除了访问在线的凹语言 Playground，也可以在本地安装凹语言。</p>
-<h3>2.1.1 二进制安装</h3>
-<p>从 Github 下载最新的二进制文件：<a href="https://github.com/wa-lang/wa/releases">https://github.com/wa-lang/wa/releases</a> 。需要确保和本地平台对应，比如 v0.8.1 对应 macOS/amd64 平台下载的是 <a href="https://github.com/wa-lang/wa/releases/download/v0.8.1/wa_0.8.1_darwin_amd64.tar.gz">wa_0.8.1_darwin_amd64.tar.gz</a>。</p>
-<p>解压后目录内容如下：</p>
-<pre><code>$ tree ./wa_0.8.1_darwin_amd64
-./wa_0.8.1_darwin_amd64
-├── LICENSE
-├── README-zh.md
-├── README.md
-└── wa
-
-1 directory, 5 files
-</code></pre>
-<p>将该目录路径添加到系统的 <code>PATH</code> 环境，然后重新打开命令行环境执行 <code>wa -v</code> 命令查看版本信息。</p>
-<pre><code>$ wa -v
-Wa version v0.8.1
-</code></pre>
-<p>第一次执行 <code>wa</code> 命令时会在命令同一个目录下生成一个 <code>wa.wat2wasm.exe</code> 命令。</p>
-<p>到此安装工作完成。</p>
+<h3>2.1.1 系统要求</h3>
+<p>凹语言支持主流的操作系统，包含Windows、macOS、Linux等。凹语言编译器还支持在主流的Chrome等现代浏览器执行。凹语言编译器输出的wasm文件支持主流的WebAssembly虚拟机。</p>
+<h3>2.1.2 二进制安装</h3>
+<p>打开凹语言在 Github 的镜像仓库，在仓库主页面右侧栏找到最新的发布版本：</p>
+<p><img src="./images/github-wa-release-01.png" alt=""></p>
+<p>点击进入最新发布的版本，在Assets部分找到Windows、macOS、Linux等主流操作系统的二进制包：</p>
+<p><img src="./images/github-wa-release-02.png" alt=""></p>
+<p>根据当前的操作系统选择对应的二进制文件下载。比如 v0.22.0 对应 Windows/amd64 平台下载的是 <a href="https://github.com/wa-lang/wa/releases/download/v0.22.0/wa_v0.22.0_windows-amd64.zip">wa_v0.22.0_windows-amd64.zip</a>。</p>
+<p>下载zip文件后解压到C盘根目录，其目录内容如下：</p>
+<p><img src="./images/wa-windows.png" alt=""></p>
+<p>然后将bin目录对应的<code>C:\wa\bin</code>路径添加到当前系统的<code>PATH</code>环境变量中。</p>
+<p>Windows平台的操作流程：鼠标选择桌面我的电脑，点击右键并在弹出菜单中选择属性，打开控制面板主页。</p>
+<p><img src="./images/windows-settings.png" alt=""></p>
+<p>在左边侧栏选中“高级系统设置”，打开系统属性对话框：</p>
+<p><img src="./images/windows-sys-setting.png" alt=""></p>
+<p>点击右下角的环境变量按钮：</p>
+<p><img src="./images/windows-env-setting.png" alt=""></p>
+<p>创建Path环境变量，并将<code>C:\wa\bin</code>路径添加到环境变量中：</p>
+<p><img src="./images/windows-env-setting-path.png" alt=""></p>
+<p>然后重新打开Windows的命令行窗口程序，输入<code>where wa</code>查看凹语言编译器对应的wa命令安装情况：</p>
+<p><img src="./images/windows-cmd.png" alt=""></p>
+<p>到此Windows平台的凹语言工具链安装完成。</p>
 <h3>2.1.2 从源码安装</h3>
-<p>本地要求安装 Go1.17+ 版本，然后执行以下命令安装最新的 <code>wa</code> 命令：</p>
-<pre><code>go install wa-lang.org/wa
+<p>对于macOS或Linux系统，可以利用Go语言的包管理工具从源代码安装凹语言编译器。首先是本地安装Go1.17或更新的版本，然后输入以下的命令安装最新的凹语言编译器：</p>
+<pre><code>go install wa-lang.org/wa@latest
 </code></pre>
-<p>默认会安装到 <code>$HOME/go/bin</code> 目录，因此需要将该该目录路径添加到系统的 <code>PATH</code> 环境。
-然后重新打开命令行环境执行一次 <code>wa</code> 命令会输出以上相同的帮助信息。</p>
-<p>第一次执行 <code>wa -v</code> 命令查看版本信息时会在命令同一个目录下生成一个 <code>wa.wat2wasm.exe</code> 命令。</p>
+<p>默认会安装到 <code>$HOME/go/bin</code> 目录，因此需要将该该目录路径添加到系统的 <code>PATH</code> 环境。然后可以验证
+然后重新打开命令行环境执行一次 <code>wa</code> 命令的执行情况。</p>
 <p>到此安装工作完成。</p>
-<h3>2.1.3 Homebrew (MacOS &amp; Linux)</h3>
-<p>对于 macOS 和 Linux 系统也可以通过 Homebrew 安装：</p>
-<pre><code>brew install wa-lang/tap/wa
-</code></pre>
-<h3>2.1.4 Scoop (Windows)</h3>
-<p>对于 Windows 系统也可以通过 Scoop 安装：</p>
-<pre><code>scoop bucket add wa-lang https://github.com/wa-lang/scoop-bucket.git
-scoop install wa-lang/wa
-</code></pre>
-<h3>2.1.5 本地 Playground</h3>
+<h3>2.1.3 本地 Playground</h3>
 <p>安装成功之后，在命令行输入 <code>wa play</code> 可以打开本地 Playground。程序会默认打开浏览器页面，也可以输入 <a href="http://localhost:2023/">http://localhost:2023/</a> 地址访问。效果如下：</p>
 <p><img src="./images/playground-local-01.png" alt=""></p>
 <p>点击“执行”按钮，可以看到输出结果。</p>
