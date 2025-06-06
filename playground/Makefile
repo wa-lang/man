@@ -1,11 +1,7 @@
 default:
-	wabook serve
 
-build:
-	-rm -rf ../book/playground
-	mkdir -p ../book/playground
-	wabook build && mv ./book ./en && mv ./playground ../book/
-	-rm ../book/playground/.gitignore
+to-word:
+	pandoc -f markdown -t docx README.md -o wa-play.docx
 
 clean:
 	-rm -rf book
